@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="recruitment.admin" %>
+
+<!DOCTYPE html>
+
+    <html>
+<head runat="server">
+    <title>Admin Panel</title>
+    
+    <%--bootstrap css--%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--datatables css--%>
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+     <%--fontawesome css--%>
+    <link href="fontawesome/css/all.css" rel="stylesheet" />
+
+        <%--our custom css--%>
+    <link href="css/customstylesheet.css" rel="stylesheet" />
+
+    <%--jquery--%>
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+    <%--popper js--%>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <%--bootstrap js--%>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+       
+
+       
+    </asp:ContentPlaceHolder>
+    
+</head>
+<body>
+    <form runat="server">
+    <div class="container-fluid">
+        <div class ="row">
+            <div class="col-12">
+    
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+         <img src="imgs/csir logo.png" width="60" height="60" />
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+
+            <div class="navbar-nav">
+                <a href="#" class="nav-item nav-link active">Admin Panel</a>
+                <a href="DashboardAdmin.aspx" class="nav-item nav-link">Dashboard</a>
+                <a href="can_profile.aspx" class="nav-item nav-link">Candidate Profile</a>
+              <%--    <a href="admin_synopsis.aspx" class="nav-item nav-link">Post wise Synopsis</a>--%>
+                 <a href="FilterbyPost.aspx" class="nav-item nav-link">Application Filters</a>
+                                
+            </div>
+
+          
+               <%-- <div  class="navbar-nav">                    
+                   
+                    <asp:TextBox ID="TextBox1" runat="server" placeholder="Search" class="form-control" ></asp:TextBox>
+                   
+                    <asp:Button ID="Button1" class="btn btn-secondary"  runat="server" Text="Search" />
+                </div>--%>
+            
+            <div class="navbar-nav">
+              
+                         
+                             <asp:LinkButton class="nav-link footerlinks" ID="adminloginlink" runat="server" >Login</asp:LinkButton>
+
+                            <asp:LinkButton class="nav-link footerlinks" ID="logoutlink"  OnClick="logout_Click" runat="server" >Logout</asp:LinkButton>
+                        
+            </div>
+            
+        </div>
+    </div>
+
+</nav>
+        </div>
+
+        </div>
+    
+   <br />
+    <br />
+         <br />
+
+    <div class ="row">
+        <div class="col-12">
+            <div  class="d-flex flex-column min-vh-100">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+                </div>
+        </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-12 text-center">
+                 <!-- Footer -->
+        <footer>
+           
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+               <div class="container-fluid mt-auto">        
+                    <div class="col-12 ">
+                        <p style="color:whitesmoke"> CSIR MADRAS COMPLEX <a class="footerlinks" href="#" target="_blank"> IT DIVISION</a></p>
+                        <P style="color:yellowgreen"> Developed by S.Rajeshkumar, CSIR Madras Complex</P>
+                    </div>
+               
+           </div>
+                    
+          </nav>
+         
+        </footer>
+
+        <!-- ./Footer -->
+            </div>
+        </div>
+           
+       
+    
+       </div>
+         </form>
+</body>
+</html>

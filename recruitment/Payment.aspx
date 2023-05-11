@@ -1,0 +1,129 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Payment.aspx.cs" Inherits="recruitment.Payment" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+         .titlemenufont
+    {
+        font-family: Arial;
+        font-size: 10pt;
+    }
+         .stepfont
+        {
+            color: green;
+     text-shadow: 2px 2px 5px green;
+        font-size: 100%;
+        }
+       
+        .savebtncolor 
+{
+   background-color: dodgerblue; 
+   padding: 4px 10px;
+   font: 16px sans-serif;
+   text-decoration: none;
+   border: 2px solid #000;
+   border-color: #aaa #444 #444 #aaa;
+   color: white;
+}
+       
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    
+         f<%-- title start--%><div class="container">
+
+        <div class="bg-light shadow text-center">
+        <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
+        Personal Details (fields marked with * are mandatory)</p>
+        <p >Candidate Registration Number:
+              <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
+       Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
+            Post Applying For: <asp:Label ID="applyhpostlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label>  </p>
+      </div>
+
+    </div> 
+        <%-- title ends--%>
+
+
+    <div class="container">
+
+        <asp:Panel ID="PaymentPanel" runat="server">
+         <div class="card">
+               <div class="card-body">
+
+                     <center>    <h6 class="card-header text-white  bg-info ">Payment Details</h6></center><br />
+        <div class="row">
+             <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+                <div class="col-4">
+                    <label for="bankname">Bank Reference Number</label>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="banknameText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
+
+                 <asp:TextBox ID="banknameText" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>                 
+
+                 </div>
+                <div class="col-4">
+                    <label for="paydate">Payment Date</label>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPayDate" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="paymentdateText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
+
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidatorPayDate" runat="server" ErrorMessage="Invalid Date Format" ControlToValidate="paymentdateText" validationgroup="basicpagegroup"
+                    ForeColor="Red" ValidationExpression="(^((((0[1-9])|([1-2][0-9])|(3[0-1]))|([1-9]))-(((0[1-9])|(1[0-2]))|([1-9]))-(([0-9]{2})|(((19)|([2]([0]{1})))([0-9]{2}))))$)"></asp:RegularExpressionValidator>
+
+                  
+                    <asp:TextBox ID="paymentdateText" class="form-control" Format="dd-MM-yyyy" placeholder="dd-MM-yyyy" runat="server" MaxLength="10" ></asp:TextBox> 
+
+              
+
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtenderPayDate" PopupButtonID="paymentdateText" TargetControlID="paymentdateText" runat="server" Format="dd-MM-yyyy"/>
+               
+                 </div>
+                <div class="col-4">
+                    <label for="paymode">Mode of Payment</label>
+
+                 <asp:TextBox ID="paymodeText" runat="server" class="form-control" placeholder="" value="SBI Collect" ReadOnly="true" ></asp:TextBox>                 
+
+               
+                 </div>
+                
+                
+
+            </div>
+                     
+
+                   </div>
+             </div>
+            </asp:Panel>
+        <asp:Panel ID="PaymentPanelNotification" runat="server">
+            <div class="row">
+                     <div class="col">
+                        <center>
+                            <div class="alert alert-success" role="alert">
+  <h5 class="alert-heading">      *Payment is exempted for Female, SC, ST, CSIR Employee (Permanent) & Ex-Army</h5>
+                                <p>If you are falling under any one of the above catagory and still payment options are visible, please re-check your filled application details in previous forms.</p>
+
+ 
+</div>
+                           
+                        </center>
+                     </div>
+                  </div>
+        </asp:Panel>
+        <div class="row">
+            <div class="col-12">
+                <center>
+                    <asp:Label ID="PaymentErrorlbl" runat="server" Font-Size="Large" ForeColor="#0000CC"></asp:Label>
+                </center>
+            </div>
+        </div>
+
+        <div class="row">
+    <div class="col-12">
+                 <asp:Button ID="goBackbtn" CssClass="savebtncolor" runat="server" Text="Go Back to Home" causesvalidation="true" validationgroup="basicpagegroup" OnClick="goBackbtn_Click"  />
+
+    <center> 
+
+       <asp:Button ID="SaveDetails" CssClass="savebtncolor" runat="server" Text="Save and Continue" causesvalidation="true" validationgroup="basicpagegroup" OnClick="SaveDetails_Click" />
+    </center>
+    </div>
+    </div>
+    </div>
+</asp:Content>

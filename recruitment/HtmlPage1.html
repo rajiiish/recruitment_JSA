@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="row">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col"><asp:Label ID="Qualificationlbl" runat="server" Text="Qualification"></asp:Label></th>
+                    <th scope="col"><asp:Label ID="DegreeNamelbl" runat="server" Text="Specialization/Degree Name"></asp:Label></th>
+                    <th scope="col"><asp:Label ID="MainSubjectlbl" runat="server" Text="Main Subject"></asp:Label></th>
+                    <th scope="col"><asp:Label ID="Institutelbl" runat="server" Text="Institute/University/College Name"></asp:Label></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><asp:DropDownList ID="coursedropdown" runat="server" AutoPostBack="True" OnSelectedIndexChanged="coursedropdown_SelectedIndexChanged">
+    <asp:ListItem Value="0">--Select--</asp:ListItem>
+    <asp:ListItem Value="SSC/SSLC/10th">SSC/SSLC/10th</asp:ListItem>
+    <asp:ListItem Value="HSC/PUC/12th">HSC/PUC/12th</asp:ListItem>
+    <asp:ListItem Value="ITI">ITI</asp:ListItem>
+    <asp:ListItem Value="DIPLOMA">DIPLOMA</asp:ListItem>
+    <asp:ListItem Value="UG">UG</asp:ListItem>
+    <asp:ListItem Value="PG">PG</asp:ListItem>
+
+</asp:DropDownList></td>
+                    <td><asp:TextBox ID="nameofdegree" runat="server"></asp:TextBox></td>
+                    <td><asp:TextBox ID="subjecttxt" runat="server"></asp:TextBox> </td>
+                    <td><asp:TextBox ID="institutetxt" runat="server"></asp:TextBox> </td>
+                </tr>
+
+            </tbody>
+
+            <thead>
+                <tr>
+                    <th scope="col"><asp:Label ID="Markslbl" runat="server" Text="Marks in Percentage"></asp:Label></th>
+                    <th scope="col"><asp:Label ID="PassingYearlbl" runat="server" Text="Month & Year of Passing"></asp:Label></th>
+                    <th scope="col"><asp:Label ID="Divisionlbl" runat="server" Text="Division/Grade"></asp:Label></th>
+                    <th scope="col">Click to Add Selected Educational Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <asp:TextBox ID="pmarkstext" runat="server" Height="30 px" Width="80px"></asp:TextBox> <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="pmarkstext"
+                                                                                                                                   CultureInvariantValues="True" ErrorMessage="Enter Percentage" MaximumValue="100.00" MinimumValue="0.00" Type="Double" ValidationGroup="regpagegroup"></asp:RangeValidator>
+                    </td>
+                    <td>
+                        <asp:TextBox ID="pyeartxt" runat="server" MaxLength="4" Height="30 px" Width="80px"></asp:TextBox>  <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ControlToValidate="pyeartxt"
+                                                                                                                                                            ValidationExpression="^[0-9]+$" runat="server" ValidationGroup="regpagegroup" ErrorMessage="enter only year."></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator Display="Dynamic" ControlToValidate="pyeartxt" ID="RegularExpressionValidator2"
+                                                        ValidationExpression="^[\s\S]{4,}$" runat="server" ValidationGroup="regpagegroup" ErrorMessage="Enter Year in Correct Formate."></asp:RegularExpressionValidator>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="Courseclass" runat="server" AutoPostBack="True">
+                            <asp:ListItem Value="0">--Select--</asp:ListItem>
+                            <asp:ListItem Value="First Class">First Class</asp:ListItem>
+                            <asp:ListItem Value="Second Class"> Second Class</asp:ListItem>
+                            <asp:ListItem Value="Third Class">Third Class</asp:ListItem>
+                            <asp:ListItem Value="First Class-with Distinction">First Class-with Distinction</asp:ListItem>
+                            <asp:ListItem Value="First Class–Exemplary">First Class–Exemplary</asp:ListItem>
+                        </asp:DropDownList>
+                    </td>
+                    <td><asp:Button ID="Addbutton" runat="server" class="btn btn-info" Text="Add" OnClick="Addbutton_Click" validationgroup="regpagegroup" /></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+
+
+</body>
+</html>

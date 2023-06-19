@@ -648,6 +648,7 @@ namespace recruitment
                         {
                             CompleteApplication.Visible = false;
                             submitveifylbl.Visible = false;
+                            goBackbtn.Visible = false;
                         }
                     }
                 }

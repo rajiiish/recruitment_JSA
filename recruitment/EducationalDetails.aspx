@@ -79,7 +79,7 @@ hr.solid {
             Post Applying For: <asp:Label ID="applyhpostlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label>  </p>
       </div>
 </div>
-    <div class="container">
+  <!--  <div class="container">
     <div class="card bg-light">
                <div class="card-body">   
      </div>
@@ -102,7 +102,7 @@ hr.solid {
 </table>
         
         </div>
-        </div>
+        </div>-->
 
    <div class="container">
       <div class="card bg-light">

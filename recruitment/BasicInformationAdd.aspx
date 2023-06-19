@@ -62,9 +62,9 @@
         <%-- title ends--%>
                
 
-      <%-- Stepbystep start--%>
+      <%-- Stepbystep start --%>
         
-        <div class="container ">
+    <!--    <div class="container ">
             <div class="card bg-light">
                <div class="card-body"> 
             <table class="table titlemenufont">
@@ -82,11 +82,11 @@
                  <td > <strong><img src="imgs/6.PNG" class="auto-style3" /></strong>FILES UPLOAD<strong><img src="imgs/icons8_forward_32px.PNG" class="auto-style3" /></strong></td> 
                
     </tr>
-  </tbody>
+  </tbody> --%> 
 </table>
                       </div>
          </div>
-            </div>
+            </div>-->
       <%-- Stepbystep ends--%>             
       
 

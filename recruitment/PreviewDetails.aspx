@@ -73,7 +73,7 @@ AspCell {
             text-align: center;
         }
         .auto-style12 {
-            color: #CC3300;
+            color: brown;
         }
         .auto-style13 {
             color: rgb(0, 102, 0);
@@ -555,6 +555,8 @@ AspCell {
     </td>
 
     </tr>
+    <tr><td colspan="3"><center> <asp:Button ID="printButton" class="btn btn-success" runat="server" Text="Print" OnClientClick="javascript:window.print();" /> </center>
+</td></tr>
 </tbody>
 </table>
                 <br />
@@ -562,8 +564,8 @@ AspCell {
 <hr />
 <p class="text-center"><span style="font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="auto-style13"><strong>Candidate already employed in Govt. Departments should apply &quot;Through Proper Channel&quot; endorsement signed by his/her present employer</strong></span></p>
                 <div class="text-center">
-            ------------------------For others: <span class="auto-style12"><strong>No Hardcopy of application is required to be sent</strong></span> --------------------------</div>
-<hr />
+              <strong> Important: </strong> <span class="auto-style12"><strong> After filling up the application take printout of duly filled form. The application form duly signed to send to <strong>"The Controller of Administration, CSIR-SERC, CSIR Road, Taramani, Chennai" </strong> enclosing copy of requisite documents as per checklist mention below. If any application is incomplete in any respect, it shall not be processed further<br />
+                    </strong></span>
             </div>
          </div>
                    </div>

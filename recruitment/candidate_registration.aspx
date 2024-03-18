@@ -38,8 +38,11 @@
                   <div class="row">
 
                      <div class="col-md-6">
-                         <label>First Name </label> 
-                         <asp:Label ID="Label1" runat="server" Text="*" ForeColor="Red"></asp:Label>
+                         <label>
+                <label for="fullname">Full Name </label>
+                  
+
+                  &nbsp;</label><asp:Label ID="Label1" runat="server" Text="*" ForeColor="Red"></asp:Label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" validationgroup="regpagegroup" runat="server" ErrorMessage="Full Name Required"  ControlToValidate="TextBox1" ForeColor="Red" ></asp:RequiredFieldValidator>
                                                   
                             <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Full Name"></asp:TextBox>

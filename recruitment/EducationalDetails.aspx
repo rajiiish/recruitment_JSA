@@ -12,11 +12,7 @@
      text-shadow: 2px 2px 5px green;
         font-size: 100%;
         }
-         .auto-style3 {
-            width: 23px;
-            height: 21px;
-        }
-        
+                 
         .savebtncolor 
 {
    background-color: dodgerblue; 
@@ -55,6 +51,10 @@
 hr.solid {
   border-top: 3px solid #bbb;
 }
+
+            .auto-style5 {
+                color: #FF0000;
+            }
 
     </style>
 </asp:Content>
@@ -166,7 +166,7 @@ hr.solid {
                 <tr>
                     <td>
                         <asp:TextBox ID="pmarkstext" runat="server" Height="30 px" Width="80px"></asp:TextBox> <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="pmarkstext"
-                                                                                                                                   CultureInvariantValues="True" ErrorMessage="Enter Percentage" MaximumValue="100.00" MinimumValue="0.00" Type="Double" ValidationGroup="regpagegroup"></asp:RangeValidator>
+                                                                                                                                   CultureInvariantValues="True" ErrorMessage="Enter Percentage" MaximumValue="100.00" MinimumValue="0.00" Type="Double" ValidationGroup="regpagegroup" CssClass="auto-style5"></asp:RangeValidator>
                         <br />
                         <asp:RequiredFieldValidator ErrorMessage="Enter Marks" ControlToValidate="pmarkstext"  validationgroup="regpagegroup" runat="server" ForeColor="Red" Display="Dynamic" Font-Size="Small" ID="RequiredFieldValidator12" />
                     </td>
@@ -190,7 +190,10 @@ hr.solid {
                         <br />
                         <asp:RequiredFieldValidator ErrorMessage="Select Grade / Division" ControlToValidate="Courseclass" InitialValue="0" validationgroup="regpagegroup" runat="server" ForeColor="Red" Display="Dynamic" Font-Size="Small" ID="RequiredFieldValidator10" />
                     </td>
-                    <td align="center"><asp:Button ID="Addbutton" runat="server" class="btn btn-info" Text="Add" OnClick="Addbutton_Click" validationgroup="regpagegroup" /></td>
+                    <td align="center"><asp:Button ID="Addbutton" runat="server" class="btn btn-info" Text="Add" OnClick="Addbutton_Click" validationgroup="regpagegroup" />
+                        <br />
+                        <asp:Label ID="EducationErrorinAddLbl" runat="server" Text="" CssClass="auto-style5"></asp:Label>
+                    </td>
                 </tr>
                
 

@@ -757,5 +757,10 @@ namespace recruitment
         {
             Response.Redirect("Candidate_Home.aspx");
         }
+
+        protected void printButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

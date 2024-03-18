@@ -1263,46 +1263,90 @@ namespace recruitment
         {
             if (coursedropdown.SelectedValue== "SSC/SSLC/10th")
                 {
-                SSLC_Education_Add();
-                loadeducationSSLC();
-                noentryRow.Visible = false;
+
+                if (sslcRow.Visible == true)
+                {
+                    EducationErrorinAddLbl.Text = "Record Already Added";
+                }
+                else
+                {
+                    SSLC_Education_Add();
+                    loadeducationSSLC();
+                    noentryRow.Visible = false;
+                }
                
             }
             else if (coursedropdown.SelectedValue == "HSC/PUC/12th")
             {
-                HSC_Education_Add();
-                loadeducationHSC();
-                noentryRow.Visible = false;
+                if (hscRow.Visible == true)
+                {
+                    EducationErrorinAddLbl.Text = "Record Already Added";
+
+                }
+                else
+                {
+                    HSC_Education_Add();
+                    loadeducationHSC();
+                    noentryRow.Visible = false;
+                }
                 
             }
             else if (coursedropdown.SelectedValue == "ITI")
             {
-                ITI_Education_Add();
-                loadeducationITI();
-                noentryRow.Visible = false;
-                
+                if (ITIRow.Visible == true)
+                {
+                    EducationErrorinAddLbl.Text = "Record Already Added";
+
+                }
+                else
+                {
+                    ITI_Education_Add();
+                    loadeducationITI();
+                    noentryRow.Visible = false;
+                }
             }
             else if (coursedropdown.SelectedValue == "DIPLOMA")
             {
-                DIPLOMA_Education_Add();
-                loadeducationDIPLOMA();
-                noentryRow.Visible = false;
-                
+                if (dipRow.Visible == true)
+                {
+                    EducationErrorinAddLbl.Text = "Record Already Added";
+
+                }
+                else
+                {
+                    DIPLOMA_Education_Add();
+                    loadeducationDIPLOMA();
+                    noentryRow.Visible = false;
+                }
             }
             else if (coursedropdown.SelectedValue == "UG")
             {
-                UG_Education_Add();
-                loadeducationUG();
-                noentryRow.Visible = false;
-                
+                if (ugRow.Visible == true)
+                {
+                    EducationErrorinAddLbl.Text = "Record Already Added";
+
+                }
+                else
+                {
+                    UG_Education_Add();
+                    loadeducationUG();
+                    noentryRow.Visible = false;
+                }
             }
 
             else if (coursedropdown.SelectedValue == "PG")
             {
-                PG_Education_Add();
-                loadeducationPG();
-                noentryRow.Visible = false;
-                
+                if (pgRow.Visible == true)
+                {
+                    EducationErrorinAddLbl.Text = "Record Already Added";
+
+                }
+                else
+                {
+                    PG_Education_Add();
+                    loadeducationPG();
+                    noentryRow.Visible = false;
+                }
             }
         }
 
@@ -1358,10 +1402,18 @@ namespace recruitment
                 subjecttxt.Text = "SSC/SSLC/10th";
                 nameofdegree.Text = "SSC/SSLC/10th";
                 DegreeNamelbl.Text = "Specialization";
-                MainSubjectlbl.Text = "Main Subject";
+                MainSubjectlbl.Text = "Main Subject";             
 
                 subjecttxt.Enabled = false;
                 nameofdegree.Enabled = false;
+
+             //   nameofdegree.Text = "";
+             //   subjecttxt.Text = "";
+                institutetxt.Text = "";
+                pmarkstext.Text = "";
+                pyeartxt.Text = "";
+                Courseclass.SelectedIndex = 0;
+               
             }
 
             else if (coursedropdown.SelectedValue == "HSC/PUC/12th")
@@ -1372,29 +1424,59 @@ namespace recruitment
                 MainSubjectlbl.Text = "Main Subject";
                 nameofdegree.Enabled = false;
                 subjecttxt.Enabled = true;
+
+              //  nameofdegree.Text = "";
                 subjecttxt.Text = "";
+                institutetxt.Text = "";
+                pmarkstext.Text = "";
+                pyeartxt.Text = "";
+                Courseclass.SelectedIndex = 0;
 
             }
             else if (coursedropdown.SelectedValue == "DIPLOMA")
             {
                 DegreeNamelbl.Text = "Name of the Diploma";
                 MainSubjectlbl.Text = "Main Subject in Diploma";
+                
                 subjecttxt.Enabled = true;
                 nameofdegree.Enabled = true;
+
+                nameofdegree.Text = "";
+                subjecttxt.Text = "";
+                institutetxt.Text = "";
+                pmarkstext.Text = "";
+                pyeartxt.Text = "";
+                Courseclass.SelectedIndex = 0;
             }
             else if (coursedropdown.SelectedValue == "UG")
             {
                 DegreeNamelbl.Text = "Name of the UG Degree";
                 MainSubjectlbl.Text = "Main Subjects in UG Degree";
+               
                 subjecttxt.Enabled = true;
                 nameofdegree.Enabled = true;
+
+                nameofdegree.Text = "";
+                subjecttxt.Text = "";
+                institutetxt.Text = "";
+                pmarkstext.Text = "";
+                pyeartxt.Text = "";
+                Courseclass.SelectedIndex = 0;
             }
             else if (coursedropdown.SelectedValue == "PG")
             {
                 DegreeNamelbl.Text = "Name of the PG Degree";
                 MainSubjectlbl.Text = "Main Subjects in PG Degree";
+                
                 subjecttxt.Enabled = true;
                 nameofdegree.Enabled = true;
+
+                nameofdegree.Text = "";
+                subjecttxt.Text = "";
+                institutetxt.Text = "";
+                pmarkstext.Text = "";
+                pyeartxt.Text = "";
+                Courseclass.SelectedIndex = 0;
             }
             else
             {
@@ -1404,6 +1486,8 @@ namespace recruitment
                 subjecttxt.Text = "";
 
             }
+            EducationErrorinAddLbl.Text = "";
+            
         }
 
         protected void phddrop_SelectedIndexChanged(object sender, EventArgs e)

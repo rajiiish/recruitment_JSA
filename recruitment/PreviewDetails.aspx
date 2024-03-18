@@ -542,12 +542,12 @@ AspCell {
     
     <tr style="height: 25px;">
     <td class="auto-style6" colspan="3">
-                         <asp:Button ID="goBackbtn" class="btn-sm btn-success" runat="server" Text="Go Back to Edit" OnClick="goBackbtn_Click" />
+                         <asp:Button ID="goBackbtn" class="btn-sm btn-success d-print-none" runat="server" Text="Go Back to Edit" OnClick="goBackbtn_Click" />
 
         <center>
             <br />
             <br />
-            <asp:Button ID="CompleteApplication" class="btn btn-success " runat="server" Text="Submit Application" Height="37px" Width="285px" OnClick="CompleteApplication_Click" /> 
+            <asp:Button ID="CompleteApplication" class="btn btn-success d-print-none " runat="server" Text="Submit Application" Height="37px" Width="285px" OnClick="CompleteApplication_Click" /> 
             <br />
             <asp:Label ID="submitveifylbl" runat="server" Text="(Verify the details of Appliction carefully before Submitting, Submitted Application cannot be edited.)" Font-Size="Small" ForeColor="#CC0000"></asp:Label>
             <br />
@@ -555,7 +555,7 @@ AspCell {
     </td>
 
     </tr>
-    <tr><td colspan="3"><center> <asp:Button ID="printButton" class="btn btn-success" runat="server" Text="Print" OnClientClick="javascript:window.print();" /> </center>
+    <tr><td colspan="3"><center> <asp:Button ID="printButton" class="btn btn-success d-print-none" runat="server"  Text="Print" OnClientClick="javascript:window.print();"  OnClick="printButton_Click" /> </center>
 </td></tr>
 </tbody>
 </table>

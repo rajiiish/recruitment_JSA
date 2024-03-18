@@ -105,15 +105,6 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidatorDob;
 
         /// <summary>
-        /// RegularExpressionValidatorDob control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorDob;
-
-        /// <summary>
         /// dobText control.
         /// </summary>
         /// <remarks>
@@ -121,6 +112,15 @@ namespace recruitment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dobText;
+
+        /// <summary>
+        /// RegularExpressionValidatorDob control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidatorDob;
 
         /// <summary>
         /// CalendarExtender1 control.

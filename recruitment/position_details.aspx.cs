@@ -44,9 +44,9 @@ namespace recruitment
                 da1.Fill(ds);
                 //  string i = ds.Tables[0].Rows[0]["applicant_count"].ToString();
                 string j = ds.Tables[0].Rows[0]["post1"].ToString();
-                string k = ds.Tables[0].Rows[0]["post2"].ToString();
-                string l = ds.Tables[0].Rows[0]["post3"].ToString();
-                string m = ds.Tables[0].Rows[0]["post4"].ToString();
+                //string k = ds.Tables[0].Rows[0]["post2"].ToString();
+                //string l = ds.Tables[0].Rows[0]["post3"].ToString();
+                //string m = ds.Tables[0].Rows[0]["post4"].ToString();
 
 
                 if (PostDropDownList.SelectedIndex == 1)
@@ -59,31 +59,31 @@ namespace recruitment
 
             }
 
-            else if (PostDropDownList.SelectedIndex == 2)
-                {
-                    int a = Convert.ToInt32(k);
-                    c = a + 1;
-                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET post2=post2+1", connection);
-                cmd1.ExecuteNonQuery();
+            //else if (PostDropDownList.SelectedIndex == 2)
+            //    {
+            //        int a = Convert.ToInt32(k);
+            //        c = a + 1;
+            //    SqlCommand cmd1 = new SqlCommand("UPDATE appno SET post2=post2+1", connection);
+            //    cmd1.ExecuteNonQuery();
 
-            }
+            //}
 
-                else if (PostDropDownList.SelectedIndex == 3)
-                {
-                    int a = Convert.ToInt32(l);
-                     c = a + 1;
-                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET post3=post3+1", connection);
-                cmd1.ExecuteNonQuery();
+            //    else if (PostDropDownList.SelectedIndex == 3)
+            //    {
+            //        int a = Convert.ToInt32(l);
+            //         c = a + 1;
+            //    SqlCommand cmd1 = new SqlCommand("UPDATE appno SET post3=post3+1", connection);
+            //    cmd1.ExecuteNonQuery();
 
-            }
+            //}
 
-                else if (PostDropDownList.SelectedIndex == 4)
-                {
-                    int a = Convert.ToInt32(m);
-                     c = a + 1;
-                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET post4=post4+1", connection);
-                cmd1.ExecuteNonQuery();
-            }
+            //    else if (PostDropDownList.SelectedIndex == 4)
+            //    {
+            //        int a = Convert.ToInt32(m);
+            //         c = a + 1;
+            //    SqlCommand cmd1 = new SqlCommand("UPDATE appno SET post4=post4+1", connection);
+            //    cmd1.ExecuteNonQuery();
+            //}
                 return c;
         }
         

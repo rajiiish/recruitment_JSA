@@ -11,8 +11,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-         <%-- title start--%>
-    <div class="container">
+         R<%-- title start--%><div class="container">
         <div class="bg-light shadow text-center">
         <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
          (fields marked with * are mandatory)</p>

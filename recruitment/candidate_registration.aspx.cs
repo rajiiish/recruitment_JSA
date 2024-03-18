@@ -223,7 +223,7 @@ namespace recruitment
                 string photoid = "123456";
                 string signid = "1234567";
 
-                string can_regno = "CMC2013" + i;
+                string can_regno = "CMC/SA/2024" + i;
 
                 try
                 {

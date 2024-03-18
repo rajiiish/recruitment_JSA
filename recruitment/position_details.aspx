@@ -36,10 +36,10 @@
     <h5 class="card-title">Select Post you are applying for:</h5>
     <p class="card-text">
         <asp:DropDownList ID="PostDropDownList" class="form-control" runat="server" OnSelectedIndexChanged="PostDropDownList_SelectedIndexChanged" AutoPostBack="True" Height="35px" Width="269px">
-            <asp:ListItem Value="Select">-Select-</asp:ListItem>
-            <asp:ListItem Value="TA-CIVIL">Technical Assistant (Civil)</asp:ListItem>
-            <asp:ListItem Value="TA-IT">Technical Assistant (IT)</asp:ListItem>
-            <asp:ListItem Value="JSA">Junior Secretariat Assistant</asp:ListItem>
+   <asp:ListItem Value="Select">-Select-</asp:ListItem>
+               
+
+             <asp:ListItem Value="SA">Security Assistant</asp:ListItem>
         </asp:DropDownList>
         &nbsp;<asp:Label ID="appidnolbl" runat="server" Text=""></asp:Label>
         &nbsp;<br /> </p>

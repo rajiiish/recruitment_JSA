@@ -13,11 +13,6 @@
         font-size: 100%;
         }
        
-        .auto-style3 {
-            width: 23px;
-            height: 21px;
-        }
-
         .savebtncolor 
 {
    background-color: dodgerblue; 
@@ -51,7 +46,7 @@
     </script><%-- title start--%><div class="container">
         <div class="bg-light  text-center">
         <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
-        Personal Details (fields marked with * are mandatory) PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM (SSC)</p>
+        Personal Details (fields marked with * are mandatory) PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
         <p >Candidate Registration Number:
               <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
        Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
@@ -141,16 +136,17 @@
              <div class="col-md-4 mb-3">
                 <label for="dob">Date of Birth</label>
                   <asp:RequiredFieldValidator ID="RequiredFieldValidatorDob" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="dobText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
-                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorDob" runat="server" ErrorMessage="Invalid Date Format" ControlToValidate="dobText" validationgroup="basicpagegroup"
-                    ForeColor="Red" ValidationExpression="(^((((0[1-9])|([1-2][0-9])|(3[0-1]))|([1-9]))-(((0[1-9])|(1[0-2]))|([1-9]))-(([0-9]{2})|(((19)|([2]([0]{1})))([0-9]{2}))))$)"></asp:RegularExpressionValidator>
+                 
                 <%--    <asp:TextBox ID="dobText1" runat="server"  Format="dd-MM-yyyy" class="form-control" TextMode="Date" placeholder="dd-MM-yyyy" value="" required></asp:TextBox>--%>
                   <asp:TextBox ID="dobText" class="form-control" Format="dd-MM-yyyy" placeholder="dd-MM-yyyy" runat="server" MaxLength="10" ></asp:TextBox> 
-                 
+                  <asp:RegularExpressionValidator ID="RegularExpressionValidatorDob" runat="server" ErrorMessage="Invalid Date Format" ControlToValidate="dobText" validationgroup="basicpagegroup"
+                    ForeColor="Red" ValidationExpression="(^((((0[1-9])|([1-2][0-9])|(3[0-1]))|([1-9]))-(((0[1-9])|(1[0-2]))|([1-9]))-(([0-9]{2})|(((19)|([2]([0]{1})))([0-9]{2}))))$)"></asp:RegularExpressionValidator>
                  
                      
                   <ajaxToolkit:CalendarExtender ID="CalendarExtender1" PopupButtonID="dobText" TargetControlID="dobText" runat="server" Format="dd-MM-yyyy"/>
                
               </div>
+
               <div class="col-md-4 mb-3">
                 <label for="gender">Gender</label> <asp:Label ID="genvallbl" runat="server" Text="" ForeColor="Red"></asp:Label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="genderDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />

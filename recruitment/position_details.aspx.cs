@@ -291,7 +291,7 @@ namespace recruitment
 
             {
 
-                qualificationlable.Text = "Diploma in Civil Engineering from a recognized institute.";
+                qualificationlable.Text = "Ex-servicemen, JCO in Army or other Paramilitary Forces with minimum of five years experience in the work of security.";
             }
 
             else if (PostDropDownList.SelectedIndex == 2)

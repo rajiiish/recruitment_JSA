@@ -37,22 +37,11 @@
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Technical Assistant (Civil)</td>
+      <td>Security Assistant (Civil)</td>
       <td>1 No.UR</td>
       <td>28 years</td>
     </tr>
-    <tr>
-     <th scope="row">2</th>
-      <td>Technical Officer (Civil)</td>
-      <td>1 No. ST</td>
-      <td>28 years</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Technician (Civil)</td>
-      <td>1 No. OBC</td>
-      <td>28 years</td>
-    </tr>
+ 
   </tbody>
 </table>
                           <br /> <br>  

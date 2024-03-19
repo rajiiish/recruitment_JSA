@@ -222,8 +222,8 @@
              <%-- ROW3 starts--%>
         <div class="row">
               <div class="col-md-4 mb-3">
-                <label for="pwd">PWD Category</label>
-                  <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="pwdDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
+                <label for="pwd">Whether Person with Disability(PWD):</label>
+&nbsp;<asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="pwdDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
                   
                   <asp:DropDownList ID="pwdDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="pwdDrop_SelectedIndexChanged" >
                        <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
@@ -244,7 +244,7 @@
                                  
               </div>
                 <div class="col-md-4 mb-3">
-                <label for="citizen">Are you a Indian Citizen</label>
+                <label for="citizen">Are you a Citizen of India by Birth</label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="citizenDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
 
                     <asp:DropDownList ID="citizenDrop" runat="server" class="form-control" placeholder="" value="" >
@@ -266,7 +266,7 @@
               </div>
                  <div class="col-md-4 mb-3">
               <div class="auto-style5">
-                <label for="pwd"> Are you an Ex-Servicemen</label>
+                <label for="pwd"> Are you an Ex-servicemen</label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="ArmyDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
                   
                   <asp:DropDownList ID="ArmyDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="ArmyDrop_SelectedIndexChanged"  >

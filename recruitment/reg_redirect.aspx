@@ -17,7 +17,7 @@
                      <div class="col">
                         <center>
                             <div class="alert alert-success" role="alert">
-  <h4 class="alert-heading">Candidate successfully registerd please login to continue.</h4>
+  <h4 class="alert-heading">Candidate Successfully Registerd. </h4> <h4> Please Login to Continue.</h4>
  
 </div>
                            

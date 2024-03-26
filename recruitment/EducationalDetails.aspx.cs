@@ -32,7 +32,11 @@ namespace recruitment
                     LoadPHDDetails();
                     LoadGATEDetails();
                     YesOrNo();
-                    
+
+                    PhdLable.Visible = false;
+                    GateLbl.Visible = false;
+                    phddrop.Visible = false;
+                    GateQualDrop.Visible = false;
 
                     if (phddrop.SelectedValue == "No")
                     {
@@ -1548,7 +1552,55 @@ namespace recruitment
         }
 
 
-       
+
+        private void ExtraEduacation()
+        {
+            string canregdbtest = Convert.ToString(Session["can_regno"]);
+            string vappidnolbl = Convert.ToString(Session["S_appregno"]);
+            
+            try
+            {
+                using (SqlConnection conn = MySqlConnection.Recruitmentcon())
+                {
+
+
+                    string insertquery = "Update AddQualfications SET Q1_Type=@vQ1_Type, Q1_Name=@vQ1_Name, Q1_InstUnistyColl = @vQ1_InstUnistyColl, Q1_Year = @vQ1_Year, Q2_Type=@vQ2_Type, Q2_Name=@vQ2_Name, Q2_InstUnistyColl = @vQ2_InstUnistyColl, Q2_Year = @vQ2_Year, Q3_Type=@vQ3_Type, Q3_Name=@vQ3_Name, Q3_InstUnistyColl = @vQ3_InstUnistyColl, Q3_Year = @vQ3_Year, Q4_Type=@vQ4_Type, Q4_Name=@vQ4_Name, Q4_InstUnistyColl = @vQ4_InstUnistyColl, Q4_Year = @vQ4_Year  WHERE appregno = @vappidnolbl and can_regno = @vcan_reg";
+
+                    SqlCommand cmd = new SqlCommand(insertquery, conn);
+                    cmd.Parameters.AddWithValue("@vcan_reg", canregdbtest);
+                    cmd.Parameters.AddWithValue("@vappidnolbl", vappidnolbl);
+
+                    cmd.Parameters.AddWithValue("@vQ1_Type", Qualf1.Text);
+                    cmd.Parameters.AddWithValue("@vQ1_Name", Qualf2.Text);
+                    cmd.Parameters.AddWithValue("@vQ1_InstUnistyColl", Qualf3.Text);
+                    cmd.Parameters.AddWithValue("@vQ1_Year", Qualf4.Text);
+
+                    cmd.Parameters.AddWithValue("@vQ2_Type", Qualf5.Text);
+                    cmd.Parameters.AddWithValue("@vQ2_Name", Qualf6.Text);
+                    cmd.Parameters.AddWithValue("@vQ2_InstUnistyColl", Qualf7.Text);
+                    cmd.Parameters.AddWithValue("@vQ2_Year", Qualf8.Text);
+
+                    cmd.Parameters.AddWithValue("@vQ3_Type", Qualf9.Text);
+                    cmd.Parameters.AddWithValue("@vQ3_Name", Qualf10.Text);
+                    cmd.Parameters.AddWithValue("@vQ3_InstUnistyColl", Qualf11.Text);
+                    cmd.Parameters.AddWithValue("@vQ3_Year", Qualf12.Text);
+
+                    cmd.Parameters.AddWithValue("@vQ4_Type", Qualf13.Text);
+                    cmd.Parameters.AddWithValue("@vQ4_Name", Qualf14.Text);
+                    cmd.Parameters.AddWithValue("@vQ4_InstUnistyColl", Qualf15.Text);
+                    cmd.Parameters.AddWithValue("@vQ4_Year", Qualf16.Text);
+
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write("<script> alert ('" + ex.Message + "');</script>");
+            }
+        }
+
+
 
 
         protected void SaveEducationbtn_Click(object sender, EventArgs e)
@@ -1572,6 +1624,7 @@ namespace recruitment
                 AddPHDetails();
                 AddGATEetails();
                 stepsComplete();
+                ExtraEduacation();
                 Response.Redirect("Candidate_Home.aspx");
 
             }

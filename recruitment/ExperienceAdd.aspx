@@ -12,11 +12,7 @@
      text-shadow: 2px 2px 5px green;
         font-size: 100%;
         }
-        .auto-style3 {
-            width: 23px;
-            height: 21px;
-        }
-
+        
              .savebtncolor 
 {
    background-color: dodgerblue; 
@@ -71,7 +67,7 @@
     <div class="container">
         <div class="bg-light  text-center">
         <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
-        Personal Details (fields marked with * are mandatory)</p>
+            (fields marked with * are mandatory)</p>
         <p >Candidate Registration Number:
               <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
        Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
@@ -114,7 +110,7 @@
                  </div><br />
             <div class="col-12">
                 <br />
-                <label>*Are You Experienced ? If Yes, Give Details of the Experieince:</label> &nbsp
+                <label>*Are You Experienced? If Yes, Give Details of the Experience:</label> &nbsp
                 <asp:DropDownList ID="expdetailsdrop"  runat="server" AutoPostBack="True" OnSelectedIndexChanged="expdetailsdrop_SelectedIndexChanged" >
                     <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
                          <asp:ListItem Value="Yes">Yes</asp:ListItem>
@@ -134,9 +130,9 @@
         
             <tr align="center">               
                                 
-                 <td><label>Name of the employer:</label> <asp:TextBox ID="employertxt" runat="server"  Height="30 px" Width="350px"></asp:TextBox></td>
+                 <td><label>Name of the Employer:</label> <asp:TextBox ID="employertxt" runat="server"  Height="30 px" Width="350px"></asp:TextBox></td>
                  <td><label>Designation or Position or Grade:</label><asp:TextBox ID="designationtxt" runat="server" Height="30 px" Width="350px"></asp:TextBox></td>
-                 <td><label>Employement Type:</label>
+                 <td><label>Employment Type:</label>
                      
                      <asp:DropDownList ID="emptypetxt" runat="server">
                          <asp:ListItem>--Select--</asp:ListItem>
@@ -154,9 +150,9 @@
 
     
     <tr align="center">
-         <td >    <lable>Date of joining:</lable> <asp:TextBox ID="fromtxt" runat="server" Height="30 px" Width="250px" Format="dd/MM/yyyy" class="form-control" AutoPostBack="true" TextMode="Date" placeholder="" value=""  OnTextChanged="fromtxt_TextChanged"></asp:TextBox> </td>
+         <td >    <lable>Date of Joining:</lable> <asp:TextBox ID="fromtxt" runat="server" Height="30 px" Width="250px" Format="dd/MM/yyyy" class="form-control" AutoPostBack="true" TextMode="Date" placeholder="" value=""  OnTextChanged="fromtxt_TextChanged"></asp:TextBox> </td>
         
-                <td> <lable>Date of leaving:</lable><br />
+                <td> <lable>Date of Leaving: (Enter Current Date in case of working presently)</lable><br />
                                     
                         <asp:TextBox ID="totxt" runat="server" AutoPostBack="true" class="form-control" Format="dd/MM/yyyy" Height="30 px" OnTextChanged="totxt_TextChanged" placeholder="" TextMode="Date" value="" Width="250px"></asp:TextBox>
                    
@@ -165,7 +161,7 @@
                 
     </tr>
   <tr align="center">
-        <td colspan="2"><lable> Details and Natre of Work: (350 characters only allowed)</lable><br /><asp:TextBox ID="expbrieftxt" runat="server"  Height="100px" Width="695px" TextMode="MultiLine" MaxLength="350"></asp:TextBox>
+        <td colspan="2"><lable> Details and Nature of Work: (350 characters only allowed) (Optional)</lable><br /><asp:TextBox ID="expbrieftxt" runat="server"  Height="100px" Width="695px" TextMode="MultiLine" MaxLength="350"></asp:TextBox>
             
             <br />
             

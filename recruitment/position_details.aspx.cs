@@ -141,25 +141,30 @@ namespace recruitment
                 string sql2 = "Insert into basicdetailsNew(can_regno,postcode,postdetails,appregno, IsExperienced, IsForignVist,UnderBond,IsRelativeCSIR,SSLC,HSC,ITI,DIPLOMA,UG,PG,PHD,GATE,ExArmy,PermentGovtStaff,pwd,IsCompleted, IsResearchPub, IsPatent,AgeRelaxCatagory,SSLCPmarks,ITIPmarks,HSCPmarks,DIPLOMAPmarks,UGPmarks,PGPmarks)values(@canreg,@pcode,@postdetails,@appregno,@vexperieced,@vforignvisit,@vunderbond,@vcsirrelative,@vsslc,@vhsc,@viti,@vdip,@vug,@vpg,@vphd,@vgate,@vExArmy,@vPermentGovtStaff,@vpwd,@vcompleted,@vrpub,@vpat,@vagerlx,@vmarks,@vmarks,@vmarks,@vmarks,@vmarks,@vmarks)";
                 string sql3 = "Insert into ExtraInfo(can_regno,appregno)values(@canreg,@appregno)";
                 string sql4 = "Insert into ApplicationSteps(can_regno,appregno,BasicInfo,Education,Experienced,Profession,AdditionalInfo,Upload,AppFee)values(@canreg,@appregno,@vno,@vno,@vno,@vno,@vno,@vno,@vno)";
+                string sql5 = "Insert into AddQualfications(can_regno,appregno)values(@canreg,@appregno)";
 
 
                 SqlCommand cmd2 = new SqlCommand(sql2, connection1);
                 SqlCommand cmd3 = new SqlCommand(sql3, connection1);
                 SqlCommand cmd4 = new SqlCommand(sql4, connection1);
+                SqlCommand cmd5 = new SqlCommand(sql5, connection1);
 
                 cmd2.CommandType = CommandType.Text;
                 cmd3.CommandType = CommandType.Text;
                 cmd4.CommandType = CommandType.Text;
+                cmd5.CommandType = CommandType.Text;
 
                 cmd2.Parameters.AddWithValue("@canreg", canregnobasic);
                 cmd3.Parameters.AddWithValue("@canreg", canregnobasic);
                 cmd4.Parameters.AddWithValue("@canreg", canregnobasic);
+                cmd5.Parameters.AddWithValue("@canreg", canregnobasic);
 
                 cmd2.Parameters.AddWithValue("@pcode", postcode);
 
                 cmd2.Parameters.AddWithValue("@appregno", newappno);
                 cmd3.Parameters.AddWithValue("@appregno", newappno);
                 cmd4.Parameters.AddWithValue("@appregno", newappno);
+                cmd5.Parameters.AddWithValue("@appregno", newappno);
 
                 cmd4.Parameters.AddWithValue("@vno", vno);
 
@@ -196,6 +201,7 @@ namespace recruitment
                 cmd2.ExecuteNonQuery();
                 cmd3.ExecuteNonQuery();
                 cmd4.ExecuteNonQuery();
+                cmd5.ExecuteNonQuery();
 
                 Response.Write("<script> alert ('Your are going to apply');</script>");
                 Session["postname"] = PostDropDownList.SelectedItem.ToString();

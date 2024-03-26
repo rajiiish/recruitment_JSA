@@ -344,8 +344,9 @@
                    <br />
                    <div class="row">
                        <div class="col-12">
-                            <label>* Minimum joining time required (in case of selected for the position): </label>  
-                <asp:TextBox ID="JoiningTimetxt" runat="server" MaxLength="2"></asp:TextBox> <lable>Months</lable>
+                           <asp:Label ID="JoinTimeLable" runat="server" Text="* Minimum joining time required (in case of selected for the position):"></asp:Label>
+                            
+                <asp:TextBox ID="JoiningTimetxt" runat="server" MaxLength="2"></asp:TextBox>
                  <asp:RegularExpressionValidator ID="RegularExpressionValidator1"  validationgroup="otherinfogroup" ControlToValidate="JoiningTimetxt" runat="server" Display="Dynamic" ErrorMessage="Only Numbers" ValidationExpression="\d+" ForeColor="Red"></asp:RegularExpressionValidator>
                        </div>
                    </div>
@@ -397,7 +398,7 @@
                     <div class="row">
                        <div class="col-12">
                           
-                             <center>    <h6 class="card-header text-white  bg-info ">Reference</h6></center>
+                             <center>    <h6 class="card-header text-white  bg-info ">Reference (Optional)</h6></center>
                             <center><label>The referees should be residents in India and holders of responsible position. They should be intimately acquainted with the applicant's character and work but must not be relations. When the candidate has been in employment he should either give his present or most recent employer or immediate superior as a referee or produce a testimonial from him in regard to the candidate's fitness for the post for which he in an applicant:</label></center>
                            <table class="table table-b">
 
@@ -422,14 +423,30 @@
 
                                </tr>
                               
+                               
+                           </table>
+                   </div>
+                        </div>
+                    <!--  Reference check end -->
+
+                    <!--  Declaraion start -->
+                   <div class="card bg-light">
+               <div class="card-body"> 
+                    
+                   <center>    <h6 class="card-header text-white  bg-info ">Declaration</h6></center>
+                   <table class="table table-b">
+
+                                                        
                                <tr>                                 
                                    <td colspan="4" class="text-justify"> <strong>Declaration:</strong> <br /><asp:CheckBox ID="termsandcondtionCheck" runat="server" Font-Size="Large" /> &nbsp I hereby declare that all the statements made in this application are true and complete to the best of my knowledge and belief and nothing has been concealed or/distorted. I am aware that, if at any time I am found to have concealed/distorted any material/information, my appointment is liable to be summarily terminated without notice</td>
 
                                </tr>
                            </table>
                    </div>
-                        </div>
-                    <!--  Reference check end -->
+                       </div>
+
+                     <!--  Declaraion start -->
+
          </div>
 
          <br />

@@ -19,7 +19,7 @@ namespace recruitment
         string emsg = "Please first select a file to upload...";
         string pdfonly = "Only PDF Files are allowed to upload";
         string photoonly = "Only JPG Files are allowed to upload";
-        string maxpdf = "Upload PDF file less then 1 MB size";
+        string maxpdf = "Upload PDF file less then 2 MB size";
         string maxphoto = "Upload JPG file less then 1 MB size";
         string deletemsg = "You are already Deleted File from Server, Please upload again.";
 
@@ -58,7 +58,7 @@ namespace recruitment
                 Communityfileexitcheck();
                 Experiencefileexitcheck();
                 ExServicemanfileexitcheck();
-                NOCfileexitcheck();
+             //   NOCfileexitcheck();
                 PWDfileexitcheck();
                 
                 photofileexitcheck();
@@ -262,7 +262,7 @@ namespace recruitment
                         /////////////////////////////////
                         if (NOCyesno == "Yes")
                         {
-                            NOCTableRow.Visible = true;
+                            NOCTableRow.Visible = false;
 
                         }
                         else if (NOCyesno == "No")
@@ -364,7 +364,7 @@ namespace recruitment
             {
                 int fileSize = FileUpload1.PostedFile.ContentLength;
 
-                if (fileSize < 1100000)
+                if (fileSize < 2100000)
                 {  //==== Add Namespace System.IO
 
                     //==== Get file name without its extension.
@@ -1127,22 +1127,22 @@ namespace recruitment
 
             else if ((ExperienceTableRow.Visible == true) && (Experience_deletebtn.Visible == false))
             {
-                Response.Write("<script> alert ('Upload Community Certificate');</script>");
+                Response.Write("<script> alert ('Upload Experience Certificate');</script>");
             }
 
             else if ((ExServicemanTableRow.Visible == true) && (ExServiceman_deletebtn.Visible == false))
             {
-                Response.Write("<script> alert ('Upload Community Certificate');</script>");
+                Response.Write("<script> alert ('Upload Ex-Serviceman Certificate');</script>");
             }
 
             else if ((NOCTableRow.Visible == true) && (NOC_deletebtn.Visible == false))
             {
-                Response.Write("<script> alert ('Upload Community Certificate');</script>");
+                Response.Write("<script> alert ('Upload NOC Certificate');</script>");
             }
 
             else if ((PWDTableRow.Visible == true) && (PWD_deletebtn.Visible == false))
             {
-                Response.Write("<script> alert ('Upload Community Certificate');</script>");
+                Response.Write("<script> alert ('Upload PWD Certificate');</script>");
             }
 
             else

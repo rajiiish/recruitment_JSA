@@ -186,51 +186,6 @@ namespace recruitment
         protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelExtender4;
 
         /// <summary>
-        /// Previewbutton4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Previewbutton4;
-
-        /// <summary>
-        /// tickimg4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage tickimg4;
-
-        /// <summary>
-        /// PreviewPanel4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PreviewPanel4;
-
-        /// <summary>
-        /// pbtn4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button pbtn4;
-
-        /// <summary>
-        /// CollapsiblePanelExtender5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.CollapsiblePanelExtender CollapsiblePanelExtender5;
-
-        /// <summary>
         /// Previewbutton5 control.
         /// </summary>
         /// <remarks>

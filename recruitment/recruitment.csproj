@@ -2234,6 +2234,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
+    <Folder Include="BackupCodes\" />
     <Folder Include="files\photos\" />
     <Folder Include="files\signatures\" />
   </ItemGroup>

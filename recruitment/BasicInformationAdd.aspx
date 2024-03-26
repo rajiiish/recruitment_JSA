@@ -46,7 +46,7 @@
     </script><%-- title start--%><div class="container">
         <div class="bg-light  text-center">
         <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
-        Personal Details (fields marked with * are mandatory) PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
+        &nbsp;(fields marked with * are mandatory) PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
         <p >Candidate Registration Number:
               <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
        Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
@@ -102,7 +102,7 @@
     </asp:ScriptManager>
         <div class="row">
               <div class="col-md-4 mb-3">
-                <label for="fullname">Full name</label>
+                <label for="fullname">Full Name</label>
                   
 
                   <asp:TextBox ID="fullnametxt" runat="server" class="form-control" placeholder="" value=""  ReadOnly="True"></asp:TextBox>
@@ -111,7 +111,7 @@
               </div>
               
                 <div class="col-md-4 mb-3">
-                <label for="fathername">Father&nbsp; Name </label>
+                <label for="fathername">Father&nbsp;Name </label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" validationgroup="basicpagegroup" runat="server" ErrorMessage="*Required"  ControlToValidate="fathernameText" ForeColor="Red" ></asp:RequiredFieldValidator>
 
                     <asp:TextBox ID="fathernameText" runat="server" class="form-control"  placeholder="" value="" ></asp:TextBox>

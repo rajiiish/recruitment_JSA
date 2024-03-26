@@ -104,27 +104,7 @@
                 <ajaxToolkit:CollapsiblePanelExtender ID="CollapsiblePanelExtender4" runat="server" CollapseControlID="Previewbutton3" Collapsed="True" CollapsedText="Hello frinnd how " ExpandControlID="Previewbutton3" ExpandedText="Its my rajesh" TextLabelID="Panel1lbl" TargetControlID="PreviewPanel3" />
             </div>
 
-            <div class="col-md-11 mx-auto">              
-               
-                <div class="card">
-                    <div class="card-header">
-                        <asp:LinkButton ID="Previewbutton4" runat="server" OnClick="ProfessionDetailsLinkBtn_Click">PROFESSIONAL INFORMATION</asp:LinkButton>
-                                                <img src="imgs/right.png" ID="tickimg4" runat="server" class="auto-style5" />
-
-                    </div>
-                </div>
-
-                <div class="card">
-                    <asp:Panel ID="PreviewPanel4" runat="server">
-                        <div class="card-body">
-                                                                                   <center>    <asp:Button ID="pbtn4" runat="server" CssClass="btn-success" Text="Add / Edit - PROFESSIONAL INFORMATION" OnClick="pbtn4_Click" ForeColor="White" Font-Bold="True" /> </center>  
-           
-                        </div>
-                    </asp:Panel>
-                </div>
-               
-                <ajaxToolkit:CollapsiblePanelExtender ID="CollapsiblePanelExtender5" runat="server" CollapseControlID="Previewbutton4" Collapsed="True" CollapsedText="Hello frinnd how " ExpandControlID="Previewbutton4" ExpandedText="Its my rajesh" TextLabelID="Panel1lbl" TargetControlID="PreviewPanel4" />
-            </div>
+        
 
             <div class="col-md-11 mx-auto">              
                
@@ -201,7 +181,7 @@
                 <br />
             <div class="col-md-12">
 
-            <center>  <asp:Button ID="PreviewApplication" class="btn-primary" runat="server" Text="Preview & Submit" OnClick="PreviewApplication_Click" Font-Bold="True" Font-Italic="False" Font-Size="Large" /> 
+            <center>  <asp:Button ID="PreviewApplication" class="btn-primary" runat="server" Text="Preview & Submit"  Font-Bold="True" Font-Italic="False" Font-Size="Large" OnClick="PreviewApplication_Click1" /> 
                 
                 </center>  
             </div>

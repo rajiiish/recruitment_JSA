@@ -111,17 +111,17 @@ AspCell {
             
   <center>  <!-- ######## This is a comment, visible only in the source editor  ######## -->
 
-<p><strong style="color: #000;">Note:</strong> Candidates are requested to take print out of the application for self reference.</p>
+<p><strong style="color: #000;">Note:</strong> Candidates are requested to take a print out of the application for self-reference.</p>
 </center>
 <table class="tablecss" >
 <thead>
 <tr style="height: 23px;">
-<td colspan="3" class="auto-style7"> <strong>Basic Informations</strong></td>
+<td colspan="3" class="auto-style7"> <strong>Basic Information</strong></td>
 </tr>
 </thead>
 <tbody>
 <tr style="height: 25px;">
-<td style="min-width: 140px; height: 25px; width: 316.812px;" class="auto-style5"><span>Full name</span></td>
+<td style="min-width: 140px; height: 25px; width: 316.812px;" class="auto-style5"><span>Full Name</span></td>
 <td style="width: 262.688px; height: 25px;">
     <strong>
     <asp:Label ID="fullnamelbl" runat="server" Text="Label"></asp:Label>
@@ -158,7 +158,7 @@ AspCell {
     </td>
 </tr>
 <tr style="height: 25px;">
-<td valign="top" style="height: 25px; width: 316.812px;" class="auto-style5"><span>GENDER</span></td>
+<td valign="top" style="height: 25px; width: 316.812px;" class="auto-style5"><span>Gender</span></td>
 <td style="width: 262.688px; height: 25px;">
     <b>
     <asp:Label ID="genderlbl" runat="server" Text="Label"></asp:Label>
@@ -166,7 +166,7 @@ AspCell {
     </td>
 </tr>
 <tr style="height: 25px;">
-<td style="width: 316.812px; height: 25px;" class="auto-style5"><span>CATEGORY</span></td>
+<td style="width: 316.812px; height: 25px;" class="auto-style5"><span>Category</span></td>
 <td style="width: 262.688px; height: 25px;">
     <b>
     <asp:Label ID="categorylbl" runat="server" Text="Label"></asp:Label>
@@ -198,17 +198,17 @@ AspCell {
     </td>
 </tr>
 <tr style="height: 25px;">
-<td style="width: 316.812px; height: 25px;" class="auto-style5"><span>PWD Catagory</span></td>
+<td style="width: 316.812px; height: 25px;" class="auto-style5"><span>PWD Category</span></td>
 <td class="auto-style4" colspan="2">
     <asp:Label ID="pwdcatlbl1" runat="server" Text="Label"></asp:Label>
-    <asp:Label ID="pwdcatlbl2" runat="server" Text="Label"></asp:Label>
-    <asp:Label ID="pwdcatlbl3" runat="server" Text="Label"></asp:Label>
+  <asp:Label ID="pwdpctlbl" runat="server" Text="Percentage of disability : "></asp:Label> <asp:Label ID="pwdcatlbl2" runat="server" Text="Label"></asp:Label> 
+ <asp:Label ID="pwdtypelbl" runat="server" Text="Type of Disability : ">  </asp:Label>    <asp:Label ID="pwdcatlbl3" runat="server" Text="Label"></asp:Label>
     </td>
 </tr>
 <tr style="height: 25px;">
 <td style="width: 316.812px; height: 25px;" class="auto-style5"><span>Are you an Ex-Servicemen</span></td>
 <td class="auto-style4" colspan="2" >
-    <asp:Label ID="armylbl" runat="server" Text="Label"></asp:Label>  <asp:Label ID="armylblservice" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="armylbl" runat="server" Text="Label"></asp:Label>   <asp:Label ID="PrdServicelbl" runat="server" Text="Period of Service (in Years) : "></asp:Label> <asp:Label ID="armylblservice" runat="server" Text="Label"></asp:Label>
     </td>
 </tr>
 <tr style="height: 25px;">
@@ -376,61 +376,10 @@ AspCell {
                                                         
                        </td>                             
     </tr>
-    <tr style="height: 25px;">
-<td class="auto-style11" colspan="3"> <span class="auto-style10"><strong>Phd Details:</strong></span><span class="auto-style5">
-    <asp:Label ID="phdlabl" runat="server" Text="No Record Added"></asp:Label>
-    </span> </td>
-</tr>
-    <tr style="height: 25px;">
-<td class="auto-style6" colspan="3">
-    <asp:Table ID="phdtable" Height="126px" Width="870px" BackColor="White" BorderColor="#336666"  BorderStyle="Double" BorderWidth="3px"  Font-Bold="False" Font-Size="10pt" GridLines="Horizontal" runat="server" CssClass="AspCell" >
-                                                                    <asp:TableHeaderRow  id="phdTitleRow" class="table table-bordered">
-                                                                        <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Phd Title</asp:TableHeaderCell>
-                                                                         <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Month & Year of Completion</asp:TableHeaderCell>
-                                                                         <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Area of Study</asp:TableHeaderCell>
-                                                                        <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Breif the Title</asp:TableHeaderCell>
-                                                                       
-                                                                    </asp:TableHeaderRow>
-      
+    
+  
 
-                                                                       <asp:TableRow id="phdRow" class="table table-bordered">
-                                                                        <asp:TableCell > <asp:Label ID="phd1" runat="server" Text="Label"></asp:Label>  </asp:TableCell>   
-                                                                         <asp:TableCell> <asp:Label ID="phd2" runat="server" Text="Label"></asp:Label>  </asp:TableCell>   
-                                                                         <asp:TableCell> <asp:Label ID="phd3" runat="server" Text="Label"></asp:Label>  </asp:TableCell>   
-                                                                         <asp:TableCell> <asp:Label ID="phd4" runat="server" Text="Label"></asp:Label>  </asp:TableCell>   
-                                                                        
-                                                                    </asp:TableRow>
-        </asp:Table>
-       
-    </td>
- </tr>
-
-    <tr style="height: 25px;">
-<td class="auto-style11" colspan="3"> <span class="auto-style10"><strong>Gate Details:</strong></span><span class="auto-style5">
-    <asp:Label ID="GATElabl" runat="server" Text="No Record Added"></asp:Label>
-    </span> </td>
-</tr>
-    <tr style="height: 25px;">
-<td class="auto-style6" colspan="3">
-    <asp:Table ID="GATEtable" Height="126px" Width="870px" BackColor="White" BorderColor="#336666"  BorderStyle="Double" BorderWidth="3px"  Font-Bold="False" Font-Size="10pt" GridLines="Horizontal" runat="server" CssClass="AspCell" >
-                                                                    <asp:TableHeaderRow  id="GATETitleRow" class="table table-bordered">
-                                                                        <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Gate Marks in Percentage</asp:TableHeaderCell>
-                                                                         <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Month & Year of Completion</asp:TableHeaderCell>
-                                                                         <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Branch</asp:TableHeaderCell>
-                                                                       
-                                                                    </asp:TableHeaderRow>
-      
-
-                                                                       <asp:TableRow id="GATERow" class="table table-bordered">
-                                                                        <asp:TableCell > <asp:Label ID="gate1" runat="server" Text="gate1"></asp:Label>  </asp:TableCell>   
-                                                                         <asp:TableCell> <asp:Label ID="gate2" runat="server" Text="gate2"></asp:Label>  </asp:TableCell>   
-                                                                         <asp:TableCell> <asp:Label ID="gate3" runat="server" Text="gate3"></asp:Label>  </asp:TableCell>   
-                                                                        
-                                                                    </asp:TableRow>
-        </asp:Table>
-       
-    </td>
- </tr>
+    
 
 <!--<tr style="height: 25px;">
 <td style="width: 762px; height: 25px;" colspan="3" class="auto-style5"><span>&nbsp;<asp:GridView ID="GridView1"  class="table table-bordered" runat="server" Height="126px" Width="757px" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" Font-Bold="False" Font-Size="10pt" GridLines="Horizontal">
@@ -473,7 +422,7 @@ AspCell {
 </tr>
    
 <tr style="height: 25px;">
-<td  colspan="3" class="text-center"><span class="auto-style10"><strong>Any Other Informations</strong></span><span class="auto-style5"> </span></td>
+<td  colspan="3" class="text-center"><span class="auto-style10"><strong>Any Other Information</strong></span><span class="auto-style5"> </span></td>
 
 </tr>
     <tr style="height: 10px;">
@@ -488,21 +437,16 @@ AspCell {
     <asp:Label ID="bondlbl" runat="server" Text="Label"></asp:Label>
     </td>
 </tr>
+   >
      <tr style="height: 10px;">
-<td style="width: 316.812px; height: 10px;" class="auto-style5"><span>Minimum joining time required (months)</span></td>
-<td class="auto-style4" colspan="2" >
-    <asp:Label ID="joinglbl" runat="server" Text="Label"></asp:Label>
-    </td>
-</tr>
-     <tr style="height: 10px;">
-<td style="width: 316.812px; height: 10px;" class="auto-style5"><span>Any of your Blood relation working in CSIR? </span></td>
+<td style="width: 316.812px; height: 10px;" class="auto-style5"><span>Any of your blood relation working in CSIR? </span></td>
 <td class="auto-style4" colspan="2" >
     <asp:Label ID="relativelbl" runat="server" Text="Label"></asp:Label> <br />
     <asp:Label ID="relativdetaillbl" runat="server" Text=""></asp:Label> 
     </td>
 </tr>
         <tr style="height: 10px;">
-<td style="width: 316.812px; height: 10px;" class="auto-style5"><span> Are you a Permanent CSIR/Government Servant at Present?:</span></td>
+<td style="width: 316.812px; height: 10px;" class="auto-style5"><span> Are you a Permanent CSIR/Government Servant at Present?</span></td>
 <td class="auto-style4" colspan="2" >
     <asp:Label ID="govtserventlbl" runat="server" Text="Label"></asp:Label>
     </td>
@@ -524,9 +468,13 @@ AspCell {
 
     </td>
 </tr>
+    <tr style="height: 25px;">
+<td  colspan="3" class="text-center"><span class="auto-style10"><strong>Declaration: </strong></span><span class="auto-style5"> </span></td>
+
+</tr>
 <tr style="height: 25px;">
-<td class="auto-style6" colspan="3"><span class="auto-style14"><strong>Declaration:</strong></span> <br /> 
-    <img alt="" class="auto-style15" src="imgs/right.png" />I hereby declare that all the statements made in this application are true and complete to the best of my knowledge and belief and nothing has been concealed or/distorted. I am aware that, if at any time I am found to have concealed/distorted any material/information, my appointment is liable to be summarily terminated without notice.</td>
+<td class="auto-style6" colspan="3"><span class="auto-style14"><strong></strong></span> <br /> 
+    <img alt="" class="auto-style15" src="imgs/right.png" />I hereby declare that all the statements in this application are accurate and complete to the best of my knowledge and belief. I am aware that if I am found to have concealed/distorted any material/information, my appointment is liable to be summarily terminated without notice.</td>
 </tr>
 
 <tr style="height: 25px;">
@@ -537,7 +485,7 @@ AspCell {
 </tr>
 <tr style="height: 25px;">
 <td style="width: 316.812px; height: 25px;" class="auto-style5">&nbsp;</td>
-<td class="auto-style3" colspan="2">Signature of the Candidate</td>
+<td class="auto-style3" colspan="2"><strong>Signature of the Candidate</strong></td>
 </tr>
     
     <tr style="height: 25px;">
@@ -549,7 +497,7 @@ AspCell {
             <br />
             <asp:Button ID="CompleteApplication" class="btn btn-success d-print-none " runat="server" Text="Submit Application" Height="37px" Width="285px" OnClick="CompleteApplication_Click" /> 
             <br />
-            <asp:Label ID="submitveifylbl" runat="server" Text="(Verify the details of Appliction carefully before Submitting, Submitted Application cannot be edited.)" Font-Size="Small" ForeColor="#CC0000"></asp:Label>
+            <asp:Label ID="submitveifylbl" runat="server" Text="(Verify the details of the application carefully before Submitting it, the Submitted Application cannot be edited.)" Font-Size="Small" ForeColor="#CC0000"></asp:Label>
             <br />
         </center>
     </td>
@@ -562,9 +510,9 @@ AspCell {
                 <br />
                 <br />
 <hr />
-<p class="text-center"><span style="font-family: &quot;Times New Roman&quot;; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="auto-style13"><strong>Candidate already employed in Govt. Departments should apply &quot;Through Proper Channel&quot; endorsement signed by his/her present employer</strong></span></p>
+<p class="text-center"><span style="font-family: Times New Roman; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="auto-style13"><strong>Candidate already employed in Govt. Departments should apply &quot;Through Proper Channel&quot; endorsement signed by his/her present employer</strong></span></p>
                 <div class="text-center">
-              <strong> Important: </strong> <span class="auto-style12"><strong> After filling up the application take printout of duly filled form. The application form duly signed to send to <strong>"The Controller of Administration, CSIR-SERC, CSIR Road, Taramani, Chennai" </strong> enclosing copy of requisite documents as per checklist mention below. If any application is incomplete in any respect, it shall not be processed further<br />
+              <strong> Important: </strong> <span class="auto-style12"><strong> : After filling up the application, take a printout of the duly filled form. The application form duly signed to be sent to  <strong>"The Controller of Administration, CSIR Madras Complex, CSIR Road, Taramani, Chennai" </strong> enclosing a copies of the requisite documents. If any application is incomplete in any respect, it shall not be processed further.<br />
                     </strong></span>
             </div>
          </div>

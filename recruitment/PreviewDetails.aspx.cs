@@ -22,11 +22,12 @@ namespace recruitment
                 loadbasicdetails();
                 YesOrNo();
                 loadeducation();
-                loadeducationphd();
+                //loadeducationphd();
                 loadexperience();
                 loadotherinfordetails();
                 PhotoFileexitCheck();
                 SignFileexitCheck();
+                Signpic.Visible = false;
                 ApplicationSubmittedCheck();
                 
                 //Response.Redirect("userlogin.aspx");
@@ -66,7 +67,10 @@ namespace recruitment
 
 
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT SSLC,HSC,ITI,DIPLOMA,UG,PG,PHD,GATE FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+             //   string sql1 = "SELECT SSLC,HSC,ITI,DIPLOMA,UG,PG,PHD,GATE FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+
+                string sql1 = "SELECT SSLC,HSC,ITI,DIPLOMA,UG,PG FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+
 
                 SqlCommand command = new SqlCommand(sql1, connection);
                 command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
@@ -88,9 +92,9 @@ namespace recruitment
                         string UGyesno = dr.GetValue(4).ToString();
                         string PGyesno = dr.GetValue(5).ToString();
 
-                        string PHDyesno = dr.GetValue(6).ToString();
+                        //string PHDyesno = dr.GetValue(6).ToString();
 
-                        string GATEyesno = dr.GetValue(7).ToString();
+                        //string GATEyesno = dr.GetValue(7).ToString();
 
 
                         if (sslcyesno == "No")
@@ -153,37 +157,37 @@ namespace recruitment
                             pgRow.Visible = true;
                         }
 
-                        if (PHDyesno == "No")
-                        {
-                            phdtable.Visible = false;
-                            phdTitleRow.Visible = false;
-                            phdRow.Visible = false;
-                            phdlabl.Visible = true;
+                        //if (PHDyesno == "No")
+                        //{
+                        //    phdtable.Visible = false;
+                        //    phdTitleRow.Visible = false;
+                        //    phdRow.Visible = false;
+                        //    phdlabl.Visible = true;
 
-                        }
-                        else if (PHDyesno == "Yes")
-                        {
-                            phdtable.Visible = true;
-                            phdTitleRow.Visible = true;
-                            phdRow.Visible = true;
-                            phdlabl.Visible = false;
-                        }
+                        //}
+                        //else if (PHDyesno == "Yes")
+                        //{
+                        //    phdtable.Visible = true;
+                        //    phdTitleRow.Visible = true;
+                        //    phdRow.Visible = true;
+                        //    phdlabl.Visible = false;
+                        //}
 
-                        if (GATEyesno == "No")
-                        {
-                            GATEtable.Visible = false;
-                            GATETitleRow.Visible = false;
-                            GATERow.Visible = false;
-                            GATElabl.Visible = true;
+                        //if (GATEyesno == "No")
+                        //{
+                        //    GATEtable.Visible = false;
+                        //    GATETitleRow.Visible = false;
+                        //    GATERow.Visible = false;
+                        //    GATElabl.Visible = true;
 
-                        }
-                        else if (GATEyesno == "Yes")
-                        {
-                            GATEtable.Visible = true;
-                            GATETitleRow.Visible = true;
-                            GATERow.Visible = true;
-                            GATElabl.Visible = false;
-                        }
+                        //}
+                        //else if (GATEyesno == "Yes")
+                        //{
+                        //    GATEtable.Visible = true;
+                        //    GATETitleRow.Visible = true;
+                        //    GATERow.Visible = true;
+                        //    GATElabl.Visible = false;
+                        //}
 
                     }
                 }
@@ -218,7 +222,9 @@ namespace recruitment
 
 
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT SSLCcourse,SSLCInstitute,SSLCPmarks,SSLCPassYear,SSLCClass, HSCCcourse, HSCcoursename, HSCSubject, HSCInstitute, HSCPmarks, HSCPassYear, HSCClass, ITICcourse, ITIcoursename, ITISubject, ITIInstitute, ITIPmarks, ITIPassYear, ITIClass, DIPLOMACcourse, DIPLOMAcoursename, DIPLOMASubject, DIPLOMAInstitute, DIPLOMAPmarks, DIPLOMAPassYear, DIPLOMAClass, UGcourse,UGcoursename,UGSubject,UGInstitute,UGPmarks,UGPassYear,UGClass,PGcourse,PGcoursename, PGSubject, PGInstitute,PGPmarks, PGPassYear, PGClass, GATEmarks,GATEPassYear,GATEsub FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+            //    string sql1 = "SELECT SSLCcourse,SSLCInstitute,SSLCPmarks,SSLCPassYear,SSLCClass, HSCCcourse, HSCcoursename, HSCSubject, HSCInstitute, HSCPmarks, HSCPassYear, HSCClass, ITICcourse, ITIcoursename, ITISubject, ITIInstitute, ITIPmarks, ITIPassYear, ITIClass, DIPLOMACcourse, DIPLOMAcoursename, DIPLOMASubject, DIPLOMAInstitute, DIPLOMAPmarks, DIPLOMAPassYear, DIPLOMAClass, UGcourse,UGcoursename,UGSubject,UGInstitute,UGPmarks,UGPassYear,UGClass,PGcourse,PGcoursename, PGSubject, PGInstitute,PGPmarks, PGPassYear, PGClass, GATEmarks,GATEPassYear,GATEsub FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+                string sql1 = "SELECT SSLCcourse,SSLCInstitute,SSLCPmarks,SSLCPassYear,SSLCClass, HSCCcourse, HSCcoursename, HSCSubject, HSCInstitute, HSCPmarks, HSCPassYear, HSCClass, ITICcourse, ITIcoursename, ITISubject, ITIInstitute, ITIPmarks, ITIPassYear, ITIClass, DIPLOMACcourse, DIPLOMAcoursename, DIPLOMASubject, DIPLOMAInstitute, DIPLOMAPmarks, DIPLOMAPassYear, DIPLOMAClass, UGcourse,UGcoursename,UGSubject,UGInstitute,UGPmarks,UGPassYear,UGClass,PGcourse,PGcoursename, PGSubject, PGInstitute,PGPmarks, PGPassYear, PGClass FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+
 
                 SqlCommand command = new SqlCommand(sql1, connection);
                 command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
@@ -278,9 +284,9 @@ namespace recruitment
                         pg6.Text = dr.GetValue(38).ToString();
                         pg7.Text = dr.GetValue(39).ToString();
 
-                        gate1.Text = dr.GetValue(40).ToString();
-                        gate2.Text = dr.GetValue(41).ToString();
-                        gate3.Text = dr.GetValue(42).ToString();
+                        //gate1.Text = dr.GetValue(40).ToString();
+                        //gate2.Text = dr.GetValue(41).ToString();
+                        //gate3.Text = dr.GetValue(42).ToString();
 
 
 
@@ -307,53 +313,53 @@ namespace recruitment
             }
         }
 
-        private void loadeducationphd()
-        {
-            try
-            {
-                string canregdbtext = Convert.ToString(Session["can_regno"]);
+        //private void loadeducationphd()
+        //{
+        //    try
+        //    {
+        //        string canregdbtext = Convert.ToString(Session["can_regno"]);
 
-                string appregnotext = Convert.ToString(Session["S_appregno"]);
-
-
-
-                SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT PHDTitle, PHDPassYear, PHDSubject, PHDDetails FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
-
-                SqlCommand command = new SqlCommand(sql1, connection);
-                command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
-                command.Parameters.AddWithValue("@appregnotext", appregnotext);
-
-                SqlDataReader dr = command.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
-                    {
-                        phd1.Text = dr.GetValue(0).ToString();
-                        phd2.Text = dr.GetValue(1).ToString();
-                        phd3.Text = dr.GetValue(2).ToString();
-                        phd4.Text = dr.GetValue(3).ToString();
-
-                    }
-                }
-                else
-                {
-                    // Response.Redirect("position_details.aspx");
-                    // Response.Write("<script>alert('Invalid credentials');</script>");
-
-
-                }
-            }
+        //        string appregnotext = Convert.ToString(Session["S_appregno"]);
 
 
 
+        //        SqlConnection connection = MySqlConnection.Recruitmentcon();
+        //        string sql1 = "SELECT PHDTitle, PHDPassYear, PHDSubject, PHDDetails FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
 
-            catch (Exception ex)
-            {
-                Response.Write("<script> alert ('" + ex.Message + "');</script>");
+        //        SqlCommand command = new SqlCommand(sql1, connection);
+        //        command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
+        //        command.Parameters.AddWithValue("@appregnotext", appregnotext);
 
-            }
-        }
+        //        SqlDataReader dr = command.ExecuteReader();
+        //        if (dr.HasRows)
+        //        {
+        //            while (dr.Read())
+        //            {
+        //                phd1.Text = dr.GetValue(0).ToString();
+        //                phd2.Text = dr.GetValue(1).ToString();
+        //                phd3.Text = dr.GetValue(2).ToString();
+        //                phd4.Text = dr.GetValue(3).ToString();
+
+        //            }
+        //        }
+        //        else
+        //        {
+        //            // Response.Redirect("position_details.aspx");
+        //            // Response.Write("<script>alert('Invalid credentials');</script>");
+
+
+        //        }
+        //    }
+
+
+
+
+        //    catch (Exception ex)
+        //    {
+        //        Response.Write("<script> alert ('" + ex.Message + "');</script>");
+
+        //    }
+        //}
 
         private void loadexperience()
         {
@@ -424,9 +430,15 @@ namespace recruitment
                     con.Open();
 
                 }
+                //SqlCommand cmd = new SqlCommand("select fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp, " +
+                //    " pwd,pwdPercent,pwdCatagory, ExArmy, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress," +
+                //    " paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
+
+
                 SqlCommand cmd = new SqlCommand("select fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp, " +
-                    " pwd,pwdPercent,pwdCatagory, ExArmy, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress," +
-                    " paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
+                   " pwd,pwdPercent,pwdCatagory, ExArmy, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress," +
+                   " paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
+
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -441,16 +453,45 @@ namespace recruitment
                         maritallbl.Text = dr.GetValue(6).ToString();
                         religionlbl.Text = dr.GetValue(7).ToString();
                         csiremplbl.Text = dr.GetValue(8).ToString();
-                        pwdcatlbl1.Text = dr.GetValue(9).ToString();
-                        pwdcatlbl2.Text = dr.GetValue(10).ToString();
-                        pwdcatlbl3.Text = dr.GetValue(11).ToString();
 
-                        armylbl.Text = dr.GetValue(12).ToString();
-                        armylblservice.Text = dr.GetValue(13).ToString();
+                        var pwdyesno = dr.GetValue(9).ToString();
+
+                        if (pwdyesno == "No")
+                        {
+                         pwdcatlbl1.Text = dr.GetValue(9).ToString();
+                         pwdcatlbl2.Text = "";
+                         pwdcatlbl3.Text = "";
+                         pwdtypelbl.Text = "";
+                         pwdpctlbl.Text = "";
+
+                        }
+                        else if (pwdyesno == "Yes")
+                        {
+                            pwdcatlbl1.Text =  dr.GetValue(9).ToString() + ",";
+                            pwdcatlbl2.Text = dr.GetValue(10).ToString() +",";
+                            pwdcatlbl3.Text = dr.GetValue(11).ToString();
+                        }
+
+                        var armyyesno = dr.GetValue(12).ToString();
+
+                        if (armyyesno == "No")
+                        {
+                            armylbl.Text = "No";
+                            armylblservice.Text = "";
+                            PrdServicelbl.Text = "";
+
+                        }
+                        else if (armyyesno == "Yes")
+                        {
+                            armylbl.Text = dr.GetValue(12).ToString() + "," + " ";
+
+                            armylblservice.Text = dr.GetValue(13).ToString();
+
+                        }
+
                         placebornlbl.Text = dr.GetValue(14).ToString();
                         aadhaarlbl.Text = dr.GetValue(15).ToString();
                         citizenlbl.Text = dr.GetValue(16).ToString();
-
                         bankreflbl.Text = dr.GetValue(17).ToString();
                         string paymentdatetxt = bankreflbl.Text;
 
@@ -501,7 +542,10 @@ namespace recruitment
                     con.Open();
 
                 }
-                SqlCommand cmd = new SqlCommand("select IsForignVist,UnderBond,MinJoiningMonth,IsRelativeCSIR,ReName,ReDesign,ReType,ReLab,Ref1Full,Ref2Full,PermentGovtStaff,ClaimingAgeRelax,AgeRelaxCatagory from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
+            //    SqlCommand cmd = new SqlCommand("select IsForignVist,UnderBond,MinJoiningMonth,IsRelativeCSIR,ReName,ReDesign,ReType,ReLab,Ref1Full,Ref2Full,PermentGovtStaff,ClaimingAgeRelax,AgeRelaxCatagory from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
+
+                SqlCommand cmd = new SqlCommand("select IsForignVist,UnderBond,IsRelativeCSIR,ReName,ReDesign,ReType,ReLab,Ref1Full,Ref2Full,PermentGovtStaff,ClaimingAgeRelax,AgeRelaxCatagory from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
+
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -510,18 +554,18 @@ namespace recruitment
 
                         forignvisitlbl.Text = dr.GetValue(0).ToString();
                         bondlbl.Text = dr.GetValue(1).ToString();
-                        joinglbl.Text = dr.GetValue(2).ToString();                       
+                      //  joinglbl.Text = dr.GetValue(2).ToString();                       
 
-                        relativelbl.Text = dr.GetValue(3).ToString();
-                        string relative = dr.GetValue(4).ToString() + ", " + dr.GetValue(5).ToString() + ", " + dr.GetValue(6).ToString() + ", " + dr.GetValue(7).ToString();
+                        relativelbl.Text = dr.GetValue(2).ToString();
+                        string relative = "Name:"+dr.GetValue(3).ToString() + ", " + "Designation:" + dr.GetValue(4).ToString() + ", " + "Relationship:"+ dr.GetValue(5).ToString() + ", " + "Lab Name:"+ dr.GetValue(6).ToString();
                         relativdetaillbl.Text = relative;
 
                         
-                        Referencelbl1.Text = dr.GetValue(8).ToString();
-                        Referencelbl2.Text = dr.GetValue(9).ToString();
-                        govtserventlbl.Text = dr.GetValue(10).ToString();
-                        Agerelxlbl1.Text = dr.GetValue(11).ToString();
-                        Agerelxlbl2.Text = dr.GetValue(12).ToString();
+                        Referencelbl1.Text = dr.GetValue(7).ToString();
+                        Referencelbl2.Text = dr.GetValue(8).ToString();
+                        govtserventlbl.Text = dr.GetValue(9).ToString();
+                        Agerelxlbl1.Text = dr.GetValue(10).ToString();
+                        Agerelxlbl2.Text = dr.GetValue(11).ToString();
 
 
 
@@ -657,6 +701,8 @@ namespace recruitment
             catch (Exception ex)
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
+
+
             }
 
 
@@ -700,7 +746,9 @@ namespace recruitment
                 string appregnotext = Convert.ToString(Session["S_appregno"]);
 
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT can_regno,appregno,BasicInfo,Education,Experienced,Profession,AdditionalInfo,Upload,AppFee FROM ApplicationSteps WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+              //  string sql1 = "SELECT can_regno,appregno,BasicInfo,Education,Experienced,Profession,AdditionalInfo,Upload,AppFee FROM ApplicationSteps WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+                string sql1 = "SELECT can_regno,appregno,BasicInfo,Education,Experienced,AdditionalInfo,Upload,AppFee FROM ApplicationSteps WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+
 
                 SqlCommand command = new SqlCommand(sql1, connection);
                 command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
@@ -714,12 +762,12 @@ namespace recruitment
                         string BasicComplete = dr.GetValue(2).ToString();
                         string EducationComplete = dr.GetValue(3).ToString();
                         string ExperienceComplete = dr.GetValue(4).ToString();
-                        string ProffessionComplete = dr.GetValue(5).ToString();
-                        string AdditionalComplete = dr.GetValue(6).ToString();
-                        string UploadComplete = dr.GetValue(7).ToString();
-                        string AppComplete = dr.GetValue(8).ToString();
+                   //     string ProffessionComplete = dr.GetValue(5).ToString();
+                        string AdditionalComplete = dr.GetValue(5).ToString();
+                        string UploadComplete = dr.GetValue(6).ToString();
+                        string AppComplete = dr.GetValue(7).ToString();
 
-                        if ((BasicComplete == "No") || (EducationComplete =="No") || (ExperienceComplete == "No") || (ProffessionComplete == "No") || (AdditionalComplete == "No") || (UploadComplete == "No") || (AppComplete == "No" ) )
+                        if ((BasicComplete == "No") || (EducationComplete =="No") || (ExperienceComplete == "No") || (AdditionalComplete == "No") || (UploadComplete == "No") || (AppComplete == "No" ) )
                         {
                             Response.Redirect("Candidate_Home.aspx");
                         }

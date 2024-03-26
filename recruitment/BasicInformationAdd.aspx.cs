@@ -461,6 +461,28 @@ namespace recruitment
                 Response.Write("<script> alert ('" + ex.Message + "');</script>");
             }
         }
+
+        private void UpdatePhdDetails()
+        {
+            if (pwdDrop.SelectedValue == "No")
+            {
+                using (SqlConnection conn = MySqlConnection.Recruitmentcon())
+                {
+                    string dbcanreg = regidlbl.Text;
+                    string dbappno = appidnolbl.Text;
+
+                    string vEmptyText = "";
+
+
+                    string insertquery1 = "UPDATE basicdetailsNew SET pwdPercent = @vEmptyText, pwdCatagory=@vEmptyText WHERE appregno = @dbappno and can_regno=@canreg";
+                    SqlCommand cmd1 = new SqlCommand(insertquery1, conn);
+                    cmd1.Parameters.AddWithValue("@canreg", dbcanreg);
+                    cmd1.Parameters.AddWithValue("@dbappno", dbappno);
+                    cmd1.Parameters.AddWithValue("@vEmptyText", vEmptyText);
+                    cmd1.ExecuteNonQuery();
+                }
+            }
+        }
         protected void SaveDetails_Click(object sender, EventArgs e)
         {
             if (dobText.Text == "")
@@ -483,6 +505,7 @@ namespace recruitment
 
             {
                 validation();
+                UpdatePhdDetails();
                 Response.Redirect("Candidate_Home.aspx");
             }
             

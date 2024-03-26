@@ -30,6 +30,8 @@ namespace recruitment
                     datashow();
                     YesOrNo();
 
+                    JoinTimeLable.Visible = false;
+                    JoiningTimetxt.Visible = false;
                     if (countryvisitdrop.SelectedValue=="No")
                     {
                        
@@ -215,9 +217,13 @@ namespace recruitment
 
         }
 
+
+
         protected void Addbutton_Click(object sender, EventArgs e)
         {
             addforignvisit();
+            UpdateForeignVisitYesNo();
+
         }
 
         protected void countryvisitdrop_SelectedIndexChanged(object sender, EventArgs e)
@@ -261,7 +267,7 @@ namespace recruitment
 
 
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT IsForignVist,UnderBond,MinJoiningMonth,IsRelativeCSIR,ReName,ReDesign,ReType,ReLab,Ref1,Ref2,Ref3,Ref4,Ref5,Ref6,TermsCondition,pwd,PermentGovtStaff,pwdPercent,pwdCatagory,ClaimingAgeRelax,AgeRelaxCatagory FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+                string sql1 = "SELECT IsForignVist,UnderBond,IsRelativeCSIR,ReName,ReDesign,ReType,ReLab,Ref1,Ref2,Ref3,Ref4,Ref5,Ref6,TermsCondition,pwd,PermentGovtStaff,pwdPercent,pwdCatagory,ClaimingAgeRelax,AgeRelaxCatagory FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
 
                 SqlCommand command = new SqlCommand(sql1, connection);
                 command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
@@ -274,32 +280,32 @@ namespace recruitment
                     {
                         countryvisitdrop.SelectedValue = dr.GetValue(0).ToString();
                         bonddrop.SelectedValue = dr.GetValue(1).ToString();
-                        JoiningTimetxt.Text = dr.GetValue(2).ToString();
-                        RelativeDrop.SelectedValue = dr.GetValue(3).ToString();
+                    //    JoiningTimetxt.Text = dr.GetValue(2).ToString();
+                        RelativeDrop.SelectedValue = dr.GetValue(2).ToString();
 
 
-                        RelativeNametxt.Text = dr.GetValue(4).ToString();
-                        PresentDesignationtxt.Text = dr.GetValue(5).ToString();
-                        RelationTypetxt.Text = dr.GetValue(6).ToString();                       
-                        NameCSIRtxt.Text = dr.GetValue(7).ToString();
+                        RelativeNametxt.Text = dr.GetValue(3).ToString();
+                        PresentDesignationtxt.Text = dr.GetValue(4).ToString();
+                        RelationTypetxt.Text = dr.GetValue(5).ToString();                       
+                        NameCSIRtxt.Text = dr.GetValue(6).ToString();
 
-                        NameRef1.Text = dr.GetValue(8).ToString();
-                        OccupRef1.Text = dr.GetValue(9).ToString();
-                        AddressRef1.Text = dr.GetValue(10).ToString();
+                        NameRef1.Text = dr.GetValue(7).ToString();
+                        OccupRef1.Text = dr.GetValue(8).ToString();
+                        AddressRef1.Text = dr.GetValue(9).ToString();
 
-                        NameRef2.Text = dr.GetValue(11).ToString();
-                        OccupRef2.Text = dr.GetValue(12).ToString();
-                        AddressRef2.Text = dr.GetValue(13).ToString();
+                        NameRef2.Text = dr.GetValue(10).ToString();
+                        OccupRef2.Text = dr.GetValue(11).ToString();
+                        AddressRef2.Text = dr.GetValue(12).ToString();
                       
 
-                        string checkbox = dr.GetValue(14).ToString();
+                        string checkbox = dr.GetValue(13).ToString();
 
-                        pwddrop.SelectedValue = dr.GetValue(15).ToString();
-                        permGovtDrop.SelectedValue = dr.GetValue(16).ToString();
-                        pwdpercttxt.Text = dr.GetValue(17).ToString();
-                        pwdtypedrop.SelectedValue = dr.GetValue(18).ToString();
-                        AgeRlxClaimDrop.SelectedValue = dr.GetValue(19).ToString();
-                        AgeRlxConfDrop.SelectedValue = dr.GetValue(20).ToString();
+                        pwddrop.SelectedValue = dr.GetValue(14).ToString();
+                        permGovtDrop.SelectedValue = dr.GetValue(15).ToString();
+                        pwdpercttxt.Text = dr.GetValue(16).ToString();
+                        pwdtypedrop.SelectedValue = dr.GetValue(17).ToString();
+                        AgeRlxClaimDrop.SelectedValue = dr.GetValue(18).ToString();
+                        AgeRlxConfDrop.SelectedValue = dr.GetValue(19).ToString();
 
                         if (checkbox =="Yes")
                         {
@@ -377,6 +383,23 @@ namespace recruitment
             }
         }
 
+        private void UpdateForeignVisitYesNo()
+        {
+            using (SqlConnection conn = MySqlConnection.Recruitmentcon())
+            {              
+                string dbcanreg = regidlbl.Text;
+                string dbappno = appidnolbl.Text;
+
+                string vIsVisited = countryvisitdrop.SelectedValue.ToString();
+                string insertquery1 = "UPDATE basicdetailsNew SET IsForignVist = @vIsVisited WHERE appregno = @dbappno and can_regno=@canreg";
+                SqlCommand cmd1 = new SqlCommand(insertquery1, conn);
+                cmd1.Parameters.AddWithValue("@canreg", dbcanreg);
+                cmd1.Parameters.AddWithValue("@dbappno", dbappno);
+                cmd1.Parameters.AddWithValue("@vIsVisited", vIsVisited);
+                cmd1.ExecuteNonQuery();
+            }
+        }
+
         private void addforignvisit()
         {
             if (String.IsNullOrEmpty(countrytxt.Text))
@@ -421,6 +444,8 @@ namespace recruitment
 
                         string visitdetails = visitdetailstxt.Text;
 
+                        string vIsVisited = countryvisitdrop.SelectedValue.ToString();
+
 
                         DateTime fromdate1 = Convert.ToDateTime(fromtxt.Text);
 
@@ -442,12 +467,16 @@ namespace recruitment
                         //  conn.Open();
 
                         string insertquery = "insert into forignvisit(can_regno, appregno, country, fromdate, todate, totaldays, visitdetails) values (@canreg, @dbappno, @vcountryname,  @fromdate, @todate, @totaldays,@visitdetails)";
-                        
+                      //  string insertquery1 = "UPDATE basicdetailsNew SET IsForignVist = @vIsVisited WHERE appregno = @ddbappno and can_regno=@dcanreg";
+
+
 
                         SqlCommand cmd = new SqlCommand(insertquery, conn);
-                       
+                     //   SqlCommand cmd1 = new SqlCommand(insertquery1, conn);
 
-                        
+
+
+
 
                         cmd.Parameters.AddWithValue("@canreg", dbcanreg);
                         //cmd.Parameters.AddWithValue("@pcode", dbpcode);
@@ -461,10 +490,14 @@ namespace recruitment
                         cmd.Parameters.AddWithValue("@visitdetails", visitdetails);
 
 
+//                        cmd1.Parameters.AddWithValue("@canreg", dbcanreg);
+///                        cmd1.Parameters.AddWithValue("@dbappno", dbappno);
+//                        cmd1.Parameters.AddWithValue("@vIsVisited", vIsVisited);
 
 
                         cmd.ExecuteNonQuery();
-                        
+                     //   cmd1.ExecuteNonQuery();
+
                         datashow();
                        
                         countrytxt.Text = "";
@@ -500,9 +533,9 @@ namespace recruitment
 
 
 
-            string vMinJoiningMonth = JoiningTimetxt.Text.ToString();
+          //  string vMinJoiningMonth = JoiningTimetxt.Text.ToString();
 
-            string vReName = NameCSIRtxt.Text;
+            string vReName = RelativeNametxt.Text;
             string vReDesign = PresentDesignationtxt.Text;
             string vReType = RelationTypetxt.Text;
             string vReLab = NameCSIRtxt.Text;
@@ -530,7 +563,7 @@ namespace recruitment
                 using (SqlConnection conn = MySqlConnection.Recruitmentcon())
                 {
                                         
-                    string insertquery1 = "UPDATE basicdetailsNew SET IsForignVist = @dIsVisited, UnderBond=@dIsBond, PermentGovtStaff=@vIsGovStaff, pwdPercent=@vPwdPercent, pwdCatagory=@vPwdCatagory, ClaimingAgeRelax=@vageRelxClaim,AgeRelaxCatagory=@vClaimCatagory, MinJoiningMonth=@dMinJoiningMonth,IsRelativeCSIR=@dIsRelative,ReName = @dReName, ReDesign=@dReDesign, ReType=@dReType, ReLab=@dReLab, RelativeCSIRDetail=@dRelativeDetails, Ref1 = @dRef1, Ref2=@dRef2, Ref3=@dRef3, Ref1Full=@dRef1Full, Ref4=@dRef4, Ref5=@dRef5, Ref6=@dRef6, Ref2Full=@dRef2Full,TermsCondition=@terms  WHERE appregno = @ddbappno and can_regno=@dcanreg";
+                    string insertquery1 = "UPDATE basicdetailsNew SET IsForignVist = @dIsVisited, UnderBond=@dIsBond, PermentGovtStaff=@vIsGovStaff, pwdPercent=@vPwdPercent, pwdCatagory=@vPwdCatagory, ClaimingAgeRelax=@vageRelxClaim,AgeRelaxCatagory=@vClaimCatagory, IsRelativeCSIR=@dIsRelative,ReName = @dReName, ReDesign=@dReDesign, ReType=@dReType, ReLab=@dReLab, RelativeCSIRDetail=@dRelativeDetails, Ref1 = @dRef1, Ref2=@dRef2, Ref3=@dRef3, Ref1Full=@dRef1Full, Ref4=@dRef4, Ref5=@dRef5, Ref6=@dRef6, Ref2Full=@dRef2Full,TermsCondition=@terms  WHERE appregno = @ddbappno and can_regno=@dcanreg";
 
                     SqlCommand cmd1 = new SqlCommand(insertquery1, conn);
 
@@ -545,7 +578,7 @@ namespace recruitment
 
 
 
-                    cmd1.Parameters.AddWithValue("@dMinJoiningMonth", vMinJoiningMonth);
+                 //   cmd1.Parameters.AddWithValue("@dMinJoiningMonth", vMinJoiningMonth);
                     cmd1.Parameters.AddWithValue("@dIsRelative", vIsRelative);
 
 
@@ -672,11 +705,11 @@ namespace recruitment
                 Response.Write("<script> alert ('Select Yes or No for Bond Catagory');</script>");
             }
 
-            else if (String.IsNullOrEmpty(JoiningTimetxt.Text))
+            //else if (String.IsNullOrEmpty(JoiningTimetxt.Text))
 
-            {
-                Response.Write("<script> alert ('Enter Minimum Joining Period');</script>");
-            }
+            //{
+            //    Response.Write("<script> alert ('Enter Minimum Joining Period');</script>");
+            //}
 
             else if (bonddrop.SelectedValue == "0")
 

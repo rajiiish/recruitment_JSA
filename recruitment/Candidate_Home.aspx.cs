@@ -23,7 +23,7 @@ namespace recruitment
                     regid();
                     AppCompletion();
                     AppCompletionSteps();
-
+                    
 
                 }
                 //loaddataBadicinformation(); 
@@ -105,7 +105,9 @@ namespace recruitment
                 string appregnotext = Convert.ToString(Session["S_appregno"]);
 
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT can_regno,appregno,BasicInfo,Education,Experienced,Profession,AdditionalInfo,Upload,AppFee FROM ApplicationSteps WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+             //   string sql1 = "SELECT can_regno,appregno,BasicInfo,Education,Experienced,Profession,AdditionalInfo,Upload,AppFee FROM ApplicationSteps WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+
+                string sql1 = "SELECT can_regno,appregno,BasicInfo,Education,Experienced,AdditionalInfo,Upload,AppFee FROM ApplicationSteps WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
 
                 SqlCommand command = new SqlCommand(sql1, connection);
                 command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
@@ -120,17 +122,17 @@ namespace recruitment
                         string BasicComplete = dr.GetValue(2).ToString();
                         string EducationComplete = dr.GetValue(3).ToString();
                         string ExperienceComplete = dr.GetValue(4).ToString();
-                        string ProffessionComplete = dr.GetValue(5).ToString();
-                        string AdditionalComplete = dr.GetValue(6).ToString();
-                        string UploadComplete = dr.GetValue(7).ToString();
-                        string AppComplete = dr.GetValue(8).ToString();
+                     //   string ProffessionComplete = dr.GetValue(5).ToString();
+                        string AdditionalComplete = dr.GetValue(5).ToString();
+                        string UploadComplete = dr.GetValue(6).ToString();
+                        string AppComplete = dr.GetValue(7).ToString();
 
                         if (BasicComplete == "No")
                         {
                             pbtn1.Enabled = true;
                             pbtn2.Enabled = false;
                             pbtn3.Enabled = false;
-                            pbtn4.Enabled = false;
+                      //      pbtn4.Enabled = false;
                             pbtn5.Enabled = false;
                             pbtn6.Enabled = false;
                             pbtn7.Enabled = false;
@@ -138,7 +140,7 @@ namespace recruitment
                             tickimg1.Visible = false;
                             tickimg2.Visible = false;
                             tickimg3.Visible = false;
-                            tickimg4.Visible = false;
+                    //        tickimg4.Visible = false;
                             tickimg5.Visible = false;
                             tickimg6.Visible = false;
                             tickimg7.Visible = false;
@@ -151,7 +153,7 @@ namespace recruitment
                             pbtn1.Enabled = true;
                             pbtn2.Enabled = true;
                             pbtn3.Enabled = false;
-                            pbtn4.Enabled = false;
+                     //       pbtn4.Enabled = false;
                             pbtn5.Enabled = false;
                             pbtn6.Enabled = false;
                             pbtn7.Enabled = false;
@@ -159,7 +161,7 @@ namespace recruitment
                             tickimg1.Visible = true;
                             tickimg2.Visible = false;
                             tickimg3.Visible = false;
-                            tickimg4.Visible = false;
+                     //       tickimg4.Visible = false;
                             tickimg5.Visible = false;
                             tickimg6.Visible = false;
                             tickimg7.Visible = false;
@@ -167,7 +169,7 @@ namespace recruitment
                             pbtn1.BackColor = System.Drawing.Color.Green;
                             pbtn2.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn3.BackColor = System.Drawing.Color.DarkMagenta;
-                            pbtn4.BackColor = System.Drawing.Color.DarkMagenta;
+                    //        pbtn4.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn5.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn6.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn7.BackColor = System.Drawing.Color.DarkMagenta;
@@ -178,7 +180,7 @@ namespace recruitment
                             pbtn1.Enabled = true;
                             pbtn2.Enabled = true;
                             pbtn3.Enabled = true;
-                            pbtn4.Enabled = false;
+                      //      pbtn4.Enabled = false;
                             pbtn5.Enabled = false;
                             pbtn6.Enabled = false;
                             pbtn7.Enabled = false;
@@ -186,7 +188,7 @@ namespace recruitment
                             tickimg1.Visible = true;
                             tickimg2.Visible = true;
                             tickimg3.Visible = false;
-                            tickimg4.Visible = false;
+                    //        tickimg4.Visible = false;
                             tickimg5.Visible = false;
                             tickimg6.Visible = false;
                             tickimg7.Visible = false;
@@ -194,7 +196,7 @@ namespace recruitment
                             pbtn1.BackColor = System.Drawing.Color.Green;
                             pbtn2.BackColor = System.Drawing.Color.Green;
                             pbtn3.BackColor = System.Drawing.Color.DarkMagenta;
-                            pbtn4.BackColor = System.Drawing.Color.DarkMagenta;
+                     //       pbtn4.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn5.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn6.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn7.BackColor = System.Drawing.Color.DarkMagenta;
@@ -202,41 +204,45 @@ namespace recruitment
 
                             PreviewApplication.Enabled = false;
                         }
-                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "No"))
-                        {
-                            pbtn1.Enabled = true;
+                        //else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "No"))
+
+
+                        //{
+                        //    pbtn1.Enabled = true;
+                        //    pbtn2.Enabled = true;
+                        //    pbtn3.Enabled = true;
+                        //    pbtn4.Enabled = true;
+                        //    pbtn5.Enabled = false;
+                        //    pbtn6.Enabled = false;
+                        //    pbtn6.Enabled = false;
+
+                        //    tickimg1.Visible = true;
+                        //    tickimg2.Visible = true;
+                        //    tickimg3.Visible = true;
+                        //    tickimg4.Visible = false;
+                        //    tickimg5.Visible = false;
+                        //    tickimg6.Visible = false;
+                        //    tickimg7.Visible = false;
+
+                        //    pbtn1.BackColor = System.Drawing.Color.Green;
+                        //    pbtn2.BackColor = System.Drawing.Color.Green;
+                        //    pbtn3.BackColor = System.Drawing.Color.Green;
+                        //    pbtn4.BackColor = System.Drawing.Color.DarkMagenta;
+                        //    pbtn5.BackColor = System.Drawing.Color.DarkMagenta;
+                        //    pbtn6.BackColor = System.Drawing.Color.DarkMagenta;
+                        //    pbtn7.BackColor = System.Drawing.Color.DarkMagenta;
+
+                        //    PreviewApplication.Enabled = false;
+                        //}
+
+                     //   else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "Yes") && (AdditionalComplete == "No"))
+                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes")  && (AdditionalComplete == "No"))
+
+                                {
+                                    pbtn1.Enabled = true;
                             pbtn2.Enabled = true;
                             pbtn3.Enabled = true;
-                            pbtn4.Enabled = true;
-                            pbtn5.Enabled = false;
-                            pbtn6.Enabled = false;
-                            pbtn6.Enabled = false;
-
-                            tickimg1.Visible = true;
-                            tickimg2.Visible = true;
-                            tickimg3.Visible = true;
-                            tickimg4.Visible = false;
-                            tickimg5.Visible = false;
-                            tickimg6.Visible = false;
-                            tickimg7.Visible = false;
-
-                            pbtn1.BackColor = System.Drawing.Color.Green;
-                            pbtn2.BackColor = System.Drawing.Color.Green;
-                            pbtn3.BackColor = System.Drawing.Color.Green;
-                            pbtn4.BackColor = System.Drawing.Color.DarkMagenta;
-                            pbtn5.BackColor = System.Drawing.Color.DarkMagenta;
-                            pbtn6.BackColor = System.Drawing.Color.DarkMagenta;
-                            pbtn7.BackColor = System.Drawing.Color.DarkMagenta;
-
-                            PreviewApplication.Enabled = false;
-                        }
-
-                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "Yes") && (AdditionalComplete == "No"))
-                        {
-                            pbtn1.Enabled = true;
-                            pbtn2.Enabled = true;
-                            pbtn3.Enabled = true;
-                            pbtn4.Enabled = true;
+                    //        pbtn4.Enabled = true;
                             pbtn5.Enabled = true;
                             pbtn6.Enabled = false;
                             pbtn6.Enabled = false;
@@ -244,7 +250,7 @@ namespace recruitment
                             tickimg1.Visible = true;
                             tickimg2.Visible = true;
                             tickimg3.Visible = true;
-                            tickimg4.Visible = true;
+                 //           tickimg4.Visible = true;
                             tickimg5.Visible = false;
                             tickimg6.Visible = false;
                             tickimg7.Visible = false;
@@ -252,19 +258,21 @@ namespace recruitment
                             pbtn1.BackColor = System.Drawing.Color.Green;
                             pbtn2.BackColor = System.Drawing.Color.Green;
                             pbtn3.BackColor = System.Drawing.Color.Green;
-                            pbtn4.BackColor = System.Drawing.Color.Green;
+                     //       pbtn4.BackColor = System.Drawing.Color.Green;
                             pbtn5.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn6.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn7.BackColor = System.Drawing.Color.DarkMagenta;
 
                             PreviewApplication.Enabled = false;
                         }
-                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "Yes") && (AdditionalComplete == "Yes") && (UploadComplete == "No"))
-                        {
-                            pbtn1.Enabled = true;
+                 //       else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "Yes") && (AdditionalComplete == "Yes") && (UploadComplete == "No"))
+                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes")  && (AdditionalComplete == "Yes") && (UploadComplete == "No"))
+
+                                {
+                                    pbtn1.Enabled = true;
                             pbtn2.Enabled = true;
                             pbtn3.Enabled = true;
-                            pbtn4.Enabled = true;
+                    //        pbtn4.Enabled = true;
                             pbtn5.Enabled = true;
                             pbtn6.Enabled = true;
                             pbtn7.Enabled = false;
@@ -272,7 +280,7 @@ namespace recruitment
                             tickimg1.Visible = true;
                             tickimg2.Visible = true;
                             tickimg3.Visible = true;
-                            tickimg4.Visible = true;
+                 //           tickimg4.Visible = true;
                             tickimg5.Visible = true;
                             tickimg6.Visible = false;
                             tickimg7.Visible = false;
@@ -280,7 +288,7 @@ namespace recruitment
                             pbtn1.BackColor = System.Drawing.Color.Green;
                             pbtn2.BackColor = System.Drawing.Color.Green;
                             pbtn3.BackColor = System.Drawing.Color.Green;
-                            pbtn4.BackColor = System.Drawing.Color.Green;
+                   //         pbtn4.BackColor = System.Drawing.Color.Green;
                             pbtn5.BackColor = System.Drawing.Color.Green;
                             pbtn6.BackColor = System.Drawing.Color.DarkMagenta;
                             pbtn7.BackColor = System.Drawing.Color.DarkMagenta;
@@ -288,12 +296,14 @@ namespace recruitment
                             PreviewApplication.Enabled = false;
                         }
 
-                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "Yes") && (AdditionalComplete == "Yes") && (UploadComplete == "Yes") && (AppComplete == "No")) 
-                        {
-                            pbtn1.Enabled = true;
+                   //     else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "Yes") && (AdditionalComplete == "Yes") && (UploadComplete == "Yes") && (AppComplete == "No"))
+                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes")  && (AdditionalComplete == "Yes") && (UploadComplete == "Yes") && (AppComplete == "No"))
+
+                                {
+                                    pbtn1.Enabled = true;
                             pbtn2.Enabled = true;
                             pbtn3.Enabled = true;
-                            pbtn4.Enabled = true;
+                //            pbtn4.Enabled = true;
                             pbtn5.Enabled = true;
                             pbtn6.Enabled = true;
                             pbtn7.Enabled = true;
@@ -301,7 +311,7 @@ namespace recruitment
                             tickimg1.Visible = true;
                             tickimg2.Visible = true;
                             tickimg3.Visible = true;
-                            tickimg4.Visible = true;
+                 //           tickimg4.Visible = true;
                             tickimg5.Visible = true;
                             tickimg6.Visible = true;
                             tickimg7.Visible = false;
@@ -309,7 +319,7 @@ namespace recruitment
                             pbtn1.BackColor = System.Drawing.Color.Green;
                             pbtn2.BackColor = System.Drawing.Color.Green;
                             pbtn3.BackColor = System.Drawing.Color.Green;
-                            pbtn4.BackColor = System.Drawing.Color.Green;
+                       //     pbtn4.BackColor = System.Drawing.Color.Green;
                             pbtn5.BackColor = System.Drawing.Color.Green;
                             pbtn6.BackColor = System.Drawing.Color.Green;
                             pbtn7.BackColor = System.Drawing.Color.DarkMagenta;
@@ -318,12 +328,14 @@ namespace recruitment
                             PreviewApplication.Enabled = false;
                         }
 
-                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "Yes") && (AdditionalComplete == "Yes") && (UploadComplete == "Yes") && (AppComplete == "Yes"))
+                  //      else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (ProffessionComplete == "Yes") && (AdditionalComplete == "Yes") && (UploadComplete == "Yes") && (AppComplete == "Yes"))
+
+                        else if ((BasicComplete == "Yes") && (EducationComplete == "Yes") && (ExperienceComplete == "Yes") && (AdditionalComplete == "Yes") && (UploadComplete == "Yes") && (AppComplete == "Yes"))
                         {
                             pbtn1.Enabled = true;
                             pbtn2.Enabled = true;
                             pbtn3.Enabled = true;
-                            pbtn4.Enabled = true;
+            //                pbtn4.Enabled = true;
                             pbtn5.Enabled = true;
                             pbtn6.Enabled = true;
                             pbtn7.Enabled = true;
@@ -331,7 +343,7 @@ namespace recruitment
                             tickimg1.Visible = true;
                             tickimg2.Visible = true;
                             tickimg3.Visible = true;
-                            tickimg4.Visible = true;
+                //            tickimg4.Visible = true;
                             tickimg5.Visible = true;
                             tickimg6.Visible = true;
                             tickimg7.Visible = true;
@@ -339,7 +351,7 @@ namespace recruitment
                             pbtn1.BackColor = System.Drawing.Color.Green;
                             pbtn2.BackColor = System.Drawing.Color.Green;
                             pbtn3.BackColor = System.Drawing.Color.Green;
-                            pbtn4.BackColor = System.Drawing.Color.Green;
+                  //          pbtn4.BackColor = System.Drawing.Color.Green;
                             pbtn5.BackColor = System.Drawing.Color.Green;
                             pbtn6.BackColor = System.Drawing.Color.Green;
                             pbtn7.BackColor = System.Drawing.Color.Green;
@@ -371,7 +383,7 @@ namespace recruitment
                 PreviewPanel1.Visible = true;
                 PreviewPanel2.Visible = false;
                 PreviewPanel3.Visible = false;
-                PreviewPanel4.Visible = false;
+            //    PreviewPanel4.Visible = false;
                 PreviewPanel5.Visible = false;
                 PreviewPanel6.Visible = false;
                 PreviewPanel7.Visible = false;
@@ -387,7 +399,7 @@ namespace recruitment
                 PreviewPanel1.Visible = false;
                 PreviewPanel2.Visible = true;
                 PreviewPanel3.Visible = false;
-                PreviewPanel4.Visible = false;
+         //       PreviewPanel4.Visible = false;
                 PreviewPanel5.Visible = false;
                 PreviewPanel6.Visible = false;
                 PreviewPanel7.Visible = false;
@@ -403,28 +415,28 @@ namespace recruitment
                 PreviewPanel1.Visible = false;
                 PreviewPanel2.Visible = false;
                 PreviewPanel3.Visible = true;
-                PreviewPanel4.Visible = false;
+         //       PreviewPanel4.Visible = false;
                 PreviewPanel5.Visible = false;
                 PreviewPanel6.Visible = false;
                 PreviewPanel7.Visible = false;
             }
         }
 
-        protected void ProfessionDetailsLinkBtn_Click(object sender, EventArgs e)
-        {
-            PreviewPanel4.Visible = true;
-            if (PreviewPanel4.Visible == true)
-            {
-                PreviewPanel1.Visible = false;
-                PreviewPanel2.Visible = false;
-                PreviewPanel3.Visible = false;
-                PreviewPanel4.Visible = true;
-                PreviewPanel5.Visible = false;
-                PreviewPanel6.Visible = false;
-                PreviewPanel7.Visible = false;
-            }
-        
-        }
+        //protected void ProfessionDetailsLinkBtn_Click(object sender, EventArgs e)
+        //{
+        //    PreviewPanel4.Visible = true;
+        //    if (PreviewPanel4.Visible == true)
+        //    {
+        //        PreviewPanel1.Visible = false;
+        //        PreviewPanel2.Visible = false;
+        //        PreviewPanel3.Visible = false;
+        //        PreviewPanel4.Visible = true;
+        //        PreviewPanel5.Visible = false;
+        //        PreviewPanel6.Visible = false;
+        //        PreviewPanel7.Visible = false;
+        //    }
+
+        //}
 
         protected void OtherInfoDetailsLinkBtn_Click(object sender, EventArgs e)
         {
@@ -434,7 +446,7 @@ namespace recruitment
                 PreviewPanel1.Visible = false;
                 PreviewPanel2.Visible = false;
                 PreviewPanel3.Visible = false;
-                PreviewPanel4.Visible = false;
+        //        PreviewPanel4.Visible = false;
                 PreviewPanel5.Visible = true;
                 PreviewPanel6.Visible = false;
                 PreviewPanel7.Visible = false;
@@ -449,7 +461,7 @@ namespace recruitment
                 PreviewPanel1.Visible = false;
                 PreviewPanel2.Visible = false;
                 PreviewPanel3.Visible = false;
-                PreviewPanel4.Visible = false;
+     //           PreviewPanel4.Visible = false;
                 PreviewPanel5.Visible = false;
                 PreviewPanel6.Visible = true;
                 PreviewPanel7.Visible = false;
@@ -464,7 +476,7 @@ namespace recruitment
                 PreviewPanel1.Visible = false;
                 PreviewPanel2.Visible = false;
                 PreviewPanel3.Visible = false;
-                PreviewPanel4.Visible = false;
+         //       PreviewPanel4.Visible = false;
                 PreviewPanel5.Visible = false;
                 PreviewPanel6.Visible = false;
                 PreviewPanel7.Visible = true;
@@ -488,10 +500,7 @@ namespace recruitment
             Response.Redirect("ExperienceAdd.aspx");
         }
 
-        protected void pbtn4_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("ProfessionalAdd.aspx");
-        }
+       
 
         protected void pbtn5_Click(object sender, EventArgs e)
         {
@@ -508,11 +517,10 @@ namespace recruitment
             Response.Redirect("Payment.aspx");
         }
 
-        protected void PreviewApplication_Click(object sender, EventArgs e)
+       
+        protected void PreviewApplication_Click1(object sender, EventArgs e)
         {
             Response.Redirect("PreviewDetails.aspx");
         }
-
-        
     }
 }

@@ -72,7 +72,7 @@ hr.solid {
      <div class="container">
         <div class="bg-light  text-center">
         <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br />
-        Personal Details (fields marked with * are mandatory)</p>
+        &nbsp;(fields marked with * are mandatory)</p>
         <p >Candidate Registration Number:
               <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
        Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
@@ -108,6 +108,8 @@ hr.solid {
       <div class="card bg-light">
                <div class="card-body align-content-center">   
                    <center>    <h6 id="Addlbl" runat="server" class="card-header text-white  bg-info ">Add Essential Educational Details (Chronological order)</h6></center>
+                   <center>    <h6 id="H1" runat="server" class="card-header text-white  bg-info ">“Irrespective of the essential qualification for the post, all acquired and or acquiring qualifications details should be entered”</h6></center>
+
         <div class="row">
          <div class="col-12">
             <center> <h5></h5></center>
@@ -120,7 +122,7 @@ hr.solid {
             <thead>
                 <tr>
                     <th scope="col"><asp:Label ID="Qualificationlbl" runat="server" Text="Qualification"></asp:Label></th>
-                    <th scope="col"><asp:Label ID="DegreeNamelbl" runat="server" Text="Specialization/Degree Name"></asp:Label></th>
+                    <th scope="col"><asp:Label ID="DegreeNamelbl" runat="server" Text="Specialisation/Degree Name"></asp:Label></th>
                     <th scope="col"><asp:Label ID="MainSubjectlbl" runat="server" Text="Main Subject"></asp:Label></th>
                     <th scope="col"><asp:Label ID="Institutelbl" runat="server" Text="Institute/University/College Name"></asp:Label></th>
                 </tr>
@@ -222,7 +224,7 @@ hr.solid {
         <div class="row">
          <div class="col-12"> 
           <center>      <h6> </h6> </center>
-          <center>    <h6 class="card-header text-white  bg-primary ">Added Educational Details:</h6></center>  
+          <center>    <h6 class="card-header text-white  bg-success ">Added Educational Details:</h6></center>  
            
              
             <center>
@@ -335,13 +337,67 @@ hr.solid {
 
     </center> </div>
                 </div>
-
-                    <!-- Phd Panel  start  -->
-                   <br />
                    <hr class="solid">
-                   <div class="row">
+                        <!-- Additional Qualifcation start  -->
+                       <div class="row">
                        <div class="col-12">                      
-                           <lable><strong>*Phd Details : </strong></lable>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="phddrop" runat="server" AutoPostBack="True" OnSelectedIndexChanged="phddrop_SelectedIndexChanged" >
+                                            <center>    <h6 class="card-header text-white  bg-primary ">Add Extra Qualifaction Details :</h6></center>  
+                    
+                                <asp:Panel ID="AddQualPanel" runat="server">
+                                                               <br />
+                                    
+                           <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                <th scope="col">Type of Qualification</th>
+                                <th scope="col">Name of the Qualification </th>
+                                <th scope="col">Institute / Board</th>
+                                <th scope="col">Completed Year</th>
+                                   </tr>
+                                   
+
+
+                                     </thead>
+                               <tr>
+                                   <td><asp:TextBox ID="Qualf1" runat="server" Width="218px"></asp:TextBox>  </td>
+                                   <td><asp:TextBox ID="Qualf2" runat="server"></asp:TextBox>   </td>
+                                   <td><asp:TextBox ID="Qualf3" runat="server" Width="335px"> </asp:TextBox></td>
+                                   <td><asp:TextBox ID="Qualf4" runat="server"></asp:TextBox>  </td>
+                               </tr>
+
+                               <tr>
+                                   <td><asp:TextBox ID="Qualf5" runat="server" Width="218px"></asp:TextBox> </td>
+                                   <td><asp:TextBox ID="Qualf6" runat="server"></asp:TextBox>  </td>
+                                   <td><asp:TextBox ID="Qualf7" runat="server" Width="335px"></asp:TextBox> </td>
+                                   <td><asp:TextBox ID="Qualf8" runat="server"></asp:TextBox>  </td>
+                               </tr>
+                               <tr>
+                                   <td><asp:TextBox ID="Qualf9" runat="server" Width="218px"></asp:TextBox> </td>
+                                   <td><asp:TextBox ID="Qualf10" runat="server"></asp:TextBox>  </td>
+                                   <td><asp:TextBox ID="Qualf11" runat="server" Width="335px"></asp:TextBox>  </td>
+                                   <td><asp:TextBox ID="Qualf12" runat="server"></asp:TextBox>  </td>
+                               </tr>
+                               <tr>
+                                   <td><asp:TextBox ID="Qualf13" runat="server" Width="218px"></asp:TextBox>  </td>
+                                   <td><asp:TextBox ID="Qualf14" runat="server"></asp:TextBox>   </td>
+                                   <td><asp:TextBox ID="Qualf15" runat="server" Width="335px"></asp:TextBox>  </td>
+                                   <td><asp:TextBox ID="Qualf16" runat="server"></asp:TextBox>  </td>
+                               </tr>
+                                
+                               </table>
+                                    </asp:Panel>
+                                     
+                       </div>
+                   </div> 
+
+                   <!-- Additional Qualifcation end  -->
+
+                    <!-- Phd Panel  start 
+                   <br />
+               <hr class="solid"> -->
+                    <div class="row">
+                       <div class="col-12">                      
+                      <asp:Label ID="PhdLable" runat="server" Text="*Phd Details:"> </asp:Label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="phddrop" runat="server" AutoPostBack="True" OnSelectedIndexChanged="phddrop_SelectedIndexChanged" >
                                 <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
                          <asp:ListItem Value="Yes">Yes</asp:ListItem>
                          <asp:ListItem Value="No">No</asp:ListItem>
@@ -372,12 +428,16 @@ hr.solid {
                                     </asp:Panel>
                                      
                        </div>
-                   </div>
+                   </div> 
+
+                    <!-- Additional Qualifcation end  -->
                    <br />
-                   <hr class="solid">
-                   <div class="row">
+                      <!-- Additional Qualifcation start 
+                  <hr class="solid"> -->
+                     <div class="row">
                        <div class="col-12">                      
-                           <lable><strong>*GATE Qualified : </strong></lable>&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="GateQualDrop" runat="server" AutoPostBack="True" OnSelectedIndexChanged="GateQualDrop_SelectedIndexChanged" >
+                          
+                           <asp:Label ID="GateLbl" runat="server" Text="*GATE Qualified :"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;<asp:DropDownList ID="GateQualDrop" runat="server" AutoPostBack="True" OnSelectedIndexChanged="GateQualDrop_SelectedIndexChanged" >
                                 <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
                          <asp:ListItem Value="Yes">Yes</asp:ListItem>
                          <asp:ListItem Value="No">No</asp:ListItem>
@@ -448,7 +508,10 @@ hr.solid {
                                     </asp:Panel>
                                      
                        </div>
-                   </div>
+                   </div> 
+                     <!-- Additional Qualifcation end  -->
+
+
               </div>
         </div>
         </div>

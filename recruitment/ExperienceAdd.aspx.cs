@@ -309,6 +309,13 @@ namespace recruitment
 
             }
 
+            else if (emptypetxt.SelectedIndex == 0)
+            {
+                Response.Write("<script> alert ('Please Select Type of Employment');</script>");
+
+            }
+
+
             else if (String.IsNullOrEmpty(fromtxt.Text))
             {
                 Response.Write("<script> alert ('Please Add From Date');</script>");
@@ -321,11 +328,11 @@ namespace recruitment
 
             }
 
-            else if (String.IsNullOrEmpty(expbrieftxt.Text))
-            {
-                Response.Write("<script> alert ('Please Add Nature of Work');</script>");
+            //else if (String.IsNullOrEmpty(expbrieftxt.Text))
+            //{
+            //    Response.Write("<script> alert ('Please Add Nature of Work');</script>");
 
-            }
+            //}
 
             else
             {
@@ -465,19 +472,21 @@ namespace recruitment
             string canregdbtest = Convert.ToString(Session["can_regno"]);
             string vappidnolbl = Convert.ToString(Session["S_appregno"]);
             string vyes = "Yes";
+            string vno = "No";
             try
             {
                 using (SqlConnection conn = MySqlConnection.Recruitmentcon())
                 {
 
 
-                    string insertquery = "Update ApplicationSteps SET Experienced=@vyes WHERE appregno = @vappidnolbl and can_regno = @vcan_reg";
+                    string insertquery = "Update ApplicationSteps SET Experienced=@vyes, AdditionalInfo=@vno, Upload =@vno  WHERE appregno = @vappidnolbl and can_regno = @vcan_reg";
 
                     SqlCommand cmd = new SqlCommand(insertquery, conn);
 
                     cmd.Parameters.AddWithValue("@vcan_reg", canregdbtest);
                     cmd.Parameters.AddWithValue("@vappidnolbl", vappidnolbl);
                     cmd.Parameters.AddWithValue("@vyes", vyes);
+                    cmd.Parameters.AddWithValue("@vno", vno);
 
                     cmd.ExecuteNonQuery();
                     conn.Close();

@@ -1774,6 +1774,7 @@
     <Content Include="imgs\books1.png" />
     <Content Include="imgs\csir logo.png" />
     <Content Include="imgs\csirnew.png" />
+    <Content Include="imgs\csirnewlogo.jpg" />
     <Content Include="imgs\defaulters-list.png" />
     <Content Include="imgs\deleteicon.png" />
     <Content Include="imgs\digital-data.png" />

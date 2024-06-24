@@ -33,8 +33,8 @@
         }
          
          .auto-style4 {
-            width: 52px;
-            height: 51px;
+            width: 102px;
+            height: 101px;
         }
     </style>
 </head>
@@ -103,9 +103,9 @@
                     <div class="row">
                         <div class="col-12"> 
                             <p>&nbsp</p>
-                       <img src="imgs/csir logo.png" class="auto-style4" />
-                    <h5 class="fw-bolder">Recruitment of Security Assistant for CSIR MADRAS COMPLEX,Taramani, Chennai</h5>
-                    <p class="lead mb-0">Council of Scientific and Industrial Research</p>
+                       <img src="imgs/csirnewlogo.jpg" class="auto-style4" />
+                    <h5 class="fw-bolder">CSIR MADRAS COMPLEX,Taramani, Chennai</h5>
+                    <p class="lead mb-0">Council of Scientific & Industrial Research</p>
                         </div>
                         </div>
             </div>

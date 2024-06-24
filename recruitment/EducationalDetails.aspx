@@ -108,7 +108,7 @@ hr.solid {
       <div class="card bg-light">
                <div class="card-body align-content-center">   
                    <center>    <h6 id="Addlbl" runat="server" class="card-header text-white  bg-info ">Add Essential Educational Details (Chronological order)</h6></center>
-                   <center>    <h6 id="H1" runat="server" class="card-header text-white  bg-info ">“Irrespective of the essential qualification for the post, all acquired and or acquiring qualifications details should be entered”</h6></center>
+                   <center>    <h6 id="H1" runat="server" class="card-header text-white  bg-danger ">“Irrespective of the essential qualification for the post, all acquired and or acquiring qualifications details should be entered”</h6></center>
 
         <div class="row">
          <div class="col-12">

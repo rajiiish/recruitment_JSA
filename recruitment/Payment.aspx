@@ -97,7 +97,7 @@
                      <div class="col">
                         <center>
                             <div class="alert alert-success" role="alert">
-  <h5 class="alert-heading">      *Payment is exempted for Female, SC, ST, CSIR Employee (Permanent) & Ex-Army</h5>
+  <h5 class="alert-heading">      *Payment is exempted for Female, SC, ST, CSIR Employee (Permanent) & Ex-Servicemen</h5>
                                 <p>If you are falling under any one of the above catagory and still payment options are visible, please re-check your filled application details in previous forms.</p>
 
  

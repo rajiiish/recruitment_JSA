@@ -133,7 +133,7 @@
                    <div class="row">
             <div class="col-12">
                 <br />
-                <label>* Have you been outside india? If Yes, Give Details of the visits:</label> &nbsp
+                <label>* Have you been outside India? If Yes, Give Details of the visits:</label> &nbsp
                 <asp:DropDownList ID="countryvisitdrop"  runat="server" AutoPostBack="True" OnSelectedIndexChanged="countryvisitdrop_SelectedIndexChanged">
                     <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
                          <asp:ListItem Value="Yes">Yes</asp:ListItem>

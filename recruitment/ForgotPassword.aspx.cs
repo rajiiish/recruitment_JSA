@@ -49,7 +49,7 @@ namespace recruitment
             {
                 MailMessage mm = new MailMessage("csirmadrascomplex@gmail.com", txtEmail.Text.Trim());
                 mm.Subject = "Password Recovery";
-                mm.Body = string.Format("<br /> <h2> CSIR MADRAS COMPLEX </h2>, <h3> ONLINE APPLICATION 2022 </h3> <h4> Hi {0},<br /><br /> Your password is <strong> {1} </strong>.</h4><br /><br />Thank You. <br/> (Warning: Don't reply anything to this email)", username, password);
+                mm.Body = string.Format("<br /> <h2> CSIR MADRAS COMPLEX </h2>, <h3> ONLINE APPLICATION 2024 </h3> <h4> Hi {0},<br /><br /> Your password is <strong> {1} </strong>.</h4><br /><br />Thank You. <br/> (Warning: Don't reply anything to this email)", username, password);
                 mm.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.Host = "smtp.gmail.com";
@@ -64,7 +64,7 @@ namespace recruitment
               //  smtp.Port = 587;
                 smtp.Send(mm);
                 lblMessage.ForeColor = Color.Green;
-                lblMessage.Text = "Password has been sent to your email address.";
+                lblMessage.Text = "Password has been sent to your email address. (Check the Spam folder in case of e-mail missing in the Inbox)";
 
                 //MailMessage mm = new MailMessage("cmcit@csircmc.res.in", txtEmail.Text.Trim());
                 //mm.Subject = "Password Recovery";

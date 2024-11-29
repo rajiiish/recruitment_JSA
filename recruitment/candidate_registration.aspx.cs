@@ -7,7 +7,9 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Data.Sql;
-
+using System.Security.Cryptography;
+using System.Text;
+using System.IO;
 
 namespace recruitment
 {
@@ -184,19 +186,21 @@ namespace recruitment
 
         }
 
-       /* public void emptytext()
-        {
-            TextBox1.Text = "";
-            TextBox2.Text = "";
-            TextBox3.Text = "";
-            TextBox4.Text = "";
-            TextBox5.Text = "";
-            TextBox6.Text = "";
-        }*/
+        /* public void emptytext()
+         {
+             TextBox1.Text = "";
+             TextBox2.Text = "";
+             TextBox3.Text = "";
+             TextBox4.Text = "";
+             TextBox5.Text = "";
+             TextBox6.Text = "";
+         }*/
 
 
-        
+      
 
+
+      
         public void datainsert()
         {
                                                                                                         
@@ -216,7 +220,13 @@ namespace recruitment
                 string fname = TextBox1.Text;
                 //  string lname = TextBox2.Text;
                 string email = TextBox3.Text;
-                string password1 = TextBox4.Text;
+
+
+              //  string password1 = TextBox4.Text;
+
+                string password1 = EncryptionHelper.Encrypt(TextBox5.Text);
+
+
                 string password2 = TextBox5.Text;
                 string mobile = TextBox6.Text;
                 // string regno = regnolbl.Text;

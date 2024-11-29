@@ -2097,6 +2097,7 @@
     <Compile Include="publisheradd.aspx.designer.cs">
       <DependentUpon>publisheradd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PwdEncryption.cs" />
     <Compile Include="registration.aspx.cs">
       <DependentUpon>registration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

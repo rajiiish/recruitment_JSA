@@ -21,6 +21,9 @@ namespace recruitment
         {
             try
             {
+                string username = TextBox1.Text.Trim();
+                string password = EncryptionHelper.Decrypt(TextBox2.Text.Trim());
+
                 SqlConnection con = MySqlConnection.Recruitmentcon();
                 //SqlConnection con = new SqlConnection(strcon);
                 if (con.State == ConnectionState.Closed)
@@ -28,7 +31,7 @@ namespace recruitment
                     con.Open();
 
                 }
-                SqlCommand cmd = new SqlCommand("select * from rec_canreg where email='" + TextBox1.Text.Trim() + "' AND password='" + TextBox2.Text.Trim() + "'", con);
+                SqlCommand cmd = new SqlCommand("select * from rec_canreg where email='" + username + "' AND password='" + password + "'", con);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {

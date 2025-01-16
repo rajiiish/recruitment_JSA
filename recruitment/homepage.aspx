@@ -22,7 +22,7 @@
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="imgs/homebanner.jpg" alt="..." /></a>
                         <div class="card-body">
-                            <div class="small text-muted">January 1, 2022</div>
+                            <div class="small text-muted">January 20, 2025</div>
                             <h5 class="card-title">Applications are invited from Indian Nationals for the following posts in CSIR Madras Complex (CMC), Chennai.</h5>
                         <!--     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>-->
                             <table class="table">

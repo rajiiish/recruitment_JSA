@@ -39,7 +39,7 @@
    <asp:ListItem Value="Select">-Select-</asp:ListItem>
                
 
-             <asp:ListItem Value="SA">Security Assistant</asp:ListItem>
+             <asp:ListItem Value="SA-01">Security Assistant (SA-01)</asp:ListItem>
         </asp:DropDownList>
         &nbsp;<asp:Label ID="appidnolbl" runat="server" Text=""></asp:Label>
         &nbsp;<br /> </p>

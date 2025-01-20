@@ -50,7 +50,7 @@
          <div class="card">
                <div class="card-body">
 
-                     <center>    <h6 class="card-header text-white  bg-info ">Payment Details</h6></center><br />
+                     <center>    <h6 class="card-header text-white  bg-info ">Payment Transaction Details</h6></center><br />
         <div class="row">
              <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
@@ -79,8 +79,17 @@
                 <div class="col-4">
                     <label for="paymode">Mode of Payment</label>
 
-                 <asp:TextBox ID="paymodeText" runat="server" class="form-control" placeholder="" value="SBI Collect" ReadOnly="true" ></asp:TextBox>                 
+               <!--   <asp:TextBox ID="paymodeText1" runat="server" class="form-control" placeholder="" value="SBI Collect" ReadOnly="true" ></asp:TextBox>  -->               
 
+                 <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="paymodeText" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
+
+                     <asp:DropDownList ID="paymodeText" runat="server" class="form-control" placeholder="" value="" AutoPostBack="False" OnSelectedIndexChanged="paymodeText_SelectedIndexChanged" >
+                          <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
+                          <asp:ListItem Value="RTGS">RTGS</asp:ListItem>
+                          <asp:ListItem Value="NEFT">NEFT</asp:ListItem>
+                          <asp:ListItem Value="DebitCard">Debit Card</asp:ListItem>
+                          <asp:ListItem Value="CreditCard">Credit Card</asp:ListItem>                          
+                     </asp:DropDownList>
                
                  </div>
                 
@@ -99,14 +108,60 @@
                             <div class="alert alert-success" role="alert">
   <h5 class="alert-heading">      *Payment is exempted for Female, SC, ST, CSIR Employee (Permanent) & Ex-Servicemen</h5>
                                 <p>If you are falling under any one of the above catagory and still payment options are visible, please re-check your filled application details in previous forms.</p>
-
- 
+                                
 </div>
                            
                         </center>
                      </div>
                   </div>
         </asp:Panel>
+
+        <asp:Panel ID="Panel1" runat="server">
+            <div class="row">
+                    
+                 <div class="col-1">
+                     </div>
+                     <div class="col-10">
+                        <center>
+                            <div class="card " style="width: 50rem;">
+                                <div class="card-header text-white  bg-info">Account Details</div>
+                                <div class="card-body">
+
+                                    <p class="card-text">
+                            <table class="table bg-Light">
+ 
+  <tbody>
+    <tr>
+      <th scope="row">Name of Account Holder</th>
+      <td>CSIR MADRAS COMPLEX</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Account Number</th>
+      <td>30267 725339</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Bank Name</th>
+      <td>State Bank of India, Taramani</td>      
+    </tr>
+      <tr>
+      <th scope="row">IFSC Code </th>
+      <td>SBIN0010673</td>      
+    </tr>
+  </tbody>
+</table>
+                                        </p>
+                                    </div>
+                                </div>
+                        </center>
+                         </div>
+
+                 <div class="col-1">
+                     </div>
+                </div>
+            </asp:Panel>
+        
         <div class="row">
             <div class="col-12">
                 <center>

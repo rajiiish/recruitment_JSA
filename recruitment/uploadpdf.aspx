@@ -217,7 +217,7 @@
         
        <asp:TableCell>  <asp:FileUpload ID="FileUpload2" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="HSC_btn" runat="server" Text="Upload" OnClick="HSC_btn_Click"/></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="Label2" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="Label2" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
                
               
@@ -237,7 +237,7 @@
         
        <asp:TableCell>  <asp:FileUpload ID="ITIFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="ITI_btn" runat="server" Text="Upload" OnClick="ITI_btn_Click" /></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="ITIlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="ITIlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
                
               
@@ -258,7 +258,7 @@
         
        <asp:TableCell>  <asp:FileUpload ID="DIPFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="DIP_btn" OnClick="DIP_btn_Click" runat="server" Text="Upload" /></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="DIPlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="DIPlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
                
               
@@ -279,7 +279,7 @@
         
        <asp:TableCell>  <asp:FileUpload ID="UGFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="UG_btn" OnClick="UG_btn_Click" runat="server" Text="Upload" /></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="UGlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="UGlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
                
               
@@ -300,7 +300,7 @@
         
        <asp:TableCell>  <asp:FileUpload ID="PGFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="PG_btn" OnClick="PG_btn_Click" runat="server" Text="Upload" /></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="PGlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="PGlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
                
               
@@ -346,7 +346,25 @@
     </asp:TableRow>
          
 
-  
+  <asp:TableRow ID="ExServicemanTableRow" runat="server" class="table table-bordered">
+         <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>  
+       <asp:TableCell>Essential Qualification Documents (eg. Ex-Servicemen,JCO, Para-Military Forces., etc.)</asp:TableCell>  
+        
+       <asp:TableCell>  <asp:FileUpload ID="ExServicemanFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
+        <asp:TableCell> <asp:Button class="btn btn-success" ID="ExServiceman_btn" runat="server" Text="Upload" OnClick="ExServiceman_btn_Click" /></asp:TableCell>  
+        <asp:TableCell><asp:Label ID="ExServicemanlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell>
+               
+              
+
+               <asp:ImageButton ID="ExServiceman_pdfview" src="imgs/pdficon.png" OnClick="ExServiceman_pdfview_Click" runat="server" Height="32px"  Width="36px"/>
+
+           &nbsp;&nbsp;&nbsp;&nbsp;  <asp:ImageButton ID="ExServiceman_deletebtn" src="imgs/pdfdelete.png" OnClick="ExServiceman_deletebtn_Click" runat="server" Height="32px"  Width="29px"/> 
+                  
+                  </asp:TableCell>  
+                   
+        
+    </asp:TableRow>
  
      <asp:TableRow ID="ExperienceTableRow" runat="server" class="table table-bordered">
          <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>  
@@ -354,7 +372,7 @@
         
        <asp:TableCell>  <asp:FileUpload ID="ExperienceFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="Experience_btn" runat="server" Text="Upload" OnClick="Experience_btn_Click"/></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="Experiencelbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="Experiencelbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
                
               
@@ -368,25 +386,7 @@
         
     </asp:TableRow>
       
-          <asp:TableRow ID="ExServicemanTableRow" runat="server" class="table table-bordered">
-         <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>  
-       <asp:TableCell> Ex-Serviceman Documents </asp:TableCell>  
-        
-       <asp:TableCell>  <asp:FileUpload ID="ExServicemanFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
-        <asp:TableCell> <asp:Button class="btn btn-success" ID="ExServiceman_btn" runat="server" Text="Upload" OnClick="ExServiceman_btn_Click" /></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="ExServicemanlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
-        <asp:TableCell>
-               
-              
-
-               <asp:ImageButton ID="ExServiceman_pdfview" src="imgs/pdficon.png" OnClick="ExServiceman_pdfview_Click" runat="server" Height="32px"  Width="36px"/>
-
-           &nbsp;&nbsp;&nbsp;&nbsp;  <asp:ImageButton ID="ExServiceman_deletebtn" src="imgs/pdfdelete.png" OnClick="ExServiceman_deletebtn_Click" runat="server" Height="32px"  Width="29px"/> 
-                  
-                  </asp:TableCell>  
-                   
-        
-    </asp:TableRow>
+          
 
    
           <asp:TableRow ID="NOCTableRow" runat="server" class="table table-bordered">
@@ -395,7 +395,7 @@
         
        <asp:TableCell>  <asp:FileUpload ID="NOCFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="NOC_btn" OnClick="NOC_btn_Click" runat="server" Text="Upload" /></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="NOClbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="NOClbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
                
               
@@ -416,7 +416,7 @@
         
        <asp:TableCell>  <asp:FileUpload ID="PWDFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="PWD_btn" OnClick="PWD_btn_Click" runat="server" Text="Upload" /></asp:TableCell>  
-        <asp:TableCell><asp:Label ID="PWDlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="PWDlbl" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
                
               

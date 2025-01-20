@@ -31,6 +31,7 @@ namespace recruitment
                     loadeducationPG();
                     LoadPHDDetails();
                     LoadGATEDetails();
+                    LoadExtraEduacation();
                     YesOrNo();
 
                     PhdLable.Visible = false;
@@ -1031,6 +1032,74 @@ namespace recruitment
             }
         }
 
+        private void LoadExtraEduacation()
+        {
+            try
+            {
+                string canregdbtext = Convert.ToString(Session["can_regno"]);
+
+                string appregnotext = Convert.ToString(Session["S_appregno"]);
+
+
+
+                SqlConnection connection = MySqlConnection.Recruitmentcon();
+                string sql1 = "SELECT *FROM AddQualfications WHERE can_regno = @canregdbtest and appregno = @appregnotext";
+
+                SqlCommand command = new SqlCommand(sql1, connection);
+                command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
+                command.Parameters.AddWithValue("@appregnotext", appregnotext);
+
+                SqlDataReader dr = command.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        Qualf1.Text = dr.GetValue(2).ToString();
+                        Qualf2.Text = dr.GetValue(3).ToString();
+                        Qualf3.Text = dr.GetValue(4).ToString();
+                        Qualf4.Text = dr.GetValue(5).ToString();
+
+                        Qualf5.Text = dr.GetValue(6).ToString();
+                        Qualf6.Text = dr.GetValue(7).ToString();
+                        Qualf7.Text = dr.GetValue(8).ToString();
+                        Qualf8.Text = dr.GetValue(9).ToString();
+
+                        Qualf9.Text = dr.GetValue(10).ToString();
+                        Qualf10.Text = dr.GetValue(11).ToString();
+                        Qualf11.Text = dr.GetValue(12).ToString();
+                        Qualf12.Text = dr.GetValue(13).ToString();
+
+                        Qualf13.Text = dr.GetValue(14).ToString();
+                        Qualf14.Text = dr.GetValue(15).ToString();
+                        Qualf15.Text = dr.GetValue(16).ToString();
+                        Qualf16.Text = dr.GetValue(17).ToString();
+
+                        //  GATEDisplayPanel.Visible = true;
+                        //   GATEPanel.Visible = false;
+
+                    }
+                }
+                else
+                {
+                    // Response.Redirect("position_details.aspx");
+                    // Response.Write("<script>alert('Invalid credentials');</script>");
+
+
+                }
+                connection.Close();
+            }
+
+
+
+
+            catch (Exception ex)
+            {
+                Response.Write("<script> alert ('" + ex.Message + "');</script>");
+
+            }
+        }
+
+
         private void DeleteSSLCDetails()
         {
             string dbcanreg = regidlbl.Text;
@@ -1551,8 +1620,7 @@ namespace recruitment
             }
         }
 
-
-
+       
         private void ExtraEduacation()
         {
             string canregdbtest = Convert.ToString(Session["can_regno"]);

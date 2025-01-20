@@ -57,7 +57,7 @@ namespace recruitment
                     SqlCommand cmd1 = new SqlCommand("UPDATE appno SET post1=post1+1", connection);
                     cmd1.ExecuteNonQuery();
 
-            }
+                }
 
             //else if (PostDropDownList.SelectedIndex == 2)
             //    {

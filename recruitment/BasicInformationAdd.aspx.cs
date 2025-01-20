@@ -26,6 +26,8 @@ namespace recruitment
                   //  PaymentOptionEnable();
                     armydrop();
 
+                    pwd.Visible = false;
+                    pwdDrop.Visible = false;
                 }
                 //loaddataBadicinformation(); 
                 //Response.Redirect("userlogin.aspx");
@@ -160,7 +162,7 @@ namespace recruitment
 
 
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp,  pwd, ExArmy, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress, paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+                string sql1 = "SELECT fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp,  pwd, ExArmy, ExServiceName, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress, paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
 
                 SqlCommand command = new SqlCommand(sql1, connection);
                 command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
@@ -195,32 +197,50 @@ namespace recruitment
                         csirDrop.SelectedValue = dr.GetValue(8).ToString();
                         pwdDrop.SelectedValue = dr.GetValue(9).ToString();
                         ArmyDrop.SelectedValue = dr.GetValue(10).ToString();
+                        EssnQualficationTxt.Text = dr.GetValue(11).ToString();
 
-
-                        if (ArmyDrop.SelectedValue == "No")
+                        if (ArmyDrop.SelectedValue == "ExArmy")
                         {
-                            ArmyService.Visible = false;
-                            servicelbl.Visible = false;
+                            
+                            EssnQualficationTxt.Enabled = false;
+                        }
+                        else if (ArmyDrop.SelectedValue == "JCO")
+                        {
+                            
+                            EssnQualficationTxt.Enabled = false;
                         }
 
-                        ArmyService.Text = dr.GetValue(11).ToString();
-                        placeofbirthtxt.Text = dr.GetValue(12).ToString();
-                        aadhaarText.Text = dr.GetValue(13).ToString();
-                        citizenDrop.Text = dr.GetValue(14).ToString();
+                        else if (ArmyDrop.SelectedValue == "Para-Military")
+                        {
+
+                            EssnQualficationTxt.Enabled = false;
+                        }
+
+                        else if (ArmyDrop.SelectedValue == "Others")
+                        {
+                            
+                            EssnQualficationTxt.Enabled = true;
+                        }
+
+                         
+                        ArmyService.Text = dr.GetValue(12).ToString();
+                        placeofbirthtxt.Text = dr.GetValue(13).ToString();
+                        aadhaarText.Text = dr.GetValue(14).ToString();
+                        citizenDrop.Text = dr.GetValue(15).ToString();
                         
 
                     //    banknameText.Text = dr.GetValue(15).ToString();
                     //    paymentdateText.Text = dr.GetValue(16).ToString();
                     //    paymodeText.Text = dr.GetValue(17).ToString();
-                        emailText.Text = dr.GetValue(18).ToString();
-                        mobileText.Text = dr.GetValue(19).ToString();
-                        preaddressText.Text = dr.GetValue(20).ToString();
-                        precityText.Text = dr.GetValue(21).ToString();
-                        prestateText.Text = dr.GetValue(22).ToString();
-                        pincodeText.Text = dr.GetValue(23).ToString();
-                        permaddressText.Text = dr.GetValue(24).ToString();
+                        emailText.Text = dr.GetValue(19).ToString();
+                        mobileText.Text = dr.GetValue(20).ToString();
+                        preaddressText.Text = dr.GetValue(21).ToString();
+                        precityText.Text = dr.GetValue(22).ToString();
+                        prestateText.Text = dr.GetValue(23).ToString();
+                        pincodeText.Text = dr.GetValue(24).ToString();
+                        permaddressText.Text = dr.GetValue(25).ToString();
 
-                        string checkbox = dr.GetValue(25).ToString();
+                        string checkbox = dr.GetValue(26).ToString();
                         if (checkbox == "Yes")
                         {
                             AddresSamecheck.Checked = true;
@@ -329,18 +349,22 @@ namespace recruitment
                 string vcsirDrop = csirDrop.SelectedValue.ToString();
                 string vpwdDrop = pwdDrop.SelectedValue.ToString();
                 string varmyDrop = ArmyDrop.SelectedValue.ToString();
-                          
+                string essnQualfication = EssnQualficationTxt.Text;
 
-                     string varmyDropService = ArmyService.Text;
-            if (varmyDrop == "Yes")
+
+            string varmyDropService = ArmyService.Text;
+            if (varmyDrop == "Others")
             {
                 ArmyService.Visible = true;
                 servicelbl.Visible = true;
+                EssnQualficationTxt.Enabled = true;
             }
             else
             {
                 ArmyService.Visible = false;
                 servicelbl.Visible = false;
+                EssnQualficationTxt.Enabled = false;
+
             }
 
             string vplaceborn = placeofbirthtxt.Text;
@@ -395,6 +419,7 @@ namespace recruitment
                             "csiremp=@vcsirDrop, " +
                             "pwd=@vpwdDrop, " +
                             "ExArmy=@varmyDrop, " +
+                            "ExServiceName=@vessnQualfication, " +
                             "ExArmyService=@varmyDropService, " +
                             "placeborn=@vplaceborn, " +
                             
@@ -429,6 +454,8 @@ namespace recruitment
                         cmd.Parameters.AddWithValue("@vcsirDrop", vcsirDrop);
                         cmd.Parameters.AddWithValue("@vpwdDrop", vpwdDrop);
                         cmd.Parameters.AddWithValue("@varmyDrop", varmyDrop);
+                         cmd.Parameters.AddWithValue("@vessnQualfication", essnQualfication);
+                    
                         cmd.Parameters.AddWithValue("@varmyDropService", varmyDropService);
                     cmd.Parameters.AddWithValue("@vplaceborn", vplaceborn);
                     
@@ -544,19 +571,43 @@ namespace recruitment
         protected void ArmyDrop_SelectedIndexChanged(object sender, EventArgs e)
         {
       
-           if (ArmyDrop.SelectedValue == "No")
+           if (ArmyDrop.SelectedValue == "ExArmy")
             {
-                ArmyService.Visible = false;
+                ArmyService.Visible = true;
                 ArmyService.Text = "0";
                 servicelbl.Visible = false;
+                EssnQualficationTxt.Enabled = false;
+                EssnQualficationTxt.Text = "Ex-Servicemen";
 
             }
-            else if (ArmyDrop.SelectedValue == "Yes")
+            else if (ArmyDrop.SelectedValue == "JCO")
+            {
+                ArmyService.Visible = true;
+                ArmyService.Text = "0";
+                servicelbl.Visible = false;
+                EssnQualficationTxt.Enabled = false;
+                EssnQualficationTxt.Text = "JCO";
+
+            }
+
+            else if (ArmyDrop.SelectedValue == "Para-Military")
+            {
+
+                ArmyService.Visible = true;
+                ArmyService.Text = "0";
+                servicelbl.Visible = false;
+                EssnQualficationTxt.Enabled = false;
+                EssnQualficationTxt.Text = "Para-Military Forces";
+            }
+
+            else if (ArmyDrop.SelectedValue == "Others")
             {
                 ArmyService.Visible = true;
                 servicelbl.Visible = true;
-            }   
-           // armydrop();
+                EssnQualficationTxt.Enabled = true;
+                EssnQualficationTxt.Text = "";
+            }
+            // armydrop();
 
         }
 

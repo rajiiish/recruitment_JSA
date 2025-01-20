@@ -206,9 +206,9 @@ AspCell {
     </td>
 </tr>
 <tr style="height: 25px;">
-<td style="width: 316.812px; height: 25px;" class="auto-style5"><span>Are you an Ex-Servicemen</span></td>
+<td style="width: 316.812px; height: 25px;" class="auto-style5"><span>Essential Qualification</span></td>
 <td class="auto-style4" colspan="2" >
-    <asp:Label ID="armylbl" runat="server" Text="Label"></asp:Label>   <asp:Label ID="PrdServicelbl" runat="server" Text="Period of Service (in Years) : "></asp:Label> <asp:Label ID="armylblservice" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="armylbl" runat="server" Text="Label"></asp:Label>  <asp:Label ID="PrdServicelbl" runat="server" Text="Period of Service (in Years) : "></asp:Label> <asp:Label ID="armylblservice" runat="server" Text="Label"></asp:Label>
     </td>
 </tr>
 <tr style="height: 25px;">
@@ -474,7 +474,7 @@ AspCell {
 </tr>
 <tr style="height: 25px;">
 <td class="auto-style6" colspan="3"><span class="auto-style14"><strong></strong></span> <br /> 
-    <img alt="" class="auto-style15" src="imgs/right.png" />I hereby declare that all the statements in this application are accurate and complete to the best of my knowledge and belief. I am aware that if I am found to have concealed/distorted any material/information, my appointment is liable to be summarily terminated without notice.</td>
+    <img alt="" class="auto-style15" src="imgs/right.png" />I hereby declare that all the statements made in the application are true, complete and correct to the best of my knowledge and belief and in the event of any of the information being found false or incorrect or any ineligibility being detected before or after the selection, my candidature is liable to be cancelled and action initiated against me</td>
 </tr>
 
 <tr style="height: 25px;">

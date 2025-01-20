@@ -114,13 +114,22 @@ namespace recruitment
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtenderPayDate;
 
         /// <summary>
+        /// paymodeText1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox paymodeText1;
+
+        /// <summary>
         /// paymodeText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox paymodeText;
+        protected global::System.Web.UI.WebControls.DropDownList paymodeText;
 
         /// <summary>
         /// PaymentPanelNotification control.
@@ -130,6 +139,15 @@ namespace recruitment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PaymentPanelNotification;
+
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
         /// PaymentErrorlbl control.

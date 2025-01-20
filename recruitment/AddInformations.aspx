@@ -251,9 +251,9 @@
                    </div>
 
                     <!--  bond check start -->
-                   <hr class="solid">
+                   <hr class="solid d-none">
                     <!--  pwd check start -->
-                   <div class="row">
+                   <div class="row d-none">
                        <div class="col-12">
                            <label>* Are you a person with disability?* :</label> &nbsp
                 <asp:DropDownList ID="pwddrop"  runat="server" AutoPostBack="True" OnSelectedIndexChanged="pwddrop_SelectedIndexChanged"  >
@@ -326,10 +326,10 @@
                            <label>*Relaxation category (Refer Advertisement):</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:DropDownList ID="AgeRlxConfDrop"  runat="server">
                     <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
-                         <asp:ListItem Value="GovtEmp.">Employee of CSIR or Govt.</asp:ListItem>
-                         <asp:ListItem Value="PWD">Person With Disability</asp:ListItem>
-                         <asp:ListItem Value="Women">Women / Widow / Divorced Women</asp:ListItem>
-                    <asp:ListItem Value="ExArmy">Ex-Servicemen</asp:ListItem>
+                         <asp:ListItem Value="Employee of CSIR or Govt">Employee of CSIR or Govt.</asp:ListItem>
+                         <asp:ListItem Value="Person With Disability">Person With Disability</asp:ListItem>
+                         <asp:ListItem Value="Women / Widow / Divorced Women">Women / Widow / Divorced Women</asp:ListItem>
+                    <asp:ListItem Value="Ex-Servicemen">Ex-Servicemen</asp:ListItem>
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="AgeRlxConfDrop" InitialValue="0" validationgroup="otherinfogroup" runat="server" ForeColor="Red" />
 
@@ -438,8 +438,9 @@
 
                                                         
                                <tr>                                 
-                                   <td colspan="4" class="text-justify"> <strong>Declaration:</strong> <br /><asp:CheckBox ID="termsandcondtionCheck" runat="server" Font-Size="Large" /> &nbsp I hereby declare that all the statements made in this application are true and complete to the best of my knowledge and belief and nothing has been concealed or/distorted. I am aware that, if at any time I am found to have concealed/distorted any material/information, my appointment is liable to be summarily terminated without notice</td>
-
+                                <!--    <td colspan="4" class="text-justify"> <strong>Declaration:</strong> <br /><asp:CheckBox ID="termsandcondtionCheck1" runat="server" Font-Size="Large" /> &nbsp I hereby declare that all the statements made in this application are true and complete to the best of my knowledge and belief and nothing has been concealed or/distorted. I am aware that, if at any time I am found to have concealed/distorted any material/information, my appointment is liable to be summarily terminated without notice</td>-->
+                                   <td colspan="4" class="text-justify"> <strong>Declaration:</strong> <br /><asp:CheckBox ID="termsandcondtionCheck" runat="server" Font-Size="Large" /> &nbsp  I hereby declare that all the statements made in the application are true, complete and correct to the best of my knowledge and belief and in the event of any of
+ the information being found false or incorrect or any ineligibility being detected before or after the selection, my candidature is liable to be cancelled and action initiated against me</td>
                                </tr>
                            </table>
                    </div>

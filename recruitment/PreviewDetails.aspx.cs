@@ -436,7 +436,7 @@ namespace recruitment
 
 
                 SqlCommand cmd = new SqlCommand("select fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp, " +
-                   " pwd,pwdPercent,pwdCatagory, ExArmy, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress," +
+                   " pwd,pwdPercent,pwdCatagory, ExArmy, ExServiceName, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress," +
                    " paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -472,27 +472,29 @@ namespace recruitment
                             pwdcatlbl3.Text = dr.GetValue(11).ToString();
                         }
 
-                        var armyyesno = dr.GetValue(12).ToString();
+                      //  var exarmy = dr.GetValue(12).ToString();
 
-                        if (armyyesno == "No")
+
+
+                        //if (exarmy == "No")
+                        //{
+                        //    armylbl.Text = "No";
+                        //    armylblservice.Text = "";
+                        //    PrdServicelbl.Text = "";
+
+                        //}
+                        //else if (exarmy == "Yes")
                         {
-                            armylbl.Text = "No";
-                            armylblservice.Text = "";
-                            PrdServicelbl.Text = "";
+                            armylbl.Text = dr.GetValue(13).ToString() + "," + " ";
+
+                            armylblservice.Text = dr.GetValue(14).ToString();
 
                         }
-                        else if (armyyesno == "Yes")
-                        {
-                            armylbl.Text = dr.GetValue(12).ToString() + "," + " ";
 
-                            armylblservice.Text = dr.GetValue(13).ToString();
-
-                        }
-
-                        placebornlbl.Text = dr.GetValue(14).ToString();
-                        aadhaarlbl.Text = dr.GetValue(15).ToString();
-                        citizenlbl.Text = dr.GetValue(16).ToString();
-                        bankreflbl.Text = dr.GetValue(17).ToString();
+                        placebornlbl.Text = dr.GetValue(15).ToString();
+                        aadhaarlbl.Text = dr.GetValue(16).ToString();
+                        citizenlbl.Text = dr.GetValue(17).ToString();
+                        bankreflbl.Text = dr.GetValue(18).ToString();
                         string paymentdatetxt = bankreflbl.Text;
 
                         if (paymentdatetxt == "")
@@ -501,16 +503,16 @@ namespace recruitment
                         }
                         else
                         {
-                            paydatelbl.Text = dr.GetValue(18).ToString();
+                            paydatelbl.Text = dr.GetValue(19).ToString();
                         }
 
-                        paymodelbl.Text = dr.GetValue(19).ToString();
-                        emaillbl.Text = dr.GetValue(20).ToString();
-                        mobilelbl.Text = dr.GetValue(21).ToString();
+                        paymodelbl.Text = dr.GetValue(20).ToString();
+                        emaillbl.Text = dr.GetValue(21).ToString();
+                        mobilelbl.Text = dr.GetValue(22).ToString();
 
-                        string paddress = dr.GetValue(22).ToString() + ", " + dr.GetValue(23).ToString() + ", " + dr.GetValue(24).ToString() + ", " + dr.GetValue(25).ToString();
+                        string paddress = dr.GetValue(23).ToString() + ", " + dr.GetValue(24).ToString() + ", " + dr.GetValue(25).ToString() + ", " + dr.GetValue(26).ToString();
                         presentaddlbl.Text = paddress;
-                        permaddlbl.Text = dr.GetValue(26).ToString();
+                        permaddlbl.Text = dr.GetValue(27).ToString();
                         
                     }
                 }

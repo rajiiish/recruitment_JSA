@@ -76,8 +76,9 @@ namespace recruitment
                         string exarmy = dr.GetValue(4).ToString();
 
 
+                        if ((gender == "Female") || (cast == "SC") || (cast == "ST") || (csiremp == "Yes") || (pwd == "Yes") || (exarmy == "ExArmy") || (exarmy == "JCO"))
 
-                        if ( (gender == "Female") || (cast == "SC") || (cast == "ST") || (csiremp == "Yes") || (pwd == "Yes") || (exarmy == "Yes"))
+                     //    if ( (gender == "Female") || (cast == "SC") || (cast == "ST") || (csiremp == "Yes") || (pwd == "Yes") || (exarmy == "ExArmy") || (exarmy == "JCO") )
                         {
                             PaymentPanel.Visible = false;
                         }
@@ -170,7 +171,7 @@ namespace recruitment
 
                         banknameText.Text = dr.GetValue(0).ToString();
                         paymentdateText.Text = dr.GetValue(1).ToString();
-                        paymodeText.Text = dr.GetValue(2).ToString();
+                        paymodeText.SelectedValue= dr.GetValue(2).ToString();
 
                     }
                 }
@@ -240,7 +241,7 @@ namespace recruitment
 
             else
             {
-                paymodeText.Text = "SBI Collect";
+               // paymodeText.Text = "SBI Collect";
             }
 
             string vcan_reg = regidlbl.Text;
@@ -248,7 +249,7 @@ namespace recruitment
           
             string vbanknameText = banknameText.Text;
             DateTime vpaymentdateText = Convert.ToDateTime(paymentdateText.Text);
-            string vpaymodeText = paymodeText.Text;
+            string vpaymodeText = paymodeText.SelectedValue;
            
             try
             {
@@ -342,6 +343,16 @@ namespace recruitment
         protected void goBackbtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("Candidate_Home.aspx");
+        }
+
+        protected void castDrop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void paymodeText_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

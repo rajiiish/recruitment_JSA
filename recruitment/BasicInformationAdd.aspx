@@ -221,18 +221,17 @@
             </div>
              <%-- ROW3 starts--%>
         <div class="row">
-              <div class="col-md-4 mb-3">
-                <label for="pwd">Whether Person with Disability(PWD):</label>
-&nbsp;<asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="pwdDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
-                  
-                  <asp:DropDownList ID="pwdDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="pwdDrop_SelectedIndexChanged" >
-                       <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
-                       <asp:ListItem Value="Yes">Yes</asp:ListItem>
-                      <asp:ListItem Value="No">No</asp:ListItem>
-                  </asp:DropDownList>
+            
+            <div class="col-md-4 mb-3">
+                <label for="placeofbirth">Place of Birth</label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" validationgroup="basicpagegroup" runat="server" ErrorMessage="*Required"  ControlToValidate="placeofbirthtxt" ForeColor="Red" ></asp:RequiredFieldValidator>
 
-                
+                  <asp:TextBox ID="placeofbirthtxt" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>
+                            
               </div>
+              
+
+
               <div class="col-md-4 mb-3">
                 <label for="aadhaar">Aadhaar Number</label>
                  
@@ -256,28 +255,39 @@
                
               </div>
             </div>
-             <div class="row">
-                    <div class="col-md-4 mb-3">
-                <label for="placeofbirth">Place of Birth</label>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" validationgroup="basicpagegroup" runat="server" ErrorMessage="*Required"  ControlToValidate="placeofbirthtxt" ForeColor="Red" ></asp:RequiredFieldValidator>
 
-                  <asp:TextBox ID="placeofbirthtxt" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>
-                            
-              </div>
+
+             <div class="row">
                  <div class="col-md-4 mb-3">
               <div class="auto-style5">
-                <label for="pwd"> Are you an Ex-servicemen</label>
+                <label for="pwd">Essential Quaification:</label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="ArmyDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
                   
                   <asp:DropDownList ID="ArmyDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="ArmyDrop_SelectedIndexChanged"  >
                        <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
-                       <asp:ListItem Value="Yes">Yes</asp:ListItem>
-                      <asp:ListItem Value="No">No</asp:ListItem>
+                       <asp:ListItem Value="ExArmy">Ex-Servicemen</asp:ListItem>
+                      <asp:ListItem Value="JCO">JCO</asp:ListItem>
+                      <asp:ListItem Value="Para-Military">Para-Military Forces</asp:ListItem>                      
+                      <asp:ListItem Value="Others">Others</asp:ListItem>
+
                   </asp:DropDownList>
 
                 
               </div>
                      </div>
+                    <div class="col-md-4 mb-3">
+                <label for="pwd">Name of Essential Quaification:</label>
+                         <asp:TextBox ID="EssnQualficationTxt" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>
+<asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="pwdDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />               
+                  
+ <asp:RequiredFieldValidator ID="RequiredFieldValidator1" validationgroup="basicpagegroup" runat="server" ErrorMessage="*Required"  ControlToValidate="EssnQualficationTxt" ForeColor="Red" ></asp:RequiredFieldValidator>
+
+                 
+                
+              </div>
+
+                 
+
                   <div class="col-md-4 mb-3">
              <asp:Label ID="servicelbl" runat="server" Text="Period of Service (in Years)"> </asp:Label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="ArmyService" InitialValue="" validationgroup="basicpagegroup" runat="server" ForeColor="Red" /> 
@@ -291,6 +301,25 @@
               
                 
             </div>
+
+             <div class="row">
+                    <div class="col-md-4 mb-3">
+                                     <asp:Label ID="pwd" runat="server" Text="Whether Person with Disability(PWD):"> </asp:Label>
+
+                
+<asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="pwdDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />                  
+                  <asp:DropDownList ID="pwdDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="pwdDrop_SelectedIndexChanged" >
+                       <asp:ListItem Value="0">--Select--</asp:ListItem>
+                       <asp:ListItem Value="Yes">Yes</asp:ListItem>
+                      <asp:ListItem Selected="True" Value="No">No</asp:ListItem>
+                  </asp:DropDownList>
+                
+              </div>              
+                                               
+              
+                
+            </div>
+
 
         </section>
    </div>

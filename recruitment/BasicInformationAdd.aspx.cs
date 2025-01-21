@@ -595,14 +595,15 @@ namespace recruitment
 
                 ArmyService.Visible = true;
                 ArmyService.Text = "0";
-                servicelbl.Visible = false;
-                EssnQualficationTxt.Enabled = false;
-                EssnQualficationTxt.Text = "Para-Military Forces";
+                servicelbl.Visible = true;
+                EssnQualficationTxt.Enabled = true;
+                EssnQualficationTxt.Text = "";
             }
 
             else if (ArmyDrop.SelectedValue == "Others")
             {
                 ArmyService.Visible = true;
+                ArmyService.Text = "0";
                 servicelbl.Visible = true;
                 EssnQualficationTxt.Enabled = true;
                 EssnQualficationTxt.Text = "";

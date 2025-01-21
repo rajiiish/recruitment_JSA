@@ -311,7 +311,7 @@
                     <!--   Rleax cat start -->
                    <div class="row">
                        <div class="col-12">
-                           <label>*Are you claiming for age relaxation other than SC/ST/OBC?</label> &nbsp
+                           <label>*Are you claiming for age relaxation?</label> &nbsp
                 <asp:DropDownList ID="AgeRlxClaimDrop"  runat="server" AutoPostBack="True" OnSelectedIndexChanged="AgeRlxClaimDrop_SelectedIndexChanged" >
                     <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
                          <asp:ListItem Value="Yes">Yes</asp:ListItem>
@@ -326,8 +326,8 @@
                            <label>*Relaxation category (Refer Advertisement):</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <asp:DropDownList ID="AgeRlxConfDrop"  runat="server">
                     <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
+                         <asp:ListItem Value="SC/ST">SC/ST</asp:ListItem>
                          <asp:ListItem Value="Employee of CSIR or Govt">Employee of CSIR or Govt.</asp:ListItem>
-                         <asp:ListItem Value="Person With Disability">Person With Disability</asp:ListItem>
                          <asp:ListItem Value="Women / Widow / Divorced Women">Women / Widow / Divorced Women</asp:ListItem>
                     <asp:ListItem Value="Ex-Servicemen">Ex-Servicemen</asp:ListItem>
                 </asp:DropDownList>

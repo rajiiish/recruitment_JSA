@@ -9,6 +9,7 @@ using System.Net.Mail;
 using System.Drawing;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 
 
 namespace recruitment
@@ -40,16 +41,20 @@ namespace recruitment
                         {
                             username = sdr["email"].ToString();
                             password = sdr["password"].ToString();
+                            pwdlbl.Text = EncryptionHelper.Decrypt(password);
+
                         }
                     }
                     con.Close();
                 }
             }
+            string passwordDecrypt = EncryptionHelper.Decrypt(password);
+
             if (!string.IsNullOrEmpty(password))
             {
                 MailMessage mm = new MailMessage("csirmadrascomplex@gmail.com", txtEmail.Text.Trim());
                 mm.Subject = "Password Recovery";
-                mm.Body = string.Format("<br /> <h2> CSIR MADRAS COMPLEX </h2>, <h3> ONLINE APPLICATION 2024 </h3> <h4> Hi {0},<br /><br /> Your password is <strong> {1} </strong>.</h4><br /><br />Thank You. <br/> (Warning: Don't reply anything to this email)", username, password);
+                mm.Body = string.Format("<br /> <h2> CSIR MADRAS COMPLEX </h2>, <h3> ONLINE APPLICATION 2024 </h3> <h4> Hi {0},<br /><br /> Your password is <strong> {1} </strong>.</h4><br /><br />Thank You. <br/> (Warning: Don't reply anything to this email)", username, pwdlbl.Text);
                 mm.IsBodyHtml = true;
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.Host = "smtp.gmail.com";
@@ -65,7 +70,7 @@ namespace recruitment
                 smtp.Send(mm);
                 lblMessage.ForeColor = Color.Green;
                 lblMessage.Text = "Password has been sent to your email address. (Check the Spam folder in case of e-mail missing in the Inbox)";
-
+                pwdlbl.Text = passwordDecrypt.ToString();
                 //MailMessage mm = new MailMessage("cmcit@csircmc.res.in", txtEmail.Text.Trim());
                 //mm.Subject = "Password Recovery";
                 //mm.Body = string.Format("Hi {0},<br /><br />Your password is {1}.<br /><br />Thank You.", username, password);
@@ -88,6 +93,7 @@ namespace recruitment
             {
                 lblMessage.ForeColor = Color.Red;
                 lblMessage.Text = "This email address does not match our records.";
+                
             }
         }
 

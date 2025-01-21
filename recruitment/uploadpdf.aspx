@@ -133,7 +133,7 @@
            
             <asp:Label ID="phottimelbl" runat="server" Text="Label"></asp:Label>
        </asp:TableCell>  
-        <asp:TableCell> <asp:Label ID="photosucesslbl" runat="server" Font-Size="Small" Text="Upload .jpeg Photo upto 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell> <asp:Label ID="photosucesslbl" runat="server" Font-Size="Small" Text="Upload Only .jpg Photo upto 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
             <asp:Image ID="photo" runat="server" Height="150px" Width="120px" /></asp:TableCell>  
         <asp:TableCell>            
@@ -158,7 +158,7 @@
             
             <asp:Label ID="signtimelbl" runat="server" Text="Label"></asp:Label>
        </asp:TableCell>  
-         <asp:TableCell> <asp:Label ID="signsucesslbl" runat="server" Font-Size="Small" Text="Upload .jpeg Photo upto 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+         <asp:TableCell> <asp:Label ID="signsucesslbl" runat="server" Font-Size="Small" Text="Upload Only .jpg Photo upto 1MB" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
         <asp:TableCell>
             <asp:Image ID="signature" runat="server" Height="60px" Width="250px" /></asp:TableCell>  
         <asp:TableCell>              

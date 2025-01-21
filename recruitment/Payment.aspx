@@ -45,7 +45,51 @@
 
 
     <div class="container">
+        <asp:Panel ID="Panel1" runat="server">
+            <div class="row">
+                    
+                 <div class="col-1">
+                     </div>
+                     <div class="col-10">
+                        <center>
+                            <div class="card " style="width: 50rem;">
+                                <div class="card-header text-white  bg-info">Account Details</div>
+                                <div class="card-body">
 
+                                    <p class="card-text">
+                            <table class="table bg-Light">
+ 
+  <tbody>
+    <tr>
+      <th scope="row">Name of Account Holder</th>
+      <td>CSIR MADRAS COMPLEX</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Account Number</th>
+      <td>30267 725339</td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Bank Name</th>
+      <td>State Bank of India, Taramani</td>      
+    </tr>
+      <tr>
+      <th scope="row">IFSC Code </th>
+      <td>SBIN0010673</td>      
+    </tr>
+  </tbody>
+</table>
+                                        </p>
+                                    </div>
+                                </div>
+                        </center>
+                         </div>
+
+                 <div class="col-1">
+                     </div>
+                </div>
+            </asp:Panel>
         <asp:Panel ID="PaymentPanel" runat="server">
          <div class="card">
                <div class="card-body">
@@ -116,51 +160,7 @@
                   </div>
         </asp:Panel>
 
-        <asp:Panel ID="Panel1" runat="server">
-            <div class="row">
-                    
-                 <div class="col-1">
-                     </div>
-                     <div class="col-10">
-                        <center>
-                            <div class="card " style="width: 50rem;">
-                                <div class="card-header text-white  bg-info">Account Details</div>
-                                <div class="card-body">
-
-                                    <p class="card-text">
-                            <table class="table bg-Light">
- 
-  <tbody>
-    <tr>
-      <th scope="row">Name of Account Holder</th>
-      <td>CSIR MADRAS COMPLEX</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">Account Number</th>
-      <td>30267 725339</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">Bank Name</th>
-      <td>State Bank of India, Taramani</td>      
-    </tr>
-      <tr>
-      <th scope="row">IFSC Code </th>
-      <td>SBIN0010673</td>      
-    </tr>
-  </tbody>
-</table>
-                                        </p>
-                                    </div>
-                                </div>
-                        </center>
-                         </div>
-
-                 <div class="col-1">
-                     </div>
-                </div>
-            </asp:Panel>
+        
         
         <div class="row">
             <div class="col-12">
@@ -172,7 +172,7 @@
 
         <div class="row">
     <div class="col-12">
-                 <asp:Button ID="goBackbtn" CssClass="savebtncolor" runat="server" Text="Go Back to Home" causesvalidation="true" validationgroup="basicpagegroup" OnClick="goBackbtn_Click"  />
+                 <asp:Button ID="goBackbtn" CssClass="savebtncolor" runat="server" Text="Go Back to Home" OnClick="goBackbtn_Click"  />
 
     <center> 
 

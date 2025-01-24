@@ -156,7 +156,6 @@ namespace recruitment
             try
             {
                 string canregdbtext = Convert.ToString(Session["can_regno"]);
-
                 string appregnotext = Convert.ToString(Session["S_appregno"]);
 
 
@@ -213,7 +212,7 @@ namespace recruitment
                         else if (ArmyDrop.SelectedValue == "Para-Military")
                         {
 
-                            EssnQualficationTxt.Enabled = false;
+                            EssnQualficationTxt.Enabled = true;
                         }
 
                         else if (ArmyDrop.SelectedValue == "Others")

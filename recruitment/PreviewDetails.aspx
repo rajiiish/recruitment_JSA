@@ -452,7 +452,7 @@ AspCell {
     </td>
 </tr>
        <tr style="height: 10px;">
-<td style="width: 316.812px; height: 10px;" class="auto-style5"><span>Are you claiming for age relaxation other than SC/ST/OBC?</span></td>
+<td style="width: 316.812px; height: 10px;" class="auto-style5"><span>Are you claiming for age relaxation?</span></td>
 <td class="auto-style4" colspan="2" >
     <asp:Label ID="Agerelxlbl1" runat="server" Text="Label"></asp:Label><br />
     <asp:Label ID="Agerelxlbl2" runat="server" Text="Label"></asp:Label>
@@ -474,7 +474,7 @@ AspCell {
 </tr>
 <tr style="height: 25px;">
 <td class="auto-style6" colspan="3"><span class="auto-style14"><strong></strong></span> <br /> 
-    <img alt="" class="auto-style15" src="imgs/right.png" />I hereby declare that all the statements made in the application are true, complete and correct to the best of my knowledge and belief and in the event of any of the information being found false or incorrect or any ineligibility being detected before or after the selection, my candidature is liable to be cancelled and action initiated against me</td>
+    <img alt="" class="auto-style15" src="imgs/right.png" />I hereby declare that all the statements made in the application are true, complete and correct to the best of my knowledge and belief and in the event of any of the information being found false or incorrect or any ineligibility being detected before or after the selection, my candidature is liable to be cancelled and action may be initiated against me</td>
 </tr>
 
 <tr style="height: 25px;">

@@ -41,14 +41,14 @@ namespace recruitment
                         {
                             username = sdr["email"].ToString();
                             password = sdr["password"].ToString();
-                            pwdlbl.Text = EncryptionHelper.Decrypt(password);
+                            pwdlbl.Text = EncryptionHelper.Decrypt1(password);
 
                         }
                     }
                     con.Close();
                 }
             }
-            string passwordDecrypt = EncryptionHelper.Decrypt(password);
+            string passwordDecrypt = EncryptionHelper.Decrypt1(password);
 
             if (!string.IsNullOrEmpty(password))
             {

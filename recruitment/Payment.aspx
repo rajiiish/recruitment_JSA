@@ -45,6 +45,19 @@
 
 
     <div class="container">
+        <asp:Panel ID="Panel2" runat="server">
+            <div class="row">
+                     <div class="col">
+                        <center>
+                            <div class="alert alert-danger" role="alert">
+                                <p>Candidates belonging to General / OBC / EWS category are required to remit/pay application fee (non-refundable) of Rs.500/- [Rupees five hundred only] through online mode viz. RTGS/NEFT/IMPS/Debit Card/Credit Card, etc to the following account and fill up the transaction details in the prescribed columns of application. No other mode of payment will be accepted.</p>
+                                
+</div>
+                           
+                        </center>
+                     </div>
+                  </div>
+        </asp:Panel>
         <asp:Panel ID="Panel1" runat="server">
             <div class="row">
                     
@@ -55,8 +68,7 @@
                             <div class="card " style="width: 50rem;">
                                 <div class="card-header text-white  bg-info">Account Details</div>
                                 <div class="card-body">
-
-                                    <p class="card-text">
+                                    
                             <table class="table bg-Light">
  
   <tbody>
@@ -80,7 +92,7 @@
     </tr>
   </tbody>
 </table>
-                                        </p>
+                                        
                                     </div>
                                 </div>
                         </center>
@@ -90,6 +102,7 @@
                      </div>
                 </div>
             </asp:Panel>
+        <br />
         <asp:Panel ID="PaymentPanel" runat="server">
          <div class="card">
                <div class="card-body">

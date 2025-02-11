@@ -236,7 +236,8 @@ namespace recruitment
             {
                 banknameText.Text = "";
                 paymentdateText.Text = DateTime.Today.ToString("dd-MM-yyyy");
-                paymodeText.Text = "";
+                // paymodeText.Text = "";
+                AcctDetailsPanel.Visible = false;
             }
 
             else

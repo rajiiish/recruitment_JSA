@@ -18,9 +18,37 @@ namespace recruitment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           // pwdlbl.Visible = false;
         }
 
+        protected void showPwd()
+        {
+            string username = string.Empty;
+            string password = string.Empty;
+
+
+            using (SqlConnection con = MySqlConnection.Recruitmentcon())
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT email, password FROM rec_canreg WHERE email = @Email"))
+                {
+                    cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                    cmd.Connection = con;
+
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        if (sdr.Read())
+                        {
+                            username = sdr["email"].ToString();
+                            password = sdr["password"].ToString();
+                            pwdlbl.Text = EncryptionHelper.Decrypt1(password);
+
+                        }
+                    }
+                    con.Close();
+                }
+            }
+
+        }
         protected void Sendmail()
         {
 
@@ -100,6 +128,7 @@ namespace recruitment
         protected void Login_Click(object sender, EventArgs e)
         {
             Sendmail();
+           // showPwd();
         }
     }
 }

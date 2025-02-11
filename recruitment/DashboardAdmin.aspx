@@ -27,9 +27,8 @@
                  <label><strong>Post Name: </strong></label>
              <asp:DropDownList ID="DropDownList1" runat="server" Height="27px" Width="257px">
 
-                            <asp:ListItem Value="TA-CIVIL">Technical Assistant (Civil)</asp:ListItem>
-                            <asp:ListItem Value="TA-IT">Technical Assistant (IT)</asp:ListItem>
-                            <asp:ListItem Value="JSA">Junior Secretariat Assistant</asp:ListItem>
+                             <asp:ListItem Value="SA-01">Security Assistant (SA-01)</asp:ListItem>
+                            
                         </asp:DropDownList>
              <asp:DropDownList ID="SubmitteDrop" runat="server"  Height="27px" Width="57px" Visible="False">
 

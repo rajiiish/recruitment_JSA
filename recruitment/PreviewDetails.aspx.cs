@@ -500,6 +500,8 @@ namespace recruitment
                         if (paymentdatetxt == "")
                         {
                             paydatelbl.Text = "";
+
+
                         }
                         else
                         {

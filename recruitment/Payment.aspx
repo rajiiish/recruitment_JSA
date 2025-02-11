@@ -58,7 +58,7 @@
                      </div>
                   </div>
         </asp:Panel>
-        <asp:Panel ID="Panel1" runat="server">
+        <asp:Panel ID="AcctDetailsPanel" runat="server">
             <div class="row">
                     
                  <div class="col-1">

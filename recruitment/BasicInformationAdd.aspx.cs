@@ -573,7 +573,7 @@ namespace recruitment
            if (ArmyDrop.SelectedValue == "ExArmy")
             {
                 ArmyService.Visible = true;
-                ArmyService.Text = "0";
+                ArmyService.Text = "";
                 servicelbl.Visible = false;
                 EssnQualficationTxt.Enabled = false;
                 EssnQualficationTxt.Text = "Ex-Servicemen";
@@ -582,7 +582,7 @@ namespace recruitment
             else if (ArmyDrop.SelectedValue == "JCO")
             {
                 ArmyService.Visible = true;
-                ArmyService.Text = "0";
+                ArmyService.Text = "";
                 servicelbl.Visible = false;
                 EssnQualficationTxt.Enabled = false;
                 EssnQualficationTxt.Text = "JCO";
@@ -593,7 +593,7 @@ namespace recruitment
             {
 
                 ArmyService.Visible = true;
-                ArmyService.Text = "0";
+                ArmyService.Text = "";
                 servicelbl.Visible = true;
                 EssnQualficationTxt.Enabled = true;
                 EssnQualficationTxt.Text = "";
@@ -602,7 +602,7 @@ namespace recruitment
             else if (ArmyDrop.SelectedValue == "Others")
             {
                 ArmyService.Visible = true;
-                ArmyService.Text = "0";
+                ArmyService.Text = "";
                 servicelbl.Visible = true;
                 EssnQualficationTxt.Enabled = true;
                 EssnQualficationTxt.Text = "";

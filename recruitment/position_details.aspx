@@ -35,11 +35,15 @@
   <div class="card-body shadow-sm bg-white rounded">
     <h5 class="card-title">Select Post you are applying for:</h5>
     <p class="card-text">
-        <asp:DropDownList ID="PostDropDownList" class="form-control" runat="server" OnSelectedIndexChanged="PostDropDownList_SelectedIndexChanged" AutoPostBack="True" Height="35px" Width="269px">
+        <asp:DropDownList ID="PostDropDownList" class="form-control" runat="server" OnSelectedIndexChanged="PostDropDownList_SelectedIndexChanged" AutoPostBack="True" Height="36px" Width="313px">
    <asp:ListItem Value="Select">-Select-</asp:ListItem>
                
 
-             <asp:ListItem Value="SA-01">Security Assistant (SA-01)</asp:ListItem>
+        <asp:ListItem Value="JSA-GEN">Junior Secretariat Assistant(JSA-GEN)</asp:ListItem>
+        <asp:ListItem Value="JSA-FA">Junior Secretariat Assistant(JSA-F&A)</asp:ListItem>
+        <asp:ListItem Value="JSA-SP">Junior Secretariat Assistant(JSA-S&P)</asp:ListItem>
+        <asp:ListItem Value="STENO-01">Junior Stenographer(Steno)</asp:ListItem>
+
         </asp:DropDownList>
         &nbsp;<asp:Label ID="appidnolbl" runat="server" Text=""></asp:Label>
         &nbsp;<br /> </p>

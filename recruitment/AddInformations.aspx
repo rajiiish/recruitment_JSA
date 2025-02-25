@@ -250,10 +250,10 @@
                        </div>
                    </div>
 
-                    <!--  bond check start -->
+                    <!--  bond check start 
                    <hr class="solid d-none">
-                    <!--  pwd check start -->
-                   <div class="row d-none">
+                    <!--  pwd check start 
+                   <div class="row d-none">-->
                        <div class="col-12">
                            <label>* Are you a person with disability?* :</label> &nbsp
                 <asp:DropDownList ID="pwddrop"  runat="server" AutoPostBack="True" OnSelectedIndexChanged="pwddrop_SelectedIndexChanged"  >

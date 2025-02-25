@@ -72,7 +72,7 @@ namespace recruitment
             {
                 int a = Convert.ToInt32(l);
                 c = a + 1;
-                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_SP=JSA-SP+1", connection);
+                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_SP=JSA_SP+1", connection);
                 cmd1.ExecuteNonQuery();
 
             }
@@ -297,21 +297,28 @@ namespace recruitment
 
             {
 
-                qualificationlable.Text = "Ex-servicemen, JCO in Army or other Paramilitary Forces with minimum of five years experience in the work of security.";
+                qualificationlable.Text = "10+2 / XII standard or its equivalent and proficiency in computer type speed of 30 wpm in HINDI (on computer correspond to 9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
             }
 
             else if (PostDropDownList.SelectedIndex == 2)
 
             {
                 
-                qualificationlable.Text = "Diploma in Electronics/Electronics & Communication/IT/Computer Science Engineering from a recognized institute.";
+                qualificationlable.Text = "10+2 / XII standard or its equivalent with Accountancy as one of the subjects and proficiency in computer type speed and in using computer @ 35 wpm in English OR 30 wpm in Hindi (on computer correspond to 10500 KDPH/9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
             }
 
             else if (PostDropDownList.SelectedIndex == 3)
 
             {
 
-                qualificationlable.Text = "i)12th pass or equivalent graduation from a recognised college/ university <br/> ii) The typing speed must be 35W.P.M in English and 30 W.P.M in Hindi.";
+                qualificationlable.Text = "10+2 / XII Standard or its equivalent and proficiency in computer type speed in using computer speed of 30 wpm in Hindi (on computer correspond to 10500 KDPH/9000KDPH on an average of 5 key depression for each word){ Time allowed 10 mts}";
+            }
+
+            else if (PostDropDownList.SelectedIndex == 3)
+
+            {
+
+                qualificationlable.Text = "10+2 / XII standard or its equivalent with Accountancy as one of the subjects and proficiency in computer type speed and in using computer @ 35 wpm in English OR 30 wpm in Hindi (on computer correspond to 10500 KDPH/9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
             }
         }
 
@@ -322,6 +329,7 @@ namespace recruitment
 
             Session["S_appregno"] = GridView1.Rows[rowindex].Cells[3].Text;
             Session["postname"] = GridView1.Rows[rowindex].Cells[2].Text;
+            Session["pcode"] = GridView1.Rows[rowindex].Cells[1].Text;
 
             Response.Redirect("Candidate_Home.aspx");
           //  Response.Redirect("BasicinformationADD.aspx");

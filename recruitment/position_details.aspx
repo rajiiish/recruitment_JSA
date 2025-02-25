@@ -35,14 +35,14 @@
   <div class="card-body shadow-sm bg-white rounded">
     <h5 class="card-title">Select Post you are applying for:</h5>
     <p class="card-text">
-        <asp:DropDownList ID="PostDropDownList" class="form-control" runat="server" OnSelectedIndexChanged="PostDropDownList_SelectedIndexChanged" AutoPostBack="True" Height="36px" Width="313px">
+        <asp:DropDownList ID="PostDropDownList" class="form-control" runat="server" OnSelectedIndexChanged="PostDropDownList_SelectedIndexChanged" AutoPostBack="True" Height="35px" Width="367px">
    <asp:ListItem Value="Select">-Select-</asp:ListItem>
                
 
-        <asp:ListItem Value="JSA-GEN">Junior Secretariat Assistant(JSA-GEN)</asp:ListItem>
-        <asp:ListItem Value="JSA-FA">Junior Secretariat Assistant(JSA-F&A)</asp:ListItem>
-        <asp:ListItem Value="JSA-SP">Junior Secretariat Assistant(JSA-S&P)</asp:ListItem>
-        <asp:ListItem Value="STENO-01">Junior Stenographer(Steno)</asp:ListItem>
+        <asp:ListItem Value="JSA">Junior Secretariat Assistant(General)-Hindi</asp:ListItem>
+        <asp:ListItem Value="JFA">Junior Secretariat Assistant(F&A)</asp:ListItem>
+        <asp:ListItem Value="JSP">Junior Secretariat Assistant(Stores&Purchase)</asp:ListItem>
+        <asp:ListItem Value="JSS">Junior Stenographer</asp:ListItem>
 
         </asp:DropDownList>
         &nbsp;<asp:Label ID="appidnolbl" runat="server" Text=""></asp:Label>
@@ -66,9 +66,9 @@
           </div>
        </div>
       <div class="md-col-6">
- <div class="card background-color:white text-Green" style="width: 30rem; height: 15rem;">
+ <div class="card background-color:white text-Green" style="width: 35rem; height: 15rem;">
      <div class="card-header text-blue"><strong><asp:Label ID="Label2" runat="server" Text="Mandatory Qualification" ForeColor="Maroon"></asp:Label> </strong></div>
-  &nbsp;<div class="card-body shadow-sm bg-white rounded">
+  <div class="card-body shadow-sm bg-white rounded">
     <h5 class="card-title">Post Qualification Required to Apply</h5>
     <p class="card-text">
         <asp:Label ID="qualificationlable" runat="server" Text="qualification"></asp:Label>

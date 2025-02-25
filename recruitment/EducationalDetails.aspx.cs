@@ -1677,16 +1677,18 @@ namespace recruitment
             {
                 Response.Write("<script> alert ('Enter 10th or Equivalent Details');</script>");
             }
-            //else if (hscRow.Visible == false)
-            //{
-            //    Response.Write("<script> alert ('Enter 12th or Equivalent Details');</script>");
 
-            //}
-            else if (((applyhpostlbl.Text == "Technical Assistant (IT)") || (applyhpostlbl.Text == "Technical Assistant (Civil)")) && ((dipRow.Visible == false)))
+            else if ((hscRow.Visible == false) && (dipRow.Visible == false))
             {
-                Response.Write("<script> alert ('Enter Diploma or Equivalent Details');</script>");
+                Response.Write("<script> alert ('Enter 12th / Diploma or Equivalent Details');</script>");
 
             }
+
+            //else if (((applyhpostlbl.Text == "Technical Assistant (IT)") || (applyhpostlbl.Text == "Technical Assistant (Civil)")) && ((dipRow.Visible == false)))
+            //{
+            //    Response.Write("<script> alert ('Enter Diploma or Equivalent Details');</script>");
+
+            //}
             else 
             {
                 AddPHDetails();

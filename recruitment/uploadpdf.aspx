@@ -348,7 +348,7 @@
 
   <asp:TableRow ID="ExServicemanTableRow" runat="server" class="table table-bordered">
          <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>  
-       <asp:TableCell>Essential Qualification Documents (eg. Ex-Servicemen,JCO, Para-Military Forces., etc.)</asp:TableCell>  
+       <asp:TableCell>Add Ex-Servicemen Document</asp:TableCell>  
         
        <asp:TableCell>  <asp:FileUpload ID="ExServicemanFileUpload" accept=".pdf" runat="server" /></asp:TableCell>  
         <asp:TableCell> <asp:Button class="btn btn-success" ID="ExServiceman_btn" runat="server" Text="Upload" OnClick="ExServiceman_btn_Click" /></asp:TableCell>  

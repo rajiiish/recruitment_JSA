@@ -13,6 +13,11 @@
         font-size: 100%;
         }
        
+        .auto-style3 {
+            width: 23px;
+            height: 21px;
+        }
+
         .savebtncolor 
 {
    background-color: dodgerblue; 
@@ -24,17 +29,12 @@
    color: white;
 }
        
-        .auto-style5 {
-            left: 0px;
-            top: 0px;
-        }
-       
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    m<script type="text/javascript">
+    <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function(event) { 
             var scrollpos = localStorage.getItem('scrollpos');
             if (scrollpos) window.scrollTo(0, scrollpos);
@@ -43,12 +43,17 @@
         window.onbeforeunload = function(e) {
             localStorage.setItem('scrollpos', window.scrollY);
         };
-    </script><%-- title start--%><div class="container">
+    </script>
+
+    
+         <%-- title start--%>
+    <div class="container">
         <div class="bg-light  text-center">
         <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
-        &nbsp;(fields marked with * are mandatory) PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
-        <p>Candidate Registration Number: <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label> </p> 
-     <p>  Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
+        Personal Details (fields marked with * are mandatory)</p>
+        <p >Candidate Registration Number:
+              <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
+       Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
             Post Applying For: <asp:Label ID="applyhpostlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label>  </p>
       </div>
 
@@ -56,9 +61,9 @@
         <%-- title ends--%>
                
 
-      <%-- Stepbystep start --%>
+      <%-- Stepbystep start--%>
         
-    <!--    <div class="container ">
+        <div class="container ">
             <div class="card bg-light">
                <div class="card-body"> 
             <table class="table titlemenufont">
@@ -76,11 +81,11 @@
                  <td > <strong><img src="imgs/6.PNG" class="auto-style3" /></strong>FILES UPLOAD<strong><img src="imgs/icons8_forward_32px.PNG" class="auto-style3" /></strong></td> 
                
     </tr>
-  </tbody> --%> 
+  </tbody>
 </table>
                       </div>
          </div>
-            </div>-->
+            </div>
       <%-- Stepbystep ends--%>             
       
 
@@ -101,7 +106,7 @@
     </asp:ScriptManager>
         <div class="row">
               <div class="col-md-4 mb-3">
-                <label for="fullname">Full Name</label>
+                <label for="fullname">Full name</label>
                   
 
                   <asp:TextBox ID="fullnametxt" runat="server" class="form-control" placeholder="" value=""  ReadOnly="True"></asp:TextBox>
@@ -110,7 +115,7 @@
               </div>
               
                 <div class="col-md-4 mb-3">
-                <label for="fathername">Father&nbsp;Name </label>
+                <label for="fathername">Father / Husband Name </label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator4" validationgroup="basicpagegroup" runat="server" ErrorMessage="*Required"  ControlToValidate="fathernameText" ForeColor="Red" ></asp:RequiredFieldValidator>
 
                     <asp:TextBox ID="fathernameText" runat="server" class="form-control"  placeholder="" value="" ></asp:TextBox>
@@ -119,7 +124,7 @@
               
               </div>
              <div class="col-md-4 mb-3">
-                <label for="mothername">Mother Name</label>
+                <label for="mothername">Mother name</label>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator9" validationgroup="basicpagegroup" runat="server" ErrorMessage="*Required"  ControlToValidate="mothernameText" ForeColor="Red" ></asp:RequiredFieldValidator>
 
                   <asp:TextBox ID="mothernameText" runat="server" class="form-control" placeholder="" value=""></asp:TextBox>
@@ -135,17 +140,16 @@
              <div class="col-md-4 mb-3">
                 <label for="dob">Date of Birth</label>
                   <asp:RequiredFieldValidator ID="RequiredFieldValidatorDob" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="dobText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
-                 
-                <%--    <asp:TextBox ID="dobText1" runat="server"  Format="dd-MM-yyyy" class="form-control" TextMode="Date" placeholder="dd-MM-yyyy" value="" required></asp:TextBox>--%>
-                  <asp:TextBox ID="dobText" class="form-control" Format="dd-MM-yyyy" placeholder="dd-MM-yyyy" runat="server" MaxLength="10" ></asp:TextBox> 
                   <asp:RegularExpressionValidator ID="RegularExpressionValidatorDob" runat="server" ErrorMessage="Invalid Date Format" ControlToValidate="dobText" validationgroup="basicpagegroup"
                     ForeColor="Red" ValidationExpression="(^((((0[1-9])|([1-2][0-9])|(3[0-1]))|([1-9]))-(((0[1-9])|(1[0-2]))|([1-9]))-(([0-9]{2})|(((19)|([2]([0]{1})))([0-9]{2}))))$)"></asp:RegularExpressionValidator>
+                <%--    <asp:TextBox ID="dobText1" runat="server"  Format="dd-MM-yyyy" class="form-control" TextMode="Date" placeholder="dd-MM-yyyy" value="" required></asp:TextBox>--%>
+                  <asp:TextBox ID="dobText" class="form-control" Format="dd-MM-yyyy" placeholder="dd-MM-yyyy" runat="server" MaxLength="10" ></asp:TextBox> 
+                 
                  
                      
                   <ajaxToolkit:CalendarExtender ID="CalendarExtender1" PopupButtonID="dobText" TargetControlID="dobText" runat="server" Format="dd-MM-yyyy"/>
                
               </div>
-
               <div class="col-md-4 mb-3">
                 <label for="gender">Gender</label> <asp:Label ID="genvallbl" runat="server" Text="" ForeColor="Red"></asp:Label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="genderDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
@@ -154,7 +158,7 @@
                     <asp:ListItem Selected="True"  Value="0">--Select--</asp:ListItem>
                    <asp:ListItem Value="Male">Male</asp:ListItem>
                    <asp:ListItem Value="Female" >Female</asp:ListItem>
-                      <asp:ListItem Value="Thired Gender">Third Gender</asp:ListItem>
+                      <asp:ListItem Value="Thired Gender">Thired Gender</asp:ListItem>
                   
 
                   
@@ -163,7 +167,7 @@
                 
               </div>
                 <div class="col-md-4 mb-3">
-                <label for="cast">Caste Category</label>
+                <label for="cast">Cast Category</label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="castDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
 
                      <asp:DropDownList ID="castDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="castDrop_SelectedIndexChanged" >
@@ -220,16 +224,18 @@
             </div>
              <%-- ROW3 starts--%>
         <div class="row">
-            
-            <div class="col-md-4 mb-3">
-                <label for="placeofbirth">Place of Birth</label>
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" validationgroup="basicpagegroup" runat="server" ErrorMessage="*Required"  ControlToValidate="placeofbirthtxt" ForeColor="Red" ></asp:RequiredFieldValidator>
+              <div class="col-md-4 mb-3">
+                <label for="pwd">PWD Category</label>
+                  <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="pwdDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
+                  
+                  <asp:DropDownList ID="pwdDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="pwdDrop_SelectedIndexChanged" >
+                       <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
+                       <asp:ListItem Value="Yes">Yes</asp:ListItem>
+                      <asp:ListItem Value="No">No</asp:ListItem>
+                  </asp:DropDownList>
 
-                  <asp:TextBox ID="placeofbirthtxt" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>
-                            
+                
               </div>
-              
-
 
               <div class="col-md-4 mb-3">
                 <label for="aadhaar">Aadhaar Number</label>
@@ -242,7 +248,7 @@
                                  
               </div>
                 <div class="col-md-4 mb-3">
-                <label for="citizen">Are you a Citizen of India by Birth</label>
+                <label for="citizen">Are you a Indian Citizen</label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="citizenDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
 
                     <asp:DropDownList ID="citizenDrop" runat="server" class="form-control" placeholder="" value="" >
@@ -255,59 +261,45 @@
               </div>
             </div>
 
-
              <div class="row">
-                 <div class="col-md-4 mb-3">
-                                     <asp:Label ID="pwd" runat="server" Text="Whether Person with Disability(PWD):"> </asp:Label>
+                    <div class="col-md-4 mb-3">
+                <label for="placeofbirth">Place of Birth</label>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator10" validationgroup="basicpagegroup" runat="server" ErrorMessage="*Required"  ControlToValidate="placeofbirthtxt" ForeColor="Red" ></asp:RequiredFieldValidator>
 
-                
-<asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="pwdDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />                  
-                  <asp:DropDownList ID="pwdDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="pwdDrop_SelectedIndexChanged" >
-                       <asp:ListItem Value="0">--Select--</asp:ListItem>
-                       <asp:ListItem Value="Yes">Yes</asp:ListItem>
-                      <asp:ListItem Selected="True" Value="No">No</asp:ListItem>
-                  </asp:DropDownList>
-                
+                  <asp:TextBox ID="placeofbirthtxt" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>
+              
+
+                <div class="invalid-feedback">
+                  Valid Place of Birth is required.
+                </div>
               </div>
-
-                 <div class="col-md-4 mb-3">
-              <div class="auto-style5">
-                <label for="ArmyDropLable">Are you a Ex-Servicemen:</label>
+              <div class="col-md-4 mb-3">
+                <label for="pwd"> Are you an Ex-Servicemen</label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="ArmyDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
                   
                   <asp:DropDownList ID="ArmyDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="ArmyDrop_SelectedIndexChanged"  >
                        <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
                        <asp:ListItem Value="Yes">Yes</asp:ListItem>
                       <asp:ListItem Value="No">No</asp:ListItem>
-                     
-
                   </asp:DropDownList>
 
                 
               </div>
-                     </div>            
-                    
-
-                 
 
                   <div class="col-md-4 mb-3">
              <asp:Label ID="servicelbl" runat="server" Text="Period of Service (in Years)"> </asp:Label>
-                  <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="ArmyService" InitialValue="" validationgroup="basicpagegroup" runat="server" ForeColor="Red" /> 
+                  <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="ArmyService" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
+                  <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="ArmyService" 
+                     ValidationExpression="^[0-9]+$" runat="server"  ValidationGroup="basicpagegroup" ErrorMessage="enter numbers."></asp:RegularExpressionValidator>
                   <asp:TextBox ID="ArmyService" runat="server" class="form-control" maxlength="2" placeholder="" value="" ></asp:TextBox>
-                      <br />
-                                   <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="ArmyService" ValidationExpression="^[0-9]+$" runat="server" validationgroup="basicpagegroup" ForeColor="Red" ErrorMessage="enter numbers."></asp:RegularExpressionValidator>
-
+                 
                 
               </div>
-                              
+
+                
               
                 
             </div>
-
-             <div class="row">      
-                
-            </div>
-
 
         </section>
    </div>
@@ -318,7 +310,87 @@
 
    
 </div>
+     <%-- Main Section ends.--%>  
     
+
+          <%-- Payment Section starts--%>  
+    <!--
+        <div class="container ">
+            <asp:Panel ID="PaymentPanel" runat="server">
+            <div class="row">                
+                <div class="col-12">
+      <div class="card bg-light">
+               <div class="card-body">  
+               <center>    <h6 class="card-header text-white  bg-info ">Application Fee Payment Details</h6></center>
+                   <br />
+                     <div class="row">
+        <div class="col-12 ">
+           
+         
+            
+           <div class="row">
+
+                <div class="col-4">
+                    <label for="bankname">Bank Reference Number</label>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="banknameText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
+
+                 <asp:TextBox ID="banknameText" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>                 
+
+                 </div>
+                <div class="col-4">
+                    <label for="paydate">Payment Date</label>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidatorPayDate" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="paymentdateText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
+
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidatorPayDate" runat="server" ErrorMessage="Invalid Date Format" ControlToValidate="paymentdateText" validationgroup="basicpagegroup"
+                    ForeColor="Red" ValidationExpression="(^((((0[1-9])|([1-2][0-9])|(3[0-1]))|([1-9]))-(((0[1-9])|(1[0-2]))|([1-9]))-(([0-9]{2})|(((19)|([2]([0]{1})))([0-9]{2}))))$)"></asp:RegularExpressionValidator>
+
+                  
+                    <asp:TextBox ID="paymentdateText" class="form-control" Format="dd-MM-yyyy" placeholder="dd-MM-yyyy" runat="server" MaxLength="10" ></asp:TextBox> 
+
+              
+
+                  <ajaxToolkit:CalendarExtender ID="CalendarExtenderPayDate" PopupButtonID="paymentdateText" TargetControlID="paymentdateText" runat="server" Format="dd-MM-yyyy"/>
+               
+                 </div>
+                <div class="col-4">
+                    <label for="paymode">Mode of Payment</label>
+                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="paymodeText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
+
+                 <asp:TextBox ID="paymodeText" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>                 
+
+               
+                 </div>
+                
+                <div class="row"><br />
+                   <div class="col-12"><br />
+              &nbsp &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp        &nbsp  &nbsp   &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  <asp:Label ID="paymentrelaxlbl" runat="server" Text="*Payment is excempted for Female, SC, ST, Csir emp" ForeColor="#009933"></asp:Label>
+                       </div>
+                 </div>
+
+            </div>
+            
+             </div>
+                          </div>
+
+                   </div>
+                   </div>
+          </div>             
+
+            </div>
+                 </asp:Panel>
+            </div>  -->
+          <%-- Payment Section Ends--%>   
+                        
+
+               <%-- Two page ends--%>  
+            
+
+     
+        <br />
+      
+        
+   
+
 
 
      <%-- Address Section start.--%>  
@@ -414,7 +486,7 @@
         </div>
     <div class="row">
     <div class="col-12">
-                         <asp:Button ID="goBackbtn" CssClass="savebtncolor" validationgroup="NONE" runat="server" Text="Go Back to Home"  OnClick="goBackbtn_Click"  />
+                         <asp:Button ID="goBackbtn" CssClass="savebtncolor" runat="server" Text="Go Back to Home" causesvalidation="true" validationgroup="basicpagegroup" OnClick="goBackbtn_Click"  />
 
     <center> 
 

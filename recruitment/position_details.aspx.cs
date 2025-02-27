@@ -19,7 +19,9 @@ namespace recruitment
             if ((Session["email"] != null) && (Session["password"] != null))
             {
               regid();
-               
+
+                //GridView1.UseAccessibleHeader = true;
+                //GridView1.HeaderRow.TableSection = TableRowSection.TableHeader;
                 //Response.Redirect("userlogin.aspx");
             }
             else

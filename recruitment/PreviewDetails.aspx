@@ -285,7 +285,7 @@ AspCell {
       
                                                         
                                                                 <asp:Table ID="Table1"  Height="317px" Width="757px" BackColor="White" BorderColor="#336666"  BorderStyle="Double" BorderWidth="3px"  Font-Bold="False" Font-Size="10pt" GridLines="Horizontal" runat="server" CssClass="AspCell" >
-                                                                    <asp:TableHeaderRow class="table table-bordered">
+                                                                    <asp:TableHeaderRow class="table font-weight-bold table-bordered">
                                                                         <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Qualification</asp:TableHeaderCell>
                                                                          <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Group Name</asp:TableHeaderCell>
                                                                          <asp:TableHeaderCell BackColor="#336666" ForeColor="White" > Main Subject</asp:TableHeaderCell>

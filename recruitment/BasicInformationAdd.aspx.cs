@@ -58,7 +58,8 @@ namespace recruitment
             {
                 castDrop.SelectedValue = "EWS";
                 castDrop.Enabled = false;
-
+                castLbl.ForeColor = System.Drawing.Color.Green;
+                castLbl.Text = "This Post is Reserved for EWS only";
                 castDrop.CssClass = "form-control";
             }
 

@@ -163,7 +163,8 @@
                 
               </div>
                 <div class="col-md-4 mb-3">
-                <label for="cast">Caste Category</label>
+               
+                    <asp:Label ID="castLbl" runat="server" Text="Caste Category"></asp:Label>
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="castDrop" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
 
                      <asp:DropDownList ID="castDrop" runat="server" class="form-control" placeholder="" value="" AutoPostBack="True" OnSelectedIndexChanged="castDrop_SelectedIndexChanged" >

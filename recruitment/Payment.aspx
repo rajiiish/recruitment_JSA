@@ -141,11 +141,9 @@
                  <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="paymodeText" InitialValue="0" validationgroup="basicpagegroup" runat="server" ForeColor="Red" />
 
                      <asp:DropDownList ID="paymodeText" runat="server" class="form-control" placeholder="" value="" AutoPostBack="False" OnSelectedIndexChanged="paymodeText_SelectedIndexChanged" >
-                          <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
-                          <asp:ListItem Value="RTGS">RTGS</asp:ListItem>
-                          <asp:ListItem Value="NEFT">NEFT</asp:ListItem>
-                          <asp:ListItem Value="DebitCard">Debit Card</asp:ListItem>
-                          <asp:ListItem Value="CreditCard">Credit Card</asp:ListItem>                          
+                          
+                         <asp:ListItem Selected="True" Value="SBI Collect">SBI Collect</asp:ListItem>
+                                                 
                      </asp:DropDownList>
                
                  </div>

@@ -328,7 +328,7 @@
                     <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
                          <asp:ListItem Value="SC/ST">SC/ST</asp:ListItem>
                          <asp:ListItem Value="Employee of CSIR or Govt">Employee of CSIR or Govt.</asp:ListItem>
-                         <asp:ListItem Value="Women / Widow / Divorced Women">Women / Widow / Divorced Women</asp:ListItem>
+                         <asp:ListItem Value="Widow / Divorced Women">Widow / Divorced Women</asp:ListItem>
                     <asp:ListItem Value="Ex-Servicemen">Ex-Servicemen</asp:ListItem>
                 </asp:DropDownList>
                 <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="AgeRlxConfDrop" InitialValue="0" validationgroup="otherinfogroup" runat="server" ForeColor="Red" />

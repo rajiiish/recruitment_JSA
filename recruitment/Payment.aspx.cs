@@ -317,6 +317,9 @@ namespace recruitment
                             else
                             {
                                 PaymentErrorlbl.Text = "Payment Reference Details already filled for another post.";
+                               
+
+                                Response.Write("<script> alert ('Payment Reference Details already filled for another post.');</script>");
 
                             }
 

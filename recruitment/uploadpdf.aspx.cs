@@ -63,6 +63,10 @@ namespace recruitment
                 
                 photofileexitcheck();
                 signfileexitcheck();
+
+                WidowPDF1fileexitcheck();
+
+                WidowPDF2fileexitcheck();
                 //  photoload();
             }
         }
@@ -124,7 +128,7 @@ namespace recruitment
 
 
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT SSLC,HSC,ITI,DIPLOMA,UG,PG,PHD,IsExperienced,ExArmy,PermentGovtStaff,pwd, IsUploadComplete,cast FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+                string sql1 = "SELECT SSLC,HSC,ITI,DIPLOMA,UG,PG,PHD,IsExperienced,ExArmy,PermentGovtStaff,pwd, ClaimingAgeRelax, AgeRelaxCatagory, IsUploadComplete,cast FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
 
                 SqlCommand command = new SqlCommand(sql1, connection);
                 command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
@@ -149,8 +153,12 @@ namespace recruitment
                         string ExServicemanyesno = dr.GetValue(8).ToString();
                         string NOCyesno = dr.GetValue(9).ToString();
                         string PWDyesno = dr.GetValue(10).ToString();
-                        string IsComplete = dr.GetValue(11).ToString();
-                        string Communityyesno = dr.GetValue(12).ToString();
+                        string AgeRelaxyesno = dr.GetValue(11).ToString();
+                        string AgeRelaxCategory = dr.GetValue(12).ToString();
+                        string IsComplete = dr.GetValue(13).ToString();
+                        string Communityyesno = dr.GetValue(14).ToString();
+
+
                         //if (IsComplete == "Yes")
                         //{
                         //    Response.Redirect("PreviewDetails.aspx");
@@ -281,7 +289,23 @@ namespace recruitment
 
                             PWDTableRow.Visible = false;
                         }
+
+
                         
+                         if ((AgeRelaxyesno == "Yes") && (AgeRelaxCategory == "Widow/Divorced"))
+                        {
+                            WidowDoc1Rwo.Visible = true;
+                            WidowDoc2Rwo.Visible = true;
+
+                        }
+                        else if (PWDyesno == "No")
+                        {
+                            WidowDoc1Rwo.Visible = false;
+                            WidowDoc2Rwo.Visible = false;
+
+                        }
+
+
                     }
                 }
                 else
@@ -760,6 +784,67 @@ namespace recruitment
 
             }
         }
+
+        public void WidowPDF1fileexitcheck()
+        {
+            string pdfname = Server.MapPath("~/files/" + regidlbl.Text.ToString() + "_widwowDivorce1" + ".pdf");
+            ViewState["pdfname"] = pdfname;
+            if (File.Exists(pdfname))
+            {
+
+                WidowPdfDelete1.Visible = true;
+                WidowPdfView1.Visible = true;
+                WidowFileUpload1.Visible = true;
+                WidowBtn1.Visible = true;
+                WidowFileUpload1.Enabled = false;
+                WidowBtn1.Enabled = false;
+                WidowLbl1.Text = "File Uploaded Sucessfully";
+
+            }
+            else
+            {
+                WidowPdfDelete1.Visible = false;
+                WidowPdfView1.Visible = false;
+                WidowFileUpload1.Enabled = true;
+                WidowBtn1.Enabled = true;
+                //  FileUpload2.Visible = false;
+                // HSC_btn.Visible = false;
+
+                // Label1.Text = "You are already Deleted File from Server, Please upload again.";
+
+            }
+        }
+
+        public void WidowPDF2fileexitcheck()
+        {
+            string pdfname = Server.MapPath("~/files/" + regidlbl.Text.ToString() + "_widwowDivorce2" + ".pdf");
+            ViewState["pdfname"] = pdfname;
+            if (File.Exists(pdfname))
+            {
+
+                WidowPdfDelete2.Visible = true;
+                WidowPdfView2.Visible = true;
+                WidowFileUpload2.Visible = true;
+                WidowBtn2.Visible = true;
+                WidowFileUpload2.Enabled = false;
+                WidowBtn2.Enabled = false;
+                WidowLbl2.Text = "File Uploaded Sucessfully";
+
+            }
+            else
+            {
+                WidowPdfDelete2.Visible = false;
+                WidowPdfView2.Visible = false;
+                WidowFileUpload2.Enabled = true;
+                WidowBtn2.Enabled = true;
+                //  FileUpload2.Visible = false;
+                // HSC_btn.Visible = false;
+
+                // Label1.Text = "You are already Deleted File from Server, Please upload again.";
+
+            }
+        }
+
         public void photofileexitcheck()
         {
 
@@ -2193,9 +2278,178 @@ namespace recruitment
             }
         }
 
+        protected void WidowBtn1_Click(object sender, EventArgs e)
+        {
+            string regno = regidlbl.Text;
+            string widwowDivorce1 = "_widwowDivorce1";
+            string newwidwowDivorce1 = regno + widwowDivorce1;
+            string textmobile = newwidwowDivorce1;
+            if (WidowFileUpload1.HasFile == false)
+            {
+                // No file uploaded!
+                WidowLbl1.Text = emsg;
+            }
+
+            else if (WidowFileUpload1.HasFile)
+            {
+                int fileSize = WidowFileUpload1.PostedFile.ContentLength;
+
+                if (fileSize < 1100000)
+                {
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(WidowFileUpload1.FileName);
+                    string fileExtension = Path.GetExtension(WidowFileUpload1.FileName);
+
+                    if (fileExtension == ".pdf")
+                    {
+                        fileNameWithoutExtension = textmobile;
+                        WidowFileUpload1.PostedFile.SaveAs(Server.MapPath("~/files/" + fileNameWithoutExtension + fileExtension));
+                        Response.Redirect(Request.Url.AbsoluteUri);
+                        WidowLbl1.Text = smsg;
+                        //  signsucesslbl.ForeColor = System.Drawing.Color.Green;
+                        WidowPDF1fileexitcheck();
+                    }
+                    else
+                    {
+                        WidowLbl1.Text = pdfonly;
+                    }
+
+                }
+
+                else
+                {
+                    WidowLbl1.Text = maxpdf;
+                }
+            }
+        }
+
+        protected void WidowBtn2_Click(object sender, EventArgs e)
+        {
+            string regno = regidlbl.Text;
+            string widwowDivorce2 = "_widwowDivorce2";
+            string newwidwowDivorce2 = regno + widwowDivorce2;
+            string textmobile = newwidwowDivorce2;
+            if (WidowFileUpload2.HasFile == false)
+            {
+                // No file uploaded!
+                WidowLbl2.Text = emsg;
+            }
+
+            else if (WidowFileUpload2.HasFile)
+            {
+                int fileSize = WidowFileUpload2.PostedFile.ContentLength;
+
+                if (fileSize < 1100000)
+                {
+                    string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(WidowFileUpload2.FileName);
+                    string fileExtension = Path.GetExtension(WidowFileUpload2.FileName);
+
+                    if (fileExtension == ".pdf")
+                    {
+                        fileNameWithoutExtension = textmobile;
+                        WidowFileUpload2.PostedFile.SaveAs(Server.MapPath("~/files/" + fileNameWithoutExtension + fileExtension));
+                        Response.Redirect(Request.Url.AbsoluteUri);
+                        WidowLbl2.Text = smsg;
+                        //  signsucesslbl.ForeColor = System.Drawing.Color.Green;
+                        WidowPDF2fileexitcheck();
+                    }
+                    else
+                    {
+                        WidowLbl2.Text = pdfonly;
+                    }
+
+                }
+
+                else
+                {
+                    WidowLbl2.Text = maxpdf;
+                }
+            }
+        }
+
+
+        protected void WidowPdfView1_pdfview_Click(object sender, ImageClickEventArgs e)
+        {
+            string FilePath = Server.MapPath("files/" + regidlbl.Text.ToString() + "_widwowDivorce1" + ".pdf");
+            WebClient User = new WebClient();
+            Byte[] FileBuffer = User.DownloadData(FilePath);
+            if (FileBuffer != null)
+            {
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                Response.BinaryWrite(FileBuffer);
+            }
+        }
+
+        protected void WidowPdfDelete1_Click(object sender, ImageClickEventArgs e)
+        {
+            string pdfname = Server.MapPath("~/files/" + regidlbl.Text.ToString() + "_widwowDivorce1" + ".pdf");
+            ViewState["pdfname"] = pdfname;
+            if (File.Exists(pdfname))
+            {
+
+                WidowPdfDelete1.Visible = true;
+                WidowPdfView1.Visible = true;
+                File.Delete(pdfname);
+                stepsCompleteDelete();
+
+                WidowPDF1fileexitcheck();
+                Response.Redirect(Request.Url.AbsoluteUri);
+                WidowLbl1.Text = "Upload only PDF ";
+
+            }
+            else
+            {
+                WidowPdfDelete1.Visible = false;
+                WidowPdfView1.Visible = false;
+                WidowLbl1.Text = deletemsg;
+
+            }
+        }
+
+        
+        protected void WidowPdfView2_pdfview_Click(object sender, ImageClickEventArgs e)
+        {
+            string FilePath = Server.MapPath("files/" + regidlbl.Text.ToString() + "_widwowDivorce2" + ".pdf");
+            WebClient User = new WebClient();
+            Byte[] FileBuffer = User.DownloadData(FilePath);
+            if (FileBuffer != null)
+            {
+                Response.ContentType = "application/pdf";
+                Response.AddHeader("content-length", FileBuffer.Length.ToString());
+                Response.BinaryWrite(FileBuffer);
+            }
+        }
+
+        protected void WidowPdfDelete2_Click(object sender, ImageClickEventArgs e)
+        {
+            string pdfname = Server.MapPath("~/files/" + regidlbl.Text.ToString() + "_widwowDivorce2" + ".pdf");
+            ViewState["pdfname"] = pdfname;
+            if (File.Exists(pdfname))
+            {
+
+                WidowPdfDelete2.Visible = true;
+                WidowPdfView2.Visible = true;
+                File.Delete(pdfname);
+                stepsCompleteDelete();
+
+                WidowPDF2fileexitcheck();
+                Response.Redirect(Request.Url.AbsoluteUri);
+                WidowLbl2.Text = "Upload only PDF ";
+
+            }
+            else
+            {
+                WidowPdfDelete2.Visible = false;
+                WidowPdfView2.Visible = false;
+                WidowLbl2.Text = deletemsg;
+
+            }
+        }
         protected void goBackbtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("Candidate_Home.aspx");
         }
+
+       
     }
 }

@@ -40,23 +40,24 @@ namespace recruitment
            
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
 
-                SqlCommand cmd = new SqlCommand("SELECT JSA_GEN, JSA_FA, JSA_SP, STENO FROM appno ", connection);
+                SqlCommand cmd = new SqlCommand("SELECT JSA_H_OBC, JSA_FA_SC, JSA_FA, JSA_SP_EWS,JR_STENO FROM appno ", connection);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da1.Fill(ds);
                 //  string i = ds.Tables[0].Rows[0]["applicant_count"].ToString();
-                string j = ds.Tables[0].Rows[0]["JSA_GEN"].ToString();
-                string k = ds.Tables[0].Rows[0]["JSA_FA"].ToString();
-                string l = ds.Tables[0].Rows[0]["JSA_SP"].ToString();
-                string m = ds.Tables[0].Rows[0]["STENO"].ToString();
+                string j = ds.Tables[0].Rows[0]["JSA_H_OBC"].ToString();
+                string k = ds.Tables[0].Rows[0]["JSA_FA_SC"].ToString();
+                string l = ds.Tables[0].Rows[0]["JSA_FA"].ToString();
+                string m = ds.Tables[0].Rows[0]["JSA_SP_EWS"].ToString();
+                string n = ds.Tables[0].Rows[0]["JR_STENO"].ToString();
 
 
-                if (PostDropDownList.SelectedIndex == 1)
+            if (PostDropDownList.SelectedIndex == 1)
                 {
                     int a = Convert.ToInt32(j);
                      c = a + 1;
 
-                    SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_GEN=JSA_GEN+1", connection);
+                    SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_H_OBC=JSA_H_OBC+1", connection);
                     cmd1.ExecuteNonQuery();
 
                 }
@@ -65,7 +66,7 @@ namespace recruitment
             {
                 int a = Convert.ToInt32(k);
                 c = a + 1;
-                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_FA=JSA_FA+1", connection);
+                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_FA_SC=JSA_FA_SC+1", connection);
                 cmd1.ExecuteNonQuery();
 
             }
@@ -74,7 +75,7 @@ namespace recruitment
             {
                 int a = Convert.ToInt32(l);
                 c = a + 1;
-                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_SP=JSA_SP+1", connection);
+                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_FA=JSA_FA+1", connection);
                 cmd1.ExecuteNonQuery();
 
             }
@@ -83,7 +84,15 @@ namespace recruitment
             {
                 int a = Convert.ToInt32(m);
                 c = a + 1;
-                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET STENO=STENO+1", connection);
+                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_SP_EWS=JSA_SP_EWS+1", connection);
+                cmd1.ExecuteNonQuery();
+            }
+
+            else if (PostDropDownList.SelectedIndex == 5)
+            {
+                int a = Convert.ToInt32(m);
+                c = a + 1;
+                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JR_STENO=JR_STENO+1", connection);
                 cmd1.ExecuteNonQuery();
             }
             return c;
@@ -208,6 +217,7 @@ namespace recruitment
                 Response.Write("<script> alert ('Your are going to apply');</script>");
                 Session["postname"] = PostDropDownList.SelectedItem.ToString();
                 Session["S_appregno"] = newappno.ToString();
+                Session["pcode"] = postcode.ToString();
 
                 Response.Redirect("Candidate_Home.aspx");
 

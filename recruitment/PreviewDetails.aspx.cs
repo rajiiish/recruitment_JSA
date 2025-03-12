@@ -27,9 +27,10 @@ namespace recruitment
                 loadotherinfordetails();
                 PhotoFileexitCheck();
                 SignFileexitCheck();
-                Signpic.Visible = false;
+                Signpic.Visible = true;
                 ApplicationSubmittedCheck();
-                
+
+                PrdServicelbl.Visible = false;
                 //Response.Redirect("userlogin.aspx");
             }
             else
@@ -472,18 +473,18 @@ namespace recruitment
                             pwdcatlbl3.Text = dr.GetValue(11).ToString();
                         }
 
-                      //  var exarmy = dr.GetValue(12).ToString();
+                          var exarmy = dr.GetValue(12).ToString();
 
 
 
-                        //if (exarmy == "No")
-                        //{
-                        //    armylbl.Text = "No";
-                        //    armylblservice.Text = "";
-                        //    PrdServicelbl.Text = "";
+                        if (exarmy == "No")
+                        {
+                            armylbl.Text = "No";
+                            armylblservice.Text = "";
+                            PrdServicelbl.Text = "";
 
-                        //}
-                        //else if (exarmy == "Yes")
+                        }
+                        else if (exarmy == "Yes")
                         {
                             armylbl.Text = dr.GetValue(13).ToString() + "," + " ";
 
@@ -497,10 +498,13 @@ namespace recruitment
                         bankreflbl.Text = dr.GetValue(18).ToString();
                         string paymentdatetxt = bankreflbl.Text;
 
+                       
+
                         if (paymentdatetxt == "")
+
                         {
                             paydatelbl.Text = "";
-
+                           
 
                         }
                         else
@@ -509,6 +513,12 @@ namespace recruitment
                         }
 
                         paymodelbl.Text = dr.GetValue(20).ToString();
+
+                        if (bankreflbl.Text == "")
+                        {
+                            paymodelbl.Text = "";
+                        }
+
                         emaillbl.Text = dr.GetValue(21).ToString();
                         mobilelbl.Text = dr.GetValue(22).ToString();
 
@@ -560,13 +570,27 @@ namespace recruitment
                         bondlbl.Text = dr.GetValue(1).ToString();
                       //  joinglbl.Text = dr.GetValue(2).ToString();                       
 
-                        relativelbl.Text = dr.GetValue(2).ToString();
-                        string relative = "Name:"+dr.GetValue(3).ToString() + ", " + "Designation:" + dr.GetValue(4).ToString() + ", " + "Relationship:"+ dr.GetValue(5).ToString() + ", " + "Lab Name:"+ dr.GetValue(6).ToString();
-                        relativdetaillbl.Text = relative;
+
+                        var relativeYesNo = dr.GetValue(2).ToString();
+
+                        if (relativeYesNo == "No")
+                        {
+                            relativdetaillbl.Text = "";
+
+                            relativelbl.Text = "No";
+                        }
+                        else
+                        {
+                            relativelbl.Text = dr.GetValue(2).ToString();
+                            string relative = "Name:" + dr.GetValue(3).ToString() + ", " + "Designation:" + dr.GetValue(4).ToString() + ", " + "Relationship:" + dr.GetValue(5).ToString() + ", " + "Lab Name:" + dr.GetValue(6).ToString();
+                            relativdetaillbl.Text = relative;
+                        }
 
                         
                         Referencelbl1.Text = dr.GetValue(7).ToString();
                         Referencelbl2.Text = dr.GetValue(8).ToString();
+
+
                         govtserventlbl.Text = dr.GetValue(9).ToString();
                         Agerelxlbl1.Text = dr.GetValue(10).ToString();
                         Agerelxlbl2.Text = dr.GetValue(11).ToString();

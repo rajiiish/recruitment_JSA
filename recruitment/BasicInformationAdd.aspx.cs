@@ -54,14 +54,36 @@ namespace recruitment
 
             string pcode = Convert.ToString(Session["pcode"]);
 
+            //pcodedisp.Text = pcode;
+
+            if (pcode == "JSA")
+            {
+                castDrop.SelectedValue = "OBC";
+                castDrop.Enabled = false;
+                castLbl.ForeColor = System.Drawing.Color.Green;
+                castLbl.Text = "This Post is Reserved for OBC Category";
+                castDrop.CssClass = "form-control";
+            }
+
+            if (pcode == "JFASC")
+            {
+                castDrop.SelectedValue = "SC";
+                castDrop.Enabled = false;
+                castLbl.ForeColor = System.Drawing.Color.Green;
+                castLbl.Text = "This Post is Reserved for SC Category";
+                castDrop.CssClass = "form-control";
+            }
+
             if (pcode == "JSP")
             {
                 castDrop.SelectedValue = "EWS";
                 castDrop.Enabled = false;
                 castLbl.ForeColor = System.Drawing.Color.Green;
-                castLbl.Text = "This Post is Reserved for EWS only";
+                castLbl.Text = "This Post is Reserved for EWS Category";
                 castDrop.CssClass = "form-control";
             }
+
+           
 
             loaddataBadicinformation();
             
@@ -217,8 +239,9 @@ namespace recruitment
 
                         if (ArmyDrop.SelectedValue == "Yes")
                         {
-                            ArmyService.Visible = true;
-                            servicelbl.Visible = true;
+                            ArmyService.Visible = false;
+                            servicelbl.Visible = false;
+                            ArmyService.Text = "0";
                             //    EssnQualficationTxt.Enabled = true;
                         }
                         else if (ArmyDrop.SelectedValue == "No")
@@ -596,8 +619,8 @@ namespace recruitment
         {
             if (ArmyDrop.SelectedValue == "Yes")
             {
-                ArmyService.Visible = true;
-                ArmyService.Text = "";
+                ArmyService.Visible = false;
+                ArmyService.Text = "0";
                 servicelbl.Visible = false;
             //    EssnQualficationTxt.Enabled = false;
             //    EssnQualficationTxt.Text = "Ex-Servicemen";

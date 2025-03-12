@@ -22,7 +22,7 @@
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="imgs/homebanner.jpg" alt="..." /></a>
                         <div class="card-body">
-                            <div class="small text-muted">January 20, 2025</div>
+                            <div class="small text-muted">March 06, 2025</div>
                             <h5 class="card-title">Applications are invited from Indian Nationals for the following posts in CSIR Madras Complex (CMC), Chennai.</h5>
                         <!--     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>-->
                             <table class="table">
@@ -31,17 +31,44 @@
       <th scope="col">S.No</th>
       <th scope="col">Post Name</th>
       <th scope="col">No of Positions</th>
-      <th scope="col">Max Age Limit</th>
+      
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>Security Assistant (SA)</td>
-      <td>1 No. (UR)</td>
-      <td>28 years</td>
+      <td>Junior Secretariat Assistant(G)-Hindi</td>
+      <td>1 No. (OBC)</td>
+      
     </tr>
- 
+ <tr>
+      <th scope="row">2</th>
+      <td>Junior Secretariat Assistant(F&A)</td>
+      <td>1 No. (SC)</td>
+      
+    </tr>
+
+      <tr>
+      <th scope="row">3</th>
+      <td>Junior Secretariat Assistant(F&A)</td>
+      <td>1 No. (UR)</td>
+      
+    </tr>
+
+      <tr>
+      <th scope="row">4</th>
+      <td>Junior Secretariat Assistant(Stores&Purchase)</td>
+      <td>1 No. (EWS)</td>
+     
+    </tr>
+
+        <tr>
+      <th scope="row">5</th>
+      <td>Junior Stenographer</td>
+      <td>2 Nos. (UR)</td>
+      
+    </tr>
+
   </tbody>
 </table>
                           <br /> <br>  
@@ -89,7 +116,7 @@
                                     <div class="col-12">
                                 <!--      <p>Applicants are required to remit/pay application fee (Non-refundable) of Rs. 500/- (wherever applicable) through SBI COLLECT to the following account and fill up the transaction details in the prescribed columns of online application.No other mode of payment will be accepted.</p>
                              <asp:Button ID="Button1" class="btn btn-info btn-block btn-sm" runat="server" href="#!" Text="SBI Collect Link"  /> -->
-                                  <strong>  <p>Application fee is exempted in respect of SC/ST/PWD/ EX-Serviceman, Women & Departmental Applicants.</p></strong>
+                                  <strong>  <p>Application fee is exempted in respect of SC/ST/PwBD/ EX-Serviceman, Women & Departmental Applicants.</p></strong>
                                         </div>
                             </div>
                             </div>

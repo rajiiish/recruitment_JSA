@@ -35,14 +35,16 @@
   <div class="card-body shadow-sm bg-white rounded">
     <h5 class="card-title">Select Post you are applying for:</h5>
     <p class="card-text">
-        <asp:DropDownList ID="PostDropDownList" class="form-control" runat="server" OnSelectedIndexChanged="PostDropDownList_SelectedIndexChanged" AutoPostBack="True" Height="35px" Width="367px">
+        <asp:DropDownList ID="PostDropDownList" class="form-control" runat="server" OnSelectedIndexChanged="PostDropDownList_SelectedIndexChanged" AutoPostBack="True" Height="44px" Width="367px">
    <asp:ListItem Value="Select">-Select-</asp:ListItem>
                
 
-        <asp:ListItem Value="JSA">Junior Secretariat Assistant(General)-Hindi</asp:ListItem>
-        <asp:ListItem Value="JFA">Junior Secretariat Assistant(F&A)</asp:ListItem>
-        <asp:ListItem Value="JSP">Junior Secretariat Assistant(Stores&Purchase)</asp:ListItem>
+        <asp:ListItem Value="JSA">Junior Secretariat Assistant(G)-Hindi-OBC</asp:ListItem>
+        <asp:ListItem Value="JFASC">Junior Secretariat Assistant(F&A)-SC</asp:ListItem>
+        <asp:ListItem Value="JFAUR">Junior Secretariat Assistant(F&A)</asp:ListItem>
+        <asp:ListItem Value="JSP">Junior Secretariat Assistant(Stores&Purchase)-EWS</asp:ListItem>
         <asp:ListItem Value="JSS">Junior Stenographer</asp:ListItem>
+       
 
         </asp:DropDownList>
         &nbsp;<asp:Label ID="appidnolbl" runat="server" Text=""></asp:Label>

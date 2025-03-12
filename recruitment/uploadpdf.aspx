@@ -427,7 +427,50 @@
                   
                   </asp:TableCell>                    
         
-    </asp:TableRow>      
+    </asp:TableRow>   
+            
+          <asp:TableRow ID="WidowDoc1Rwo" runat="server" class="table table-bordered">
+         <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>  
+       <asp:TableCell>Death Certificate for Widow or Court Judgment/Decree in case of divource</asp:TableCell>  
+        
+       <asp:TableCell>  <asp:FileUpload ID="WidowFileUpload1" accept=".pdf" runat="server" /></asp:TableCell>  
+              
+        <asp:TableCell> <asp:Button class="btn btn-success" ID="WidowBtn1" OnClick="WidowBtn1_Click" runat="server" Text="Upload" />
+ </asp:TableCell>  
+        <asp:TableCell><asp:Label ID="WidowLbl1" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell>
+               
+               <asp:ImageButton ID="WidowPdfView1" src="imgs/pdficon.png" OnClick="WidowPdfView1_pdfview_Click" runat="server" Height="32px"  Width="36px"/>
+
+           &nbsp;&nbsp;&nbsp;&nbsp;  <asp:ImageButton ID="WidowPdfDelete1" src="imgs/pdfdelete.png" OnClick="WidowPdfDelete1_Click" runat="server" Height="32px"  Width="29px"/> 
+
+               
+                  
+                  </asp:TableCell>                    
+        
+    </asp:TableRow>
+
+              <asp:TableRow ID="WidowDoc2Rwo" runat="server" class="table table-bordered">
+         <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>  
+       <asp:TableCell> Affidavit for non-remarriage.</asp:TableCell>  
+        
+       <asp:TableCell>  <asp:FileUpload ID="WidowFileUpload2" accept=".pdf" runat="server" /></asp:TableCell>  
+        <asp:TableCell> <asp:Button class="btn btn-success" ID="WidowBtn2" OnClick="WidowBtn2_Click" runat="server" Text="Upload" /></asp:TableCell>  
+        <asp:TableCell><asp:Label ID="WidowLbl2" runat="server" Font-Size="small" Text="Upload PDF File less then 1MB (1000 KB)" Font-Italic="True" ForeColor="Blue"></asp:Label>&nbsp; </asp:TableCell>  
+        <asp:TableCell>
+                <asp:ImageButton ID="WidowPdfView2" src="imgs/pdficon.png" OnClick="WidowPdfView2_pdfview_Click" runat="server" Height="32px"  Width="36px"/>
+
+           &nbsp;&nbsp;&nbsp;&nbsp;  <asp:ImageButton ID="WidowPdfDelete2" src="imgs/pdfdelete.png" OnClick="WidowPdfDelete2_Click" runat="server" Height="32px"  Width="29px"/>
+              
+
+              
+                  
+                  </asp:TableCell>                    
+        
+    </asp:TableRow>
+          
+
+         
 
 </asp:Table>
 
@@ -447,6 +490,11 @@
 
     <center> 
         <asp:Button ID="uploadcontinue" runat="server" CssClass="savebtncolor" Text="Save and Continue" OnClick="uploadcontinue_Click"  />
+
+         
+        
+
+        
     </center>
     </div>
     </div>

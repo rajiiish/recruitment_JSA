@@ -60,6 +60,15 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.Image photo;
 
         /// <summary>
+        /// Signpic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Signpic;
+
+        /// <summary>
         /// fathernamelbl control.
         /// </summary>
         /// <remarks>
@@ -852,13 +861,13 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.Label Referencelbl2;
 
         /// <summary>
-        /// Signpic control.
+        /// Signpic_empty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Signpic;
+        protected global::System.Web.UI.WebControls.Image Signpic_empty;
 
         /// <summary>
         /// goBackbtn control.

@@ -861,6 +861,15 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.Label Referencelbl2;
 
         /// <summary>
+        /// TypingMediumLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TypingMediumLbl;
+
+        /// <summary>
         /// Signpic_empty control.
         /// </summary>
         /// <remarks>

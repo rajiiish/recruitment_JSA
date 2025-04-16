@@ -41,9 +41,10 @@
 
         <asp:ListItem Value="JSA">Junior Secretariat Assistant(G)-Hindi-OBC</asp:ListItem>
         <asp:ListItem Value="JFASC">Junior Secretariat Assistant(F&A)-SC</asp:ListItem>
-        <asp:ListItem Value="JFAUR">Junior Secretariat Assistant(F&A)</asp:ListItem>
+        <asp:ListItem Value="JFA">Junior Secretariat Assistant(F&A)</asp:ListItem>
         <asp:ListItem Value="JSP">Junior Secretariat Assistant(Stores&Purchase)-EWS</asp:ListItem>
         <asp:ListItem Value="JSS">Junior Stenographer</asp:ListItem>
+        <asp:ListItem Value="JSSOBC">Junior Stenographer-(OBC)</asp:ListItem>
        
 
         </asp:DropDownList>
@@ -69,12 +70,12 @@
        </div>
       <div class="md-col-6">
  <div class="card background-color:white text-Green" style="width: 35rem; height: 15rem;">
-     <div class="card-header text-blue"><strong><asp:Label ID="Label2" runat="server" Text="Mandatory Qualification" ForeColor="Maroon"></asp:Label> </strong></div>
+     <div class="card-header text-blue"><strong><asp:Label ID="Label2" runat="server" Text="Essential Qualification" ForeColor="Maroon"></asp:Label> </strong></div>
   <div class="card-body shadow-sm bg-white rounded">
-    <h5 class="card-title">Post Qualification Required to Apply</h5>
+    <h5 class="card-title">Essential Qualifications required to apply for the post</h5>
     <p class="card-text">
-        <asp:Label ID="qualificationlable" runat="server" Text="qualification"></asp:Label>
-
+        <asp:Label ID="qualificationlable" runat="server" Text="<-Select the Post to Apply->"></asp:Label><br />
+        <asp:Label ID="qualificationlableCast" class="alert-danger" runat="server" Text=""></asp:Label>
   </div>
 </div>
     </div>

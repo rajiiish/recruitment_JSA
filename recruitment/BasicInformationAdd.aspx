@@ -35,18 +35,11 @@
 
 
     m<script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function(event) { 
-            var scrollpos = localStorage.getItem('scrollpos');
-            if (scrollpos) window.scrollTo(0, scrollpos);
-        });
-
-        window.onbeforeunload = function(e) {
-            localStorage.setItem('scrollpos', window.scrollY);
-        };
+       
     </script><%-- title start--%><div class="container">
         <div class="bg-light  text-center">
-        <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
-        &nbsp;(fields marked with * are mandatory) PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
+        <p class="alert-info">Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
+        &nbsp; PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
         <p>Candidate Registration Number: <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label> </p> 
      <p>  Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
             Post Applying For: <asp:Label ID="applyhpostlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label>  &nbsp; </p>
@@ -296,7 +289,7 @@
                   <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="ArmyService" InitialValue="" validationgroup="basicpagegroup" runat="server" ForeColor="Red" /> 
                   <asp:TextBox ID="ArmyService" runat="server" class="form-control" maxlength="2" placeholder="" value="0" ></asp:TextBox>
                       <br />
-                                   <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="ArmyService" ValidationExpression="^[0-9]+$" runat="server" validationgroup="basicpagegroup" ForeColor="Red" ErrorMessage="enter numbers."></asp:RegularExpressionValidator>
+                                   <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="ArmyService" ValidationExpression="^[0-9]+$" runat="server" validationgroup="basicpagegroup" ForeColor="Red" ErrorMessage="Enter Numbers."></asp:RegularExpressionValidator>
 
                 
               </div>
@@ -364,7 +357,7 @@
                     </div>
 
                 <div class="col-4">
-               <label for="address1">state</label>
+               <label for="address1">State</label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="prestateText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
                   
                   <asp:TextBox ID="prestateText" runat="server" class="form-control"  placeholder="" value="" ></asp:TextBox>
@@ -374,7 +367,9 @@
                <label for="address1">Pincode</label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="pincodeText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
                   
-                  <asp:TextBox ID="pincodeText" runat="server" class="form-control"  placeholder="" value="" ></asp:TextBox>
+                  <asp:TextBox ID="pincodeText" runat="server" class="form-control"  placeholder="" value="" MaxLength="6" ></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" ControlToValidate="pincodeText" ValidationExpression="^[0-9]+$" runat="server" validationgroup="basicpagegroup" ForeColor="Red" ErrorMessage="Enter Numbers."></asp:RegularExpressionValidator>
+
                     </div>
           </div>        
         </div>

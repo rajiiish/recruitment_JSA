@@ -13,8 +13,8 @@
     
          R<%-- title start--%><div class="container">
         <div class="bg-light shadow text-center">
-        <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
-         (fields marked with * are mandatory)</p>
+        <p class="alert-info">Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
+        &nbsp; PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
         <p >Candidate Registration Number:
               <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
    &nbsp;  &nbsp;    Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
@@ -182,7 +182,8 @@
             <div class="col-md-12">
 
             <center>  <asp:Button ID="PreviewApplication" class="btn-primary" runat="server" Text="Preview & Submit"  Font-Bold="True" Font-Italic="False" Font-Size="Large" OnClick="PreviewApplication_Click1" /> 
-                
+                <br />
+                <p class="alert-info">(Verify the details of the application carefully before Submitting it, the Submitted Application cannot be edited.)</p>
                 </center>  
             </div>
                    </div>

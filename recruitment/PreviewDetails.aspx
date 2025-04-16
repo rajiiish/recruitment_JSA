@@ -106,11 +106,16 @@
             width: 262.688px;
             height: 25px;
         }
+
+        .fontsize
+        {
+            font-size: 12px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container">
+    <div class="container fontsize" >
         <div class="bg-light  text-center">
 
             <p>
@@ -127,7 +132,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="container fontsize">
         <div class="card bg-light">
             <div class="card-body">
                 <div class="row">
@@ -139,7 +144,7 @@
 
                             <!--<p><strong style="color: #000;">Note:</strong> Candidates are requested to take a print out of the application for self-reference.</p>-->
                             <div class="text-center d-print-none">
-                                <strong>Important: </strong><span class="auto-style12 "><strong>: After filling up the application, take a printout of the duly filled form. The application form duly signed to be sent to  <strong>"The Controller of Administration, CSIR Madras Complex, CSIR Road, Taramani, Chennai" </strong>enclosing a copies of the requisite documents. If any application is incomplete in any respect, it shall not be processed further. </strong></span>
+                            <strong>Important: </strong><span class="auto-style12">After submitting the application, take a printout of the filled-in application form. The duly signed application form should be sent to  <strong> "The Controller of Administration, CSIR Madras Complex, CSIR Road, Taramani, Chennai-600113" </strong>enclosing copies of the requisite documents (certificates, etc.). Incomplete applications will not be processed.<br />
                             </div>
                         </center>
                         <table class="tablecss">
@@ -179,7 +184,7 @@
                                 </td>
                             </tr>
                             <tr style="height: 25px;">
-                                <td style="height: 25px; width: 316.812px;border: thin solid #000000" class="auto-style5"><span>DOB</span></td>
+                                <td style="height: 25px; width: 316.812px;border: thin solid #000000" class="auto-style5"><span>Date of Birth</span></td>
                                 <td style="width: 262.688px; height: 25px; border: thin solid #000000">
                                     <b>
                                         <asp:Label ID="doblbl" runat="server" Text="Label"></asp:Label>
@@ -219,7 +224,7 @@
                                 </td>
                             </tr>
                             <tr style="height: 25px;">
-                                <td style="width: 316.812px; height: 25px; border: thin solid #000000" class="auto-style5"><span>Are you a CSIR Employee</span></td>
+                                <td style="width: 316.812px; height: 25px; border: thin solid #000000" class="auto-style5"><span>Are you a CSIR Employee?</span></td>
                                 <td colspan="2" style="border: thin solid #000000" class="auto-style16">
                                     <b>
                                         <asp:Label ID="csiremplbl" runat="server" Text="Label"></asp:Label>
@@ -227,7 +232,7 @@
                                 </td>
                             </tr>
                             <tr style="height: 25px;">
-                                <td style="width: 316.812px; height: 25px; border: thin solid #000000" class="auto-style5"><span>PwBD Category</span></td>
+                                <td style="width: 316.812px; height: 25px; border: thin solid #000000" class="auto-style5"><span>PwBD Category?</span></td>
                                 <td style="border: thin solid #000000" class="auto-style4" colspan="2">
                                     <asp:Label ID="pwdcatlbl1" runat="server" Text="Label"></asp:Label>
                                     <asp:Label ID="pwdpctlbl" runat="server" Text="Percentage of disability : "></asp:Label>
@@ -251,7 +256,7 @@
                                 </td>
                             </tr>
                             <tr style="height: 25px;">
-                                <td style="width: 316.812px; height: 25px; border: thin solid #000000"" class="auto-style5"><span>Place or City of Born</span></td>
+                                <td style="width: 316.812px; height: 25px; border: thin solid #000000"" class="auto-style5"><span>Place of Birth</span></td>
                                 <td style="border: thin solid #000000"class="auto-style4" colspan="2">
                                     <asp:Label ID="placebornlbl" runat="server" Text="Label"></asp:Label>
                                 </td>
@@ -316,27 +321,27 @@
 
 
 
-                                    <asp:Table ID="Table1" Height="317px" Width="757px" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" Font-Bold="False" Font-Size="10pt" GridLines="Horizontal" runat="server" CssClass="AspCell">
-                                        <asp:TableHeaderRow class="table font-weight-bold table-bordered">
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Qualification</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Group Name</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Main Subject</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Institute/School Name</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Marks in Percentage </asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Year of Passing </asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Division/Grade </asp:TableHeaderCell>
+                                    <asp:Table ID="Table1" Height="317px" Width="869px" BackColor="White" BorderColor="#000000" BorderStyle="solid" BorderWidth="1px" Font-Bold="False" Font-Size="10pt" GridLines="Both" runat="server" ForeColor="Black">
+                                            <asp:TableHeaderRow class="table font-weight-bold table-bordered ">
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Qualification</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Group Name</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Main Subject</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Institute/School Name</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Marks in Percentage </asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Year of Passing </asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Division/Grade </asp:TableHeaderCell>
                                         </asp:TableHeaderRow>
                                         <asp:TableRow ID="sslcRow" class="table table-bordered">
-                                            <asp:TableCell CssClass="AspCell">
+                                            <asp:TableCell>
                                                 <asp:Label ID="ssl1" runat="server" Text="Label"></asp:Label>
                                             </asp:TableCell>
-                                            <asp:TableCell CssClass="AspCell">
+                                            <asp:TableCell>
                                                 <asp:Label ID="ssl2" runat="server" Text="Label"></asp:Label>
                                             </asp:TableCell>
-                                            <asp:TableCell CssClass="AspCell">
+                                            <asp:TableCell>
                                                 <asp:Label ID="ssl3" runat="server" Text="Label"></asp:Label>
                                             </asp:TableCell>
-                                            <asp:TableCell CssClass="AspCell">
+                                            <asp:TableCell>
                                                 <asp:Label ID="ssl4" runat="server" Text="Label"></asp:Label>
                                             </asp:TableCell>
                                             <asp:TableCell CssClass="AspCell">
@@ -399,18 +404,16 @@
                                             </asp:TableCell>
 
                                         </asp:TableRow>
-                                        <asp:TableRow>
-                                            <asp:TableCell ColumnSpan="7"> </asp:TableCell>
-                                        </asp:TableRow>
+                                        
 
                                         <asp:TableHeaderRow ID="ugpgtitleRow" class="table table-bordered">
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Qualification</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Specialization/Degree Name</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Main Subject</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White">Institute/University/College Name</asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Marks in Percentage </asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Year of Passing </asp:TableHeaderCell>
-                                            <asp:TableHeaderCell BackColor="#336666" ForeColor="White"> Division/Grade </asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Qualification</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Specialization/Degree Name</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Main Subject</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black">Institute/University/College Name</asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Marks in Percentage </asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Year of Passing </asp:TableHeaderCell>
+                                            <asp:TableHeaderCell BackColor="White" ForeColor="Black"> Division/Grade </asp:TableHeaderCell>
                                         </asp:TableHeaderRow>
 
                                         <asp:TableRow ID="dipRow" class="table table-bordered">
@@ -498,12 +501,12 @@
 
 
                             <!--<tr style="height: 25px;">
-<td style="width: 762px; height: 25px;" colspan="3" class="auto-style5"><span>&nbsp;<asp:GridView ID="GridView1"  class="table table-bordered" runat="server" Height="126px" Width="757px" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" Font-Bold="False" Font-Size="10pt" GridLines="Horizontal">
+<td style="width: 762px; height: 25px;" colspan="3" class="auto-style5"><span>&nbsp;<asp:GridView ID="GridView1"  class="table table-bordered" runat="server" Height="126px" Width="757px" BackColor="White" BorderColor="White" BorderStyle="Double" BorderWidth="3px" CellPadding="4" Font-Bold="False" Font-Size="10pt" GridLines="Horizontal">
     <FooterStyle BackColor="White" ForeColor="#333333" />
-    <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
-    <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+    <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="Black" />
+    <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Center" />
     <RowStyle BackColor="White" ForeColor="#333333" />
-    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+    <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="Black" />
     <SortedAscendingCellStyle BackColor="#F7F7F7" />
     <SortedAscendingHeaderStyle BackColor="#487575" />
     <SortedDescendingCellStyle BackColor="#E5E5E5" />
@@ -521,14 +524,14 @@
 
                             <tr style="height: 25px;">
                                 <td style="border: thin solid #000000" class="auto-style2" colspan="3">
-                                    <asp:GridView ID="GridView2" class="table table-bordered" runat="server" Height="126px" Width="870px" BackColor="White" BorderColor="#336666" BorderStyle="Double" BorderWidth="3px" CellPadding="4" Font-Bold="False" Font-Size="10pt" GridLines="Horizontal" OnRowDataBound="GridView2_RowDataBound">
+                                    <asp:GridView ID="GridView2" class="table table-bordered" runat="server" Height="126px" Width="870px" BackColor="White" BorderColor="White" BorderStyle="Double" BorderWidth="3px" CellPadding="4" Font-Bold="False" Font-Size="10pt" GridLines="Horizontal" OnRowDataBound="GridView2_RowDataBound">
                                         <FooterStyle BackColor="White" ForeColor="#333333" />
-                                        <HeaderStyle BackColor="#336666" Font-Bold="True" ForeColor="White" />
+                                        <HeaderStyle BackColor="White" Font-Bold="True" ForeColor="Black" />
                                         <AlternatingRowStyle BackColor="White" />
 
-                                        <PagerStyle BackColor="#336666" ForeColor="White" HorizontalAlign="Center" />
+                                        <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Center" />
                                         <RowStyle BackColor="White" ForeColor="#333333" />
-                                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="White" />
+                                        <SelectedRowStyle BackColor="#339966" Font-Bold="True" ForeColor="Black" />
                                         <SortedAscendingCellStyle BackColor="#F7F7F7" />
                                         <SortedAscendingHeaderStyle BackColor="#487575" />
                                         <SortedDescendingCellStyle BackColor="#E5E5E5" />
@@ -585,6 +588,15 @@
 
                                 </td>
                             </tr>
+                           <tr style="height: 10px;">
+                                <td style="width: 316.812px; height: 10px; border: thin solid #000000" class="auto-style5"><span>Medium for Computer Proficiency Test</span></td>
+                                <td style="border: thin solid #000000" class="auto-style4" colspan="2">
+                                    <asp:Label ID="TypingMediumLbl" runat="server" Text="Label"></asp:Label><br />
+                                    
+
+
+                                </td>
+                            </tr>
 
                             <tr style="height: 25px;">
                                 <td style="border: thin solid #000000" colspan="3" class="text-center"><span class="auto-style10"><strong>Declaration</strong></span></td>
@@ -634,15 +646,16 @@
                         <br />
                         <br />
                         <hr />
-                        <p class="text-center"><span style="font-family: Times New Roman; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="auto-style13"><strong>Candidate already employed in Govt. Departments should apply &quot;Through Proper Channel&quot; endorsement signed by his/her present employer</strong></span></p>
+                        <p class="text-center"><span style="font-family: Times New Roman; font-size: medium; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;" class="auto-style13"><strong>Candidate already employed in Govt. Departments should apply &quot;Through Proper Channel&quot; endorsement signed by present employer</strong></span></p>
                         <div class="text-center">
-                            <strong>Important: </strong><span class="auto-style12"><strong>: After filling up the application, take a printout of the duly filled form. The application form duly signed to be sent to  <strong>"The Controller of Administration, CSIR Madras Complex, CSIR Road, Taramani, Chennai" </strong>enclosing a copies of the requisite documents. If any application is incomplete in any respect, it shall not be processed further.<br />
-                            </strong></span>
-                        </div>
+                            <strong>Important: </strong><span class="auto-style12">After submitting the application, take a printout of the filled-in application form. The duly signed application form should be sent to  <strong> "The Controller of Administration, CSIR Madras Complex, CSIR Road, Taramani, Chennai-600113" </strong>enclosing copies of the requisite documents (certificates, etc.).</span> <br /> 
+                               <h6 class="alert-danger"><strong> Incomplete application / unsigned application will not be processed.</strong></h6>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    </span>
 
 </asp:Content>

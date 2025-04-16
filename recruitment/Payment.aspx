@@ -32,8 +32,8 @@
          f<%-- title start--%><div class="container">
 
         <div class="bg-light shadow text-center">
-        <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
-        Personal Details (fields marked with * are mandatory)</p>
+        <p class="alert-info">Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
+        &nbsp; PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
         <p >Candidate Registration Number:
               <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
        Application ID: <asp:Label ID="appidnolbl" runat="server" Text="Label" Font-Bold="True" ForeColor="#006600"></asp:Label> 
@@ -50,7 +50,7 @@
                      <div class="col">
                         <center>
                             <div class="alert alert-danger" role="alert">
-                                <p>Candidates belonging to General / OBC / EWS category are required to remit/pay application fee (non-refundable) of Rs.500/- [Rupees five hundred only] through online mode viz. RTGS/NEFT/IMPS/Debit Card/Credit Card, etc to the following account and fill up the transaction details in the prescribed columns of application. No other mode of payment will be accepted.</p>
+                                <p>Candidates belonging to General / OBC / EWS category are required to remit/pay application fee (non-refundable) of Rs.500/- [Rupees five hundred only] through online mode viz. SBI Collect and fill up the transaction details in the prescribed columns of application given below. No other mode of payment will be accepted.</p>
                                 
 </div>
                            
@@ -66,32 +66,11 @@
                      <div class="col-10">
                         <center>
                             <div class="card " style="width: 50rem;">
-                                <div class="card-header text-white  bg-info">Account Details</div>
+                                <div class="card-header text-white  bg-info">SBI Collect Payment Link</div>
                                 <div class="card-body">
-                                    
-                            <table class="table bg-Light">
- 
-  <tbody>
-    <tr>
-      <th scope="row">Name of Account Holder</th>
-      <td>CSIR MADRAS COMPLEX</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">Account Number</th>
-      <td>30267 725339</td>
-      
-    </tr>
-    <tr>
-      <th scope="row">Bank Name</th>
-      <td>State Bank of India, Taramani</td>      
-    </tr>
-      <tr>
-      <th scope="row">IFSC Code </th>
-      <td>SBIN0010673</td>      
-    </tr>
-  </tbody>
-</table>
+                                    <p class="alert-info">After a successful payment, the candidate must enter the SBI Collect Reference Number / UTRN number and transaction date in the details below.</p> <p class="alert-info"><a href="files/HOW_PAY_SBI_COLLECT_CMC.pdf" target="_blank"> How to Pay Fee in SBI Collect</a></p>
+                                    <p><a href="https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpid=222844" target="_blank"> Click Here to Pay Fee in SBI Collect</a></p>
+                            
                                         
                                     </div>
                                 </div>
@@ -112,7 +91,7 @@
              <asp:ScriptManager ID="ScriptManager1" runat="server">
     </asp:ScriptManager>
                 <div class="col-4">
-                    <label for="bankname">Bank Reference Number</label>
+                    <label for="bankname">SBI Collect Reference Number</label>
                  <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ForeColor="Red" ErrorMessage="*Required" ControlToValidate="banknameText" validationgroup="basicpagegroup"></asp:RequiredFieldValidator>
 
                  <asp:TextBox ID="banknameText" runat="server" class="form-control" placeholder="" value="" ></asp:TextBox>                 

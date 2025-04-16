@@ -83,7 +83,16 @@ namespace recruitment
                 castDrop.CssClass = "form-control";
             }
 
-           
+            if (pcode == "JSSOBC")
+            {
+                castDrop.SelectedValue = "OBC";
+                castDrop.Enabled = false;
+                castLbl.ForeColor = System.Drawing.Color.Green;
+                castLbl.Text = "This Post is Reserved for OBC Category";
+                castDrop.CssClass = "form-control";
+            }
+
+
 
             loaddataBadicinformation();
             
@@ -564,7 +573,10 @@ namespace recruitment
             {
                 
             }
-
+            else if (aadhaarText.Text.Count() < 12)
+            {
+                Response.Write("<script>alert('Enter correct Full Aadhaar Number')</script>");
+            }
             //else if (applyhpostlbl.Text == "Junior Secretariat Assistant(JSA-S&P)")
             //{
             //    castDrop.SelectedValue = "EWS";
@@ -680,19 +692,29 @@ namespace recruitment
 
         protected void AddresSamecheck_CheckedChanged(object sender, EventArgs e)
         {
-            if (AddresSamecheck.Checked)
-            {
-                string line1 = preaddressText.Text;
-                string line2 = precityText.Text;
-                string line3 = prestateText.Text;
-                string line4 = pincodeText.Text;
 
-                string fulladd = line1 + "," + " " + line2 + "," + " " + line3 + "," + " " + line4;
-                permaddressText.Text = fulladd;
+            if ((preaddressText.Text == "") || (precityText.Text == "") || (prestateText.Text == "") || (pincodeText.Text == ""))
+            {
+                RequiredFieldValidator8.Text = "The present address fields cannot be left empty";
+
+
             }
             else
             {
-                permaddressText.Text = "";
+                if (AddresSamecheck.Checked)
+                {
+                    string line1 = preaddressText.Text;
+                    string line2 = precityText.Text;
+                    string line3 = prestateText.Text;
+                    string line4 = pincodeText.Text;
+
+                    string fulladd = line1 + "," + " " + line2 + "," + " " + line3 + "," + " " + line4;
+                    permaddressText.Text = fulladd;
+                }
+                else
+                {
+                    permaddressText.Text = "";
+                }
             }
                        
         }

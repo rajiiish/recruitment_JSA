@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container-fluid">
         
-        e<!-- Page header with logo and tagline
+        <!-- Page header with logo and tagline
         <header class="py-5 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
@@ -22,7 +22,7 @@
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="imgs/homebanner.jpg" alt="..." /></a>
                         <div class="card-body">
-                            <div class="small text-muted">March 06, 2025</div>
+                            <div class="small text-muted">April 17, 2025</div>
                             <h5 class="card-title">Applications are invited from Indian Nationals for the following posts in CSIR Madras Complex (CMC), Chennai.</h5>
                         <!--     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>-->
                             <table class="table">
@@ -65,7 +65,14 @@
         <tr>
       <th scope="row">5</th>
       <td>Junior Stenographer</td>
-      <td>2 Nos. (UR)</td>
+      <td>3 Nos. (UR)</td>
+      
+    </tr>
+
+          <tr>
+      <th scope="row">6</th>
+      <td>Junior Stenographer</td>
+      <td>1 Nos. (OBC)</td>
       
     </tr>
 
@@ -116,7 +123,11 @@
                                     <div class="col-12">
                                 <!--      <p>Applicants are required to remit/pay application fee (Non-refundable) of Rs. 500/- (wherever applicable) through SBI COLLECT to the following account and fill up the transaction details in the prescribed columns of online application.No other mode of payment will be accepted.</p>
                              <asp:Button ID="Button1" class="btn btn-info btn-block btn-sm" runat="server" href="#!" Text="SBI Collect Link"  /> -->
-                                  <strong>  <p>Application fee is exempted in respect of SC/ST/PwBD/ EX-Serviceman, Women & Departmental Applicants.</p></strong>
+                                  <strong>  <p>Application fee is exempted in respect of SC/ST/PwBD/ EX-Serviceman, Women & Departmental Applicants.</p></strong> <br />
+                                         <p>After a successful payment, the candidate must enter the URTN number and transaction date in the details below.</p> <p class="alert-info"><a href="files/HOW_PAY_SBI_COLLECT_CMC.pdf" target="_blank"> How to Pay Fee in SBI Collect</a></p>
+                                    <p><a href="https://www.onlinesbi.sbi/sbicollect/" target="_blank"> Click Here to Pay Fee in SBI Collect</a></p>
+
+                                      
                                         </div>
                             </div>
                             </div>

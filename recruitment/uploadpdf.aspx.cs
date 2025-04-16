@@ -15,7 +15,8 @@ namespace recruitment
     public partial class uploadpdf : System.Web.UI.Page
     {
 
-        string smsg = "File Uploaded Successfully";
+        string smsg = "File Uploaded Successfully";      
+
         string emsg = "Please first select a file to upload...";
         string pdfonly = "Only PDF Files are allowed to upload";
         string photoonly = "Only JPG Files are allowed to upload";
@@ -292,14 +293,16 @@ namespace recruitment
 
 
                         
-                         if ((AgeRelaxyesno == "Yes") && (AgeRelaxCategory == "Widow/Divorced"))
+                        if ((AgeRelaxyesno == "Yes") && (AgeRelaxCategory == "Widow/Divorced"))
                         {
                             WidowDoc1Rwo.Visible = true;
                             WidowDoc2Rwo.Visible = true;
 
                         }
-                        else if (PWDyesno == "No")
-                        {
+
+                        //                        else if ((AgeRelaxyesno == "No") && (AgeRelaxCategory != "Widow/Divorced"))
+                        else
+                            {
                             WidowDoc1Rwo.Visible = false;
                             WidowDoc2Rwo.Visible = false;
 

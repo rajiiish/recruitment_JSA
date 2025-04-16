@@ -76,7 +76,7 @@ namespace recruitment
                         string exarmy = dr.GetValue(4).ToString();
 
 
-                        if ((gender == "Female") || (cast == "SC") || (cast == "ST") || (csiremp == "Yes") || (pwd == "Yes") || (exarmy == "ExArmy") || (exarmy == "JCO"))
+                        if ((gender == "Female") || (cast == "SC") || (cast == "ST") || (csiremp == "Yes") || (pwd == "Yes") || (exarmy == "Yes") || (exarmy == "JCO"))
 
                      //    if ( (gender == "Female") || (cast == "SC") || (cast == "ST") || (csiremp == "Yes") || (pwd == "Yes") || (exarmy == "ExArmy") || (exarmy == "JCO") )
                         {

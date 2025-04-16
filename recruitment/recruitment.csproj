@@ -2225,6 +2225,7 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="admin.Master" />
+    <Content Include="files\HOW_PAY_SBI_COLLECT_CMC.pdf" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">

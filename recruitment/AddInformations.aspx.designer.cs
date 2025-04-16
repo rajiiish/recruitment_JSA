@@ -177,6 +177,15 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.TextBox pwdpercttxt;
 
         /// <summary>
+        /// RegularExpressionValidator2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+
+        /// <summary>
         /// AgeRlxClaimDrop control.
         /// </summary>
         /// <remarks>
@@ -283,6 +292,15 @@ namespace recruitment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NameCSIRtxt;
+
+        /// <summary>
+        /// TypingTestDrop control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList TypingTestDrop;
 
         /// <summary>
         /// NameRef1 control.

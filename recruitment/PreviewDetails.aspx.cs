@@ -128,34 +128,49 @@ namespace recruitment
                             ITIRow.Visible = true;
                         }
 
+                        if ((DIPyesno == "Yes") || (UGyesno == "Yes") || (PGyesno == "Yes"))
+                        {
+                            ugpgtitleRow.Visible = true;
+                        }
+                        else
+                        {
+                            ugpgtitleRow.Visible = false;
+                        }
+
                         if (DIPyesno == "No")
                         {
                             dipRow.Visible = false;
+                           
 
                         }
                         else if (DIPyesno == "Yes")
                         {
                             dipRow.Visible = true;
+                            
                         }
 
                         if (UGyesno == "No")
                         {
                             ugRow.Visible = false;
+                            
 
                         }
                         else if (UGyesno == "Yes")
                         {
                             ugRow.Visible = true;
+                           
                         }
 
                         if (PGyesno == "No")
                         {
                             pgRow.Visible = false;
+                           
 
                         }
                         else if (PGyesno == "Yes")
                         {
                             pgRow.Visible = true;
+                            
                         }
 
                         //if (PHDyesno == "No")
@@ -438,7 +453,7 @@ namespace recruitment
 
                 SqlCommand cmd = new SqlCommand("select fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp, " +
                    " pwd,pwdPercent,pwdCatagory, ExArmy, ExServiceName, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress," +
-                   " paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
+                   " paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck, TypingTestMedium from basicdetailsNew where can_regno= '" + regidlbl.Text.Trim() + "' and appregno= '" + appidnolbl.Text.Trim() + "'", con);
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
@@ -525,7 +540,8 @@ namespace recruitment
                         string paddress = dr.GetValue(23).ToString() + ", " + dr.GetValue(24).ToString() + ", " + dr.GetValue(25).ToString() + ", " + dr.GetValue(26).ToString();
                         presentaddlbl.Text = paddress;
                         permaddlbl.Text = dr.GetValue(27).ToString();
-                        
+
+                        TypingMediumLbl.Text = dr.GetValue(29).ToString();
                     }
                 }
                 else
@@ -587,13 +603,32 @@ namespace recruitment
                         }
 
                         
-                        Referencelbl1.Text = dr.GetValue(7).ToString();
-                        Referencelbl2.Text = dr.GetValue(8).ToString();
+                        var ref1 = dr.GetValue(7).ToString();
+                        var ref2 = dr.GetValue(8).ToString();
 
+                        if (ref1 == ", , ")
+                        {
+                            Referencelbl1.Text = "Nil";
+                            Referencelbl2.Text = "";
+                        }
+                        else
+                        {
+                            Referencelbl1.Text = dr.GetValue(7).ToString();
+                            Referencelbl2.Text = dr.GetValue(8).ToString();
+                        }
 
                         govtserventlbl.Text = dr.GetValue(9).ToString();
                         Agerelxlbl1.Text = dr.GetValue(10).ToString();
-                        Agerelxlbl2.Text = dr.GetValue(11).ToString();
+
+                        if (Agerelxlbl1.Text=="No")
+                        {
+                            Agerelxlbl2.Text = "";
+                        }
+                        else
+                        {
+                            Agerelxlbl2.Text = dr.GetValue(11).ToString();
+                        }
+                        
 
 
 

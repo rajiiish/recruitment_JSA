@@ -245,6 +245,7 @@ namespace recruitment
                 cmd.Parameters.AddWithValue("@db5", db5);
                 cmd.Parameters.AddWithValue("@sslcyesno", sslcyesno);
                 cmd.ExecuteNonQuery();
+                EducationErrorinAddLbl.Text = "Details Added Successfully";
                 Response.Redirect("EducationalDetails.aspx");
                 YesOrNo();
                 conn.Close();
@@ -291,6 +292,7 @@ namespace recruitment
                 cmd.Parameters.AddWithValue("@dbfield5", db5);
                 cmd.Parameters.AddWithValue("@yesno", yesno);
                 cmd.ExecuteNonQuery();
+                EducationErrorinAddLbl.Text = "Details Added Successfully";
                 Response.Redirect("EducationalDetails.aspx");
                 YesOrNo();
                 conn.Close();
@@ -337,6 +339,7 @@ namespace recruitment
                 cmd.Parameters.AddWithValue("@dbfield5", db5);
                 cmd.Parameters.AddWithValue("@yesno", yesno);
                 cmd.ExecuteNonQuery();
+                EducationErrorinAddLbl.Text = "Details Added Successfully";
                 Response.Redirect("EducationalDetails.aspx");
                 YesOrNo();
                 conn.Close();
@@ -385,6 +388,7 @@ namespace recruitment
                 cmd.Parameters.AddWithValue("@dbfield5", db5);
                 cmd.Parameters.AddWithValue("@yesno", yesno);
                 cmd.ExecuteNonQuery();
+                EducationErrorinAddLbl.Text = "Details Added Successfully";
                 Response.Redirect("EducationalDetails.aspx");
                 YesOrNo();
                 conn.Close();
@@ -434,6 +438,7 @@ namespace recruitment
                 cmd.Parameters.AddWithValue("@dbfield5", db5);
                 cmd.Parameters.AddWithValue("@yesno", yesno);
                 cmd.ExecuteNonQuery();
+                EducationErrorinAddLbl.Text = "Details Added Successfully";
                 Response.Redirect("EducationalDetails.aspx");
                 YesOrNo();
                 conn.Close();
@@ -483,6 +488,7 @@ namespace recruitment
                 cmd.Parameters.AddWithValue("@dbfield5", db5);
                 cmd.Parameters.AddWithValue("@yesno", yesno);
                 cmd.ExecuteNonQuery();
+                EducationErrorinAddLbl.Text = "Details Added Successfully";
                 Response.Redirect("EducationalDetails.aspx");
                 YesOrNo();
                 conn.Close();
@@ -532,7 +538,7 @@ namespace recruitment
                     cmd1.Parameters.AddWithValue("@ddbappno", dbappno);
 
                     cmd1.ExecuteNonQuery();
-
+                    EducationErrorinAddLbl.Text = "Details Added Successfully";
                     LoadPHDDetails();
                    // YesOrNo();
                     conn.Close();
@@ -584,7 +590,7 @@ namespace recruitment
                     cmd1.Parameters.AddWithValue("@ddbappno", dbappno);
 
                     cmd1.ExecuteNonQuery();
-
+                    EducationErrorinAddLbl.Text = "Details Added Successfully";
                     LoadGATEDetails();
                    // YesOrNo();
                     conn.Close();

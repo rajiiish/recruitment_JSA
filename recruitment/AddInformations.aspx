@@ -82,21 +82,12 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function (event) {
-            var scrollpos = localStorage.getItem('scrollpos');
-            if (scrollpos) window.scrollTo(0, scrollpos);
-        });
-
-        window.onbeforeunload = function (e) {
-            localStorage.setItem('scrollpos', window.scrollY);
-        };
+    
     </script>
     <div class="container">
         <div class="bg-light  text-center">
-            <p>
-                Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br />
-                Personal Details (fields marked with * are mandatory)
-            </p>
+             <p class="alert-info">Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
+        &nbsp; PLEASE BE VERY CAREFUL WHILE FILLING THE APPLICATION FORM </p>
             <p>
                 Candidate Registration Number:
               <asp:Label ID="regidlbl" runat="server" Text="Label" Font-Bold="True" ForeColor="Blue"></asp:Label>
@@ -276,7 +267,7 @@
                 </div>
 
                   <hr class="solid">
-                <!--  bond check start 
+                <!--  bond check eND 
                    <hr class="solid d-none">
                     <!--  pwd check start 
                    <div class="row d-none">-->
@@ -290,8 +281,9 @@
                     <asp:ListItem Value="Yes">Yes</asp:ListItem>
                     <asp:ListItem Value="No">No</asp:ListItem>
                 </asp:DropDownList>
-
-                    &nbsp;(* If you want to change the option for PwBD Catagory, Please update in &quot;Personal Details&quot; .
+                    <br />
+                    <lable class="alert-danger">If you want to change the option for the PwBD category, please update it in the <B>Personal Details Entry.</B></lable>
+                   
                 </div>
                 <div class="col-12">
                     <asp:Panel ID="pwdpanel" runat="server">
@@ -329,7 +321,12 @@
 
                                 </td>
                                 <td>
-                                    <asp:TextBox ID="pwdpercttxt" runat="server"></asp:TextBox></td>
+                                    <asp:TextBox ID="pwdpercttxt" runat="server"  maxlength="2"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="pwdpercttxt" ValidationExpression="^[0-9]+$" runat="server" validationgroup="otherinfogroup" ForeColor="Red" ErrorMessage="Enter 2 Digit Numbers."></asp:RegularExpressionValidator>
+
+
+                                </td> 
+
                             </tr>
                         </table>
 
@@ -441,7 +438,25 @@
 
             <!--  Relative check end  -->
             <br />
+        <!--  bond check start -->
+                <hr class="solid">
+                <!--  bond check start -->
+                <div class="row">
+                    <div class="auto-style9">
+                        <label>* Select the Medium for Computer Proficiency Test?:</label>
+                        &nbsp
+                <asp:DropDownList ID="TypingTestDrop" runat="server" AutoPostBack="True">
+                    <asp:ListItem Selected="True" Value="0">--Select--</asp:ListItem>
+                    <asp:ListItem Value="English">English</asp:ListItem>
+                    <asp:ListItem Value="Hindi">Hindi</asp:ListItem>
+                </asp:DropDownList>
+                        <asp:RequiredFieldValidator ErrorMessage="*Required" ControlToValidate="TypingTestDrop" InitialValue="0" ValidationGroup="otherinfogroup" runat="server" ForeColor="Red" />
+                        <br />
+                        <lable class="alert-danger">* The typing test medium cannot be changed once selected in the online application. This shall be treated final, and no changes in the medium of the proficiency test in computer typing speed will be entertained subsequently.</lable>
+                    </div>
+                </div>
 
+                  <hr class="solid">
             <!--  Reference check start -->
             <div class="row">
                 <div class="col-12">
@@ -525,6 +540,9 @@
 
                 <center>
                     <asp:Button ID="SaveEducationbtn" runat="server" CssClass="savebtncolor" Text="Save and Continue" ValidationGroup="otherinfogroup" OnClick="SaveEducationbtn_Click" />
+                    <br />
+                    <p class="alert-info">(Verify all the details of the application entered before saving application.)</p>
+
                 </center>
             </div>
             <div class="row">

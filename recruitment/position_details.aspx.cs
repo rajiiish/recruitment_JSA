@@ -40,7 +40,7 @@ namespace recruitment
            
                 SqlConnection connection = MySqlConnection.Recruitmentcon();
 
-                SqlCommand cmd = new SqlCommand("SELECT JSA_H_OBC, JSA_FA_SC, JSA_FA, JSA_SP_EWS,JR_STENO FROM appno ", connection);
+                SqlCommand cmd = new SqlCommand("SELECT JSA_H_OBC, JSA_FA_SC, JSA_FA, JSA_SP_EWS,JR_STENO, JR_STENO_OBC FROM appno ", connection);
                 SqlDataAdapter da1 = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da1.Fill(ds);
@@ -50,17 +50,17 @@ namespace recruitment
                 string l = ds.Tables[0].Rows[0]["JSA_FA"].ToString();
                 string m = ds.Tables[0].Rows[0]["JSA_SP_EWS"].ToString();
                 string n = ds.Tables[0].Rows[0]["JR_STENO"].ToString();
+                string o = ds.Tables[0].Rows[0]["JR_STENO_OBC"].ToString();
 
 
             if (PostDropDownList.SelectedIndex == 1)
-                {
-                    int a = Convert.ToInt32(j);
-                     c = a + 1;
+            {
+                int a = Convert.ToInt32(j);
+                c = a + 1;
+                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_H_OBC=JSA_H_OBC+1", connection);
+                cmd1.ExecuteNonQuery();
 
-                    SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JSA_H_OBC=JSA_H_OBC+1", connection);
-                    cmd1.ExecuteNonQuery();
-
-                }
+            }
 
             else if (PostDropDownList.SelectedIndex == 2)
             {
@@ -90,9 +90,17 @@ namespace recruitment
 
             else if (PostDropDownList.SelectedIndex == 5)
             {
-                int a = Convert.ToInt32(m);
+                int a = Convert.ToInt32(n);
                 c = a + 1;
                 SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JR_STENO=JR_STENO+1", connection);
+                cmd1.ExecuteNonQuery();
+            }
+
+            else if (PostDropDownList.SelectedIndex == 6)
+            {
+                int a = Convert.ToInt32(o);
+                c = a + 1;
+                SqlCommand cmd1 = new SqlCommand("UPDATE appno SET JR_STENO_OBC=JR_STENO_OBC+1", connection);
                 cmd1.ExecuteNonQuery();
             }
             return c;
@@ -309,28 +317,53 @@ namespace recruitment
 
             {
 
-                qualificationlable.Text = "10+2 / XII standard or its equivalent and proficiency in computer type speed of 30 wpm in HINDI (on computer correspond to 9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
+                qualificationlable.Text = "10+2 / XII standard or its equivalent and proficiency in computer type speed in using computer @30 wpm in HINDI (on computer correspond to 10500 KDPH /9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
+                qualificationlableCast.Text = "This Post is Reserved for OBC Category";
+
             }
 
             else if (PostDropDownList.SelectedIndex == 2)
 
             {
-                
-                qualificationlable.Text = "10+2 / XII standard or its equivalent with Accountancy as one of the subjects and proficiency in computer type speed and in using computer @ 35 wpm in English OR 30 wpm in Hindi (on computer correspond to 10500 KDPH/9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
+
+                qualificationlable.Text = "10+2 / XII standard or its equivalent and proficiency in computer type speed in using computer @35 wpm in ENGLISH /  @30 wpm in HINDI (on computer correspond to 10500 KDPH /9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
+                qualificationlableCast.Text = "This Post is Reserved for SC Category";
+
             }
 
             else if (PostDropDownList.SelectedIndex == 3)
 
             {
 
-                qualificationlable.Text = "10+2 / XII Standard or its equivalent and proficiency in computer type speed in using computer speed of 30 wpm in Hindi (on computer correspond to 10500 KDPH/9000KDPH on an average of 5 key depression for each word){ Time allowed 10 mts}";
+                qualificationlable.Text = "10+2 / XII standard or its equivalent and proficiency in computer type speed in using computer @35 wpm in ENGLISH /  @30 wpm in HINDI (on computer correspond to 10500 KDPH /9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
+                qualificationlableCast.Text = "";
+
             }
 
-            else if (PostDropDownList.SelectedIndex == 3)
+            else if (PostDropDownList.SelectedIndex == 4)
 
             {
 
-                qualificationlable.Text = "10+2 / XII standard or its equivalent with Accountancy as one of the subjects and proficiency in computer type speed and in using computer @ 35 wpm in English OR 30 wpm in Hindi (on computer correspond to 10500 KDPH/9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
+                qualificationlable.Text = "10+2 / XII standard or its equivalent and proficiency in computer type speed in using computer @35 wpm in ENGLISH /  @30 wpm in HINDI (on computer correspond to 10500 KDPH /9000 KDPH on an average of 5 key depressions for each word).{ Time allowed 10 mts}";
+                qualificationlableCast.Text = "This Post is Reserved for EWS Category";
+            }
+
+            else if (PostDropDownList.SelectedIndex == 5)
+
+            {
+
+                qualificationlable.Text = "10+2 / XII standard or its equivalent and speed of 80 wpm in shorthand in English / Hindi";
+                qualificationlableCast.Text = "";
+
+            }
+
+            else if (PostDropDownList.SelectedIndex == 6)
+
+            {
+
+                qualificationlable.Text = "10+2 / XII standard or its equivalent and speed of 80 wpm in shorthand in English / Hindi";
+                qualificationlableCast.Text = "This Post is Reserved for OBC Category";
+
             }
         }
 

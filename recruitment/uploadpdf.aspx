@@ -319,7 +319,7 @@
 </asp:Table>
         <br />
         
-          <center> <asp:Label ID="Label10" runat="server" Text="Other Mandatory Documents Upload" Font-Bold="True" ForeColor="#0000CC"></asp:Label> &nbsp;
+          <center> <asp:Label ID="OtherMandLbl" runat="server" Text="Other Mandatory Documents Upload" Font-Bold="True" ForeColor="#0000CC"></asp:Label> &nbsp;
         </center>
 
         <asp:Table ID="Table3" runat="server">

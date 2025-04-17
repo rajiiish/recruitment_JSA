@@ -44,10 +44,15 @@
                   
                         <asp:Label ID="droplblname" runat="server" Text="Select Post Code to View:"></asp:Label>
                         <asp:DropDownList ID="DropDownList1" runat="server" Height="27px" Width="257px">
+ <asp:ListItem Value="Select">-Select-</asp:ListItem>
+               
 
-                            <asp:ListItem Value="TA-CIVIL">Technical Assistant (Civil)</asp:ListItem>
-                            <asp:ListItem Value="TA-IT">Technical Assistant (IT)</asp:ListItem>
-                            <asp:ListItem Value="JSA">Junior Secretariat Assistant</asp:ListItem>
+        <asp:ListItem Value="JSA">Junior Secretariat Assistant(G)-Hindi-OBC</asp:ListItem>
+        <asp:ListItem Value="JFASC">Junior Secretariat Assistant(F&A)-SC</asp:ListItem>
+        <asp:ListItem Value="JFA">Junior Secretariat Assistant(F&A)</asp:ListItem>
+        <asp:ListItem Value="JSP">Junior Secretariat Assistant(Stores&Purchase)-EWS</asp:ListItem>
+        <asp:ListItem Value="JSS">Junior Stenographer</asp:ListItem>
+        <asp:ListItem Value="JSSOBC">Junior Stenographer-(OBC)</asp:ListItem>
                         </asp:DropDownList>
                         &nbsp;  
                         <asp:Label ID="Label3" runat="server" Text="Submitted:"></asp:Label>

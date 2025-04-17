@@ -27,7 +27,15 @@
                  <label><strong>Post Name: </strong></label>
              <asp:DropDownList ID="DropDownList1" runat="server" Height="27px" Width="257px">
 
-                             <asp:ListItem Value="SA-01">Security Assistant (SA-01)</asp:ListItem>
+                             <asp:ListItem Value="Select">-Select-</asp:ListItem>
+               
+
+        <asp:ListItem Value="JSA">Junior Secretariat Assistant(G)-Hindi-OBC</asp:ListItem>
+        <asp:ListItem Value="JFASC">Junior Secretariat Assistant(F&A)-SC</asp:ListItem>
+        <asp:ListItem Value="JFA">Junior Secretariat Assistant(F&A)</asp:ListItem>
+        <asp:ListItem Value="JSP">Junior Secretariat Assistant(Stores&Purchase)-EWS</asp:ListItem>
+        <asp:ListItem Value="JSS">Junior Stenographer</asp:ListItem>
+        <asp:ListItem Value="JSSOBC">Junior Stenographer-(OBC)</asp:ListItem>
                             
                         </asp:DropDownList>
              <asp:DropDownList ID="SubmitteDrop" runat="server"  Height="27px" Width="57px" Visible="False">

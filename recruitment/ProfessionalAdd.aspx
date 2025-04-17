@@ -13,11 +13,6 @@
         font-size: 100%;
         }
        
-        .auto-style3 {
-            width: 23px;
-            height: 21px;
-        }
-
         .savebtncolor 
 {
    background-color: dodgerblue; 
@@ -45,10 +40,7 @@
         window.onbeforeunload = function(e) {
             localStorage.setItem('scrollpos', window.scrollY);
         };
-    </script>
-
-       <%-- title start--%>
-    <div class="container">
+    </script><%-- title start--%><div class="container">
         <div class="bg-light  text-center">
         <p >Note: Don't input any special characters or punctuation marks. Input only alphanumeric characters.<br/>
         Personal Details (fields marked with * are mandatory)</p>

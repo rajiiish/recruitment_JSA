@@ -18,7 +18,7 @@ namespace recruitment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // pwdlbl.Visible = false;
+            pwdlbl.Visible = false;
         }
 
         protected void showPwd()
@@ -40,7 +40,7 @@ namespace recruitment
                         {
                             username = sdr["email"].ToString();
                             password = sdr["password"].ToString();
-                          //  pwdlbl.Text = EncryptionHelper.Decrypt1(password);
+                            pwdlbl.Text = EncryptionHelper.Decrypt1(password);
 
                         }
                     }
@@ -69,7 +69,7 @@ namespace recruitment
                         {
                             username = sdr["email"].ToString();
                             password = sdr["password"].ToString();
-                         //   pwdlbl.Text = EncryptionHelper.Decrypt1(password);
+                            pwdlbl.Text = EncryptionHelper.Decrypt1(password);
 
                         }
                     }
@@ -98,7 +98,7 @@ namespace recruitment
                 smtp.Send(mm);
                 lblMessage.ForeColor = Color.Green;
                 lblMessage.Text = "Password has been sent to your email address. (Check the Spam folder in case of e-mail missing in the Inbox)";
-              //  pwdlbl.Text = passwordDecrypt.ToString();
+                pwdlbl.Text = passwordDecrypt.ToString();
                 //MailMessage mm = new MailMessage("cmcit@csircmc.res.in", txtEmail.Text.Trim());
                 //mm.Subject = "Password Recovery";
                 //mm.Body = string.Format("Hi {0},<br /><br />Your password is {1}.<br /><br />Thank You.", username, password);

@@ -24,36 +24,38 @@ namespace recruitment
                 string username = TextBox1.Text.Trim();
                 string password = EncryptionHelper.Decrypt(TextBox2.Text.Trim());
 
-                SqlConnection con = MySqlConnection.Recruitmentcon();
-                //SqlConnection con = new SqlConnection(strcon);
-                if (con.State == ConnectionState.Closed)
+                using (SqlConnection con = MySqlConnection.Recruitmentcon())
                 {
-                    con.Open();
-
-                }
-                SqlCommand cmd = new SqlCommand("select * from rec_canreg where email='" + username + "' AND password='" + password + "'", con);
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
+                    //SqlConnection con = new SqlConnection(strcon);
+                    if (con.State == ConnectionState.Closed)
                     {
-                        Session["email"] = dr.GetValue(1).ToString();
-                        Session["password"] = dr.GetValue(2).ToString();
-                        Session["fname"] = dr.GetValue(3).ToString();
-                        Session["can_regno"] = dr.GetValue(6).ToString();
+                        con.Open();
 
-                        //Response.Redirect("test.aspx");
-                        //Response.Write("<script>alert('" + dr.GetValue(1).ToString() + "');</script>");
                     }
+                    SqlCommand cmd = new SqlCommand("select * from rec_canreg where email='" + username + "' AND password='" + password + "'", con);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            Session["email"] = dr.GetValue(1).ToString();
+                            Session["password"] = dr.GetValue(2).ToString();
+                            Session["fname"] = dr.GetValue(3).ToString();
+                            Session["can_regno"] = dr.GetValue(6).ToString();
 
-                    Response.Redirect("position_details.aspx");
+                            //Response.Redirect("test.aspx");
+                            //Response.Write("<script>alert('" + dr.GetValue(1).ToString() + "');</script>");
+                        }
+
+                        Response.Redirect("position_details.aspx");
+                    }
+                    else
+                    {
+                        Label1.Text = "Enter correct login details";
+                        // Response.Write("<script>alert('Invalid credentials');</script>");
+                    }
+                    con.Close();
                 }
-                else
-                {
-                    Label1.Text = "Enter correct login details";
-                   // Response.Write("<script>alert('Invalid credentials');</script>");
-                }
-                con.Close();
             }
             catch (Exception ex)
             {

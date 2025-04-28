@@ -105,6 +105,15 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.Image photo;
 
         /// <summary>
+        /// Signpic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Signpic;
+
+        /// <summary>
         /// fathernamelbl control.
         /// </summary>
         /// <remarks>
@@ -186,6 +195,15 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.Label pwdcatlbl1;
 
         /// <summary>
+        /// pwdpctlbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label pwdpctlbl;
+
+        /// <summary>
         /// pwdcatlbl2 control.
         /// </summary>
         /// <remarks>
@@ -193,6 +211,15 @@ namespace recruitment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label pwdcatlbl2;
+
+        /// <summary>
+        /// pwdtypelbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label pwdtypelbl;
 
         /// <summary>
         /// pwdcatlbl3 control.
@@ -211,6 +238,15 @@ namespace recruitment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label armylbl;
+
+        /// <summary>
+        /// PrdServicelbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PrdServicelbl;
 
         /// <summary>
         /// armylblservice control.
@@ -762,141 +798,6 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.Label pg7;
 
         /// <summary>
-        /// phdlabl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phdlabl;
-
-        /// <summary>
-        /// phdtable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table phdtable;
-
-        /// <summary>
-        /// phdTitleRow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableHeaderRow phdTitleRow;
-
-        /// <summary>
-        /// phdRow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow phdRow;
-
-        /// <summary>
-        /// phd1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phd1;
-
-        /// <summary>
-        /// phd2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phd2;
-
-        /// <summary>
-        /// phd3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phd3;
-
-        /// <summary>
-        /// phd4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phd4;
-
-        /// <summary>
-        /// GATElabl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label GATElabl;
-
-        /// <summary>
-        /// GATEtable control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table GATEtable;
-
-        /// <summary>
-        /// GATETitleRow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableHeaderRow GATETitleRow;
-
-        /// <summary>
-        /// GATERow control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TableRow GATERow;
-
-        /// <summary>
-        /// gate1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label gate1;
-
-        /// <summary>
-        /// gate2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label gate2;
-
-        /// <summary>
-        /// gate3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label gate3;
-
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
@@ -904,6 +805,15 @@ namespace recruitment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
+        /// Explable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Explable;
 
         /// <summary>
         /// GridView2 control.
@@ -931,15 +841,6 @@ namespace recruitment
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label bondlbl;
-
-        /// <summary>
-        /// joinglbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label joinglbl;
 
         /// <summary>
         /// relativelbl control.
@@ -1005,12 +906,30 @@ namespace recruitment
         protected global::System.Web.UI.WebControls.Label Referencelbl2;
 
         /// <summary>
-        /// Signpic control.
+        /// TypingMediumLbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Signpic;
+        protected global::System.Web.UI.WebControls.Label TypingMediumLbl;
+
+        /// <summary>
+        /// Signpic_empty control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Signpic_empty;
+
+        /// <summary>
+        /// printButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button printButton;
     }
 }

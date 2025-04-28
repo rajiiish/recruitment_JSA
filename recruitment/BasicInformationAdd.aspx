@@ -34,7 +34,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    m<script type="text/javascript">
+    <script type="text/javascript">
        
     </script><%-- title start--%><div class="container">
         <div class="bg-light  text-center">

@@ -105,37 +105,38 @@ namespace recruitment
                 string canregdbtext = Convert.ToString(Session["can_regno"]);
                 string appregnotext = Convert.ToString(Session["S_appregno"]);
 
-                SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT IsCompleted FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
-
-                SqlCommand command = new SqlCommand(sql1, connection);
-                command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
-                command.Parameters.AddWithValue("@appregnotext", appregnotext);
-
-                SqlDataReader dr = command.ExecuteReader();
-                if (dr.HasRows)
+                using (SqlConnection connection = MySqlConnection.Recruitmentcon())
                 {
-                    while (dr.Read())
+                    string sql1 = "SELECT IsCompleted FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+
+                    SqlCommand command = new SqlCommand(sql1, connection);
+                    command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
+                    command.Parameters.AddWithValue("@appregnotext", appregnotext);
+
+                    SqlDataReader dr = command.ExecuteReader();
+                    if (dr.HasRows)
                     {
-                       
-                        string complete = dr.GetValue(0).ToString();
-
-                        if (complete == "Yes")
+                        while (dr.Read())
                         {
-                            Response.Redirect("position_details.aspx");
+
+                            string complete = dr.GetValue(0).ToString();
+
+                            if (complete == "Yes")
+                            {
+                                Response.Redirect("position_details.aspx");
+                            }
+
                         }
-                      
                     }
-                }
-                else
-                {
+                    else
+                    {
 
-                    Response.Redirect("position_details.aspx");
+                        Response.Redirect("position_details.aspx");
+                    }
+                    connection.Close();
                 }
-                connection.Close();
+
             }
-
-
 
             catch (Exception ex)
             {
@@ -152,40 +153,42 @@ namespace recruitment
             string dbcanreg = Convert.ToString(Session["can_regno"]);
             try
             {
-                SqlConnection con = MySqlConnection.Recruitmentcon();
-
-                if (con.State == ConnectionState.Closed)
+                using (SqlConnection con = MySqlConnection.Recruitmentcon())
                 {
-                    con.Open();
 
-                }
-                SqlCommand cmd = new SqlCommand("select * from rec_canreg where can_regno= @canreg ", con);
-
-                cmd.Parameters.AddWithValue("@canreg", dbcanreg);
-                cmd.Parameters.AddWithValue("@appregno", appregno);
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.HasRows)
-                {
-                    while (dr.Read())
+                    if (con.State == ConnectionState.Closed)
                     {
-                        fullnametxt.Text = dr.GetValue(3).ToString();
-                      //  lastnameText.Text = dr.GetValue(4).ToString();
-                        emailText.Text = dr.GetValue(1).ToString();
+                        con.Open();
 
-                        mobileText.Text = dr.GetValue(4).ToString();
-
-                        
                     }
-                }
-                else
-                {
-                    Response.Redirect("position_details.aspx");
-                    // Response.Write("<script>alert('Invalid credentials');</script>");
+                    SqlCommand cmd = new SqlCommand("select * from rec_canreg where can_regno= @canreg ", con);
+
+                    cmd.Parameters.AddWithValue("@canreg", dbcanreg);
+                    cmd.Parameters.AddWithValue("@appregno", appregno);
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            fullnametxt.Text = dr.GetValue(3).ToString();
+                            //  lastnameText.Text = dr.GetValue(4).ToString();
+                            emailText.Text = dr.GetValue(1).ToString();
+
+                            mobileText.Text = dr.GetValue(4).ToString();
 
 
+                        }
+                    }
+                    else
+                    {
+                        Response.Redirect("position_details.aspx");
+                        // Response.Write("<script>alert('Invalid credentials');</script>");
+
+
+                    }
+                    con.Close();
                 }
-                con.Close();
             }
 
             catch (Exception ex)
@@ -199,7 +202,7 @@ namespace recruitment
 
         public void loaddataBadicinformation()
         {
-           
+
             try
             {
                 string canregdbtext = Convert.ToString(Session["can_regno"]);
@@ -207,107 +210,108 @@ namespace recruitment
 
 
 
-                SqlConnection connection = MySqlConnection.Recruitmentcon();
-                string sql1 = "SELECT fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp,  pwd, ExArmy, ExServiceName, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress, paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
-
-                SqlCommand command = new SqlCommand(sql1, connection);
-                command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
-                command.Parameters.AddWithValue("@appregnotext", appregnotext);
-               
-                SqlDataReader dr = command.ExecuteReader();
-                if (dr.HasRows)
+                using (SqlConnection connection = MySqlConnection.Recruitmentcon())
                 {
-                    while (dr.Read())
+                    string sql1 = "SELECT fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp,  pwd, ExArmy, ExServiceName, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress, paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck FROM basicdetailsNew WHERE can_regno = @canregdbtest and appregno = @appregnotext ";
+
+                    SqlCommand command = new SqlCommand(sql1, connection);
+                    command.Parameters.AddWithValue("@canregdbtest", canregdbtext);
+                    command.Parameters.AddWithValue("@appregnotext", appregnotext);
+
+                    SqlDataReader dr = command.ExecuteReader();
+                    if (dr.HasRows)
                     {
-                        //  regidlbl.Text = dr.GetValue(0).ToString();
-                        // appidnolbl.Text = dr.GetValue(1).ToString();
-                        //applyhpostlbl.Text = dr.GetValue(2).ToString();
-
-                        //  DateTime vdobText = Convert.ToDateTime(dobText.Text);
-
-
-                        fullnametxt.Text = dr.GetValue(0).ToString();
-                      //  lastnameText.Text = dr.GetValue(5).ToString();
-                        fathernameText.Text = dr.GetValue(1).ToString();
-                        mothernameText.Text = dr.GetValue(2).ToString();
-
-
-                        dobText.Text = dr.GetValue(3).ToString();
-
-
-                        genderDrop.SelectedValue = dr.GetValue(4).ToString();
-
-
-                      
-                        castDrop.SelectedValue = dr.GetValue(5).ToString();
-                        maritalDrop.SelectedValue = dr.GetValue(6).ToString();
-                        religionText.Text = dr.GetValue(7).ToString();
-                        csirDrop.SelectedValue = dr.GetValue(8).ToString();
-                        pwdDrop.SelectedValue = dr.GetValue(9).ToString();
-                        ArmyDrop.SelectedValue = dr.GetValue(10).ToString();
-
-                        if (ArmyDrop.SelectedValue == "Yes")
+                        while (dr.Read())
                         {
-                            ArmyService.Visible = false;
-                            servicelbl.Visible = false;
-                            ArmyService.Text = "0";
-                            //    EssnQualficationTxt.Enabled = true;
+                            //  regidlbl.Text = dr.GetValue(0).ToString();
+                            // appidnolbl.Text = dr.GetValue(1).ToString();
+                            //applyhpostlbl.Text = dr.GetValue(2).ToString();
+
+                            //  DateTime vdobText = Convert.ToDateTime(dobText.Text);
+
+
+                            fullnametxt.Text = dr.GetValue(0).ToString();
+                            //  lastnameText.Text = dr.GetValue(5).ToString();
+                            fathernameText.Text = dr.GetValue(1).ToString();
+                            mothernameText.Text = dr.GetValue(2).ToString();
+
+
+                            dobText.Text = dr.GetValue(3).ToString();
+
+
+                            genderDrop.SelectedValue = dr.GetValue(4).ToString();
+
+
+
+                            castDrop.SelectedValue = dr.GetValue(5).ToString();
+                            maritalDrop.SelectedValue = dr.GetValue(6).ToString();
+                            religionText.Text = dr.GetValue(7).ToString();
+                            csirDrop.SelectedValue = dr.GetValue(8).ToString();
+                            pwdDrop.SelectedValue = dr.GetValue(9).ToString();
+                            ArmyDrop.SelectedValue = dr.GetValue(10).ToString();
+
+                            if (ArmyDrop.SelectedValue == "Yes")
+                            {
+                                ArmyService.Visible = false;
+                                servicelbl.Visible = false;
+                                ArmyService.Text = "0";
+                                //    EssnQualficationTxt.Enabled = true;
+                            }
+                            else if (ArmyDrop.SelectedValue == "No")
+                            {
+                                ArmyService.Visible = false;
+                                servicelbl.Visible = false;
+                                ArmyService.Text = "0";
+
+                                //   EssnQualficationTxt.Enabled = false;
+
+                            }
+
+                            //   EssnQualficationTxt.Text = dr.GetValue(11).ToString();
+
+
+
+                            ArmyService.Text = dr.GetValue(12).ToString();
+                            placeofbirthtxt.Text = dr.GetValue(13).ToString();
+                            aadhaarText.Text = dr.GetValue(14).ToString();
+                            citizenDrop.Text = dr.GetValue(15).ToString();
+
+
+                            //    banknameText.Text = dr.GetValue(15).ToString();
+                            //    paymentdateText.Text = dr.GetValue(16).ToString();
+                            //    paymodeText.Text = dr.GetValue(17).ToString();
+                            emailText.Text = dr.GetValue(19).ToString();
+                            mobileText.Text = dr.GetValue(20).ToString();
+                            preaddressText.Text = dr.GetValue(21).ToString();
+                            precityText.Text = dr.GetValue(22).ToString();
+                            prestateText.Text = dr.GetValue(23).ToString();
+                            pincodeText.Text = dr.GetValue(24).ToString();
+                            permaddressText.Text = dr.GetValue(25).ToString();
+
+                            string checkbox = dr.GetValue(26).ToString();
+                            if (checkbox == "Yes")
+                            {
+                                AddresSamecheck.Checked = true;
+                            }
+
+                            else if (checkbox == "No")
+                            {
+                                AddresSamecheck.Checked = false;
+                            }
+
                         }
-                        else if (ArmyDrop.SelectedValue == "No")
-                        {
-                            ArmyService.Visible = false;
-                            servicelbl.Visible = false;
-                            ArmyService.Text = "0";
+                    }
+                    else
+                    {
+                        // Response.Redirect("position_details.aspx");
+                        // Response.Write("<script>alert('Invalid credentials');</script>");
 
-                            //   EssnQualficationTxt.Enabled = false;
-
-                        }
-
-                        //   EssnQualficationTxt.Text = dr.GetValue(11).ToString();
-
-
-
-                        ArmyService.Text = dr.GetValue(12).ToString();
-                        placeofbirthtxt.Text = dr.GetValue(13).ToString();
-                        aadhaarText.Text = dr.GetValue(14).ToString();
-                        citizenDrop.Text = dr.GetValue(15).ToString();
-                        
-
-                    //    banknameText.Text = dr.GetValue(15).ToString();
-                    //    paymentdateText.Text = dr.GetValue(16).ToString();
-                    //    paymodeText.Text = dr.GetValue(17).ToString();
-                        emailText.Text = dr.GetValue(19).ToString();
-                        mobileText.Text = dr.GetValue(20).ToString();
-                        preaddressText.Text = dr.GetValue(21).ToString();
-                        precityText.Text = dr.GetValue(22).ToString();
-                        prestateText.Text = dr.GetValue(23).ToString();
-                        pincodeText.Text = dr.GetValue(24).ToString();
-                        permaddressText.Text = dr.GetValue(25).ToString();
-
-                        string checkbox = dr.GetValue(26).ToString();
-                        if (checkbox == "Yes")
-                        {
-                            AddresSamecheck.Checked = true;
-                        }
-
-                        else if (checkbox == "No")
-                        {
-                            AddresSamecheck.Checked = false;
-                        }
 
                     }
+                    connection.Close();
                 }
-                else
-                {
-                   // Response.Redirect("position_details.aspx");
-                    // Response.Write("<script>alert('Invalid credentials');</script>");
 
-
-                }
-                connection.Close();
             }
-
-
 
 
             catch (Exception ex)

@@ -135,37 +135,37 @@ namespace recruitment
                             pgRow.Visible = true;
                         }
 
-                        if (PHDyesno == "No")
-                        {
-                            phdtable.Visible = false;
-                            phdTitleRow.Visible = false;
-                            phdRow.Visible = false;
-                            phdlabl.Visible = true;
+                        //if (PHDyesno == "No")
+                        //{
+                        //    phdtable.Visible = false;
+                        //    phdTitleRow.Visible = false;
+                        //    phdRow.Visible = false;
+                        //    phdlabl.Visible = true;
 
-                        }
-                        else if (PHDyesno == "Yes")
-                        {
-                            phdtable.Visible = true;
-                            phdTitleRow.Visible = true;
-                            phdRow.Visible = true;
-                            phdlabl.Visible = false;
-                        }
+                        //}
+                        //else if (PHDyesno == "Yes")
+                        //{
+                        //    phdtable.Visible = true;
+                        //    phdTitleRow.Visible = true;
+                        //    phdRow.Visible = true;
+                        //    phdlabl.Visible = false;
+                        //}
 
-                        if (GATEyesno == "No")
-                        {
-                            GATEtable.Visible = false;
-                            GATETitleRow.Visible = false;
-                            GATERow.Visible = false;
-                            GATElabl.Visible = true;
+                        //if (GATEyesno == "No")
+                        //{
+                        //    GATEtable.Visible = false;
+                        //    GATETitleRow.Visible = false;
+                        //    GATERow.Visible = false;
+                        //    GATElabl.Visible = true;
 
-                        }
-                        else if (GATEyesno == "Yes")
-                        {
-                            GATEtable.Visible = true;
-                            GATETitleRow.Visible = true;
-                            GATERow.Visible = true;
-                            GATElabl.Visible = false;
-                        }
+                        //}
+                        //else if (GATEyesno == "Yes")
+                        //{
+                        //    GATEtable.Visible = true;
+                        //    GATETitleRow.Visible = true;
+                        //    GATERow.Visible = true;
+                        //    GATElabl.Visible = false;
+                        //}
 
                     }
                 }
@@ -260,9 +260,9 @@ namespace recruitment
                         pg6.Text = dr.GetValue(38).ToString();
                         pg7.Text = dr.GetValue(39).ToString();
 
-                        gate1.Text = dr.GetValue(40).ToString();
-                        gate2.Text = dr.GetValue(41).ToString();
-                        gate3.Text = dr.GetValue(42).ToString();
+                      //  gate1.Text = dr.GetValue(40).ToString();
+                   //     gate2.Text = dr.GetValue(41).ToString();
+//gate3.Text = dr.GetValue(42).ToString();
 
 
 
@@ -311,10 +311,10 @@ namespace recruitment
                 {
                     while (dr.Read())
                     {
-                        phd1.Text = dr.GetValue(0).ToString();
-                        phd2.Text = dr.GetValue(1).ToString();
-                        phd3.Text = dr.GetValue(2).ToString();
-                        phd4.Text = dr.GetValue(3).ToString();
+                   //     phd1.Text = dr.GetValue(0).ToString();
+                     //   phd2.Text = dr.GetValue(1).ToString();
+                    //    phd3.Text = dr.GetValue(2).ToString();
+                    //    phd4.Text = dr.GetValue(3).ToString();
 
                     }
                 }
@@ -411,8 +411,8 @@ namespace recruitment
 
                 }
                 SqlCommand cmd = new SqlCommand("select fullname, fathername, mothername, dateofbirth, sexuality, cast, marital, religion, csiremp, " +
-                    " pwd,pwdPercent,pwdCatagory, ExArmy, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress," +
-                    " paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck from basicdetailsNew where can_regno= @canreg and appregno= @appregno", con);
+                       " pwd,pwdPercent,pwdCatagory, ExArmy, ExServiceName, ExArmyService, placeborn, aadhaar, citizen,bankname,  paydate, paymode,email, mobile, presentaddress," +
+                       " paddresscity, paddressstate, paddresspincode, peraddress,paddressSameCheck, TypingTestMedium from basicdetailsNew where can_regno= @canreg and appregno= @appregno", con);
 
                 cmd.Parameters.AddWithValue("@canreg", dbcanreg);
                 cmd.Parameters.AddWithValue("@appregno", appregno);
@@ -430,36 +430,79 @@ namespace recruitment
                         maritallbl.Text = dr.GetValue(6).ToString();
                         religionlbl.Text = dr.GetValue(7).ToString();
                         csiremplbl.Text = dr.GetValue(8).ToString();
-                        pwdcatlbl1.Text = dr.GetValue(9).ToString();
-                        pwdcatlbl2.Text = dr.GetValue(10).ToString();
-                        pwdcatlbl3.Text = dr.GetValue(11).ToString();
 
-                        armylbl.Text = dr.GetValue(12).ToString();
-                        armylblservice.Text = dr.GetValue(13).ToString();
-                        placebornlbl.Text = dr.GetValue(14).ToString();
-                        aadhaarlbl.Text = dr.GetValue(15).ToString();
-                        citizenlbl.Text = dr.GetValue(16).ToString();
+                        var pwdyesno = dr.GetValue(9).ToString();
 
-                        bankreflbl.Text = dr.GetValue(17).ToString();
+                        if (pwdyesno == "No")
+                        {
+                            pwdcatlbl1.Text = dr.GetValue(9).ToString();
+                            pwdcatlbl2.Text = "";
+                            pwdcatlbl3.Text = "";
+                            pwdtypelbl.Text = "";
+                            pwdpctlbl.Text = "";
+
+                        }
+                        else if (pwdyesno == "Yes")
+                        {
+                            pwdcatlbl1.Text = dr.GetValue(9).ToString() + ",";
+                            pwdcatlbl2.Text = dr.GetValue(10).ToString() + ",";
+                            pwdcatlbl3.Text = dr.GetValue(11).ToString();
+                        }
+
+                        var exarmy = dr.GetValue(12).ToString();
+
+
+
+                        if (exarmy == "No")
+                        {
+                            armylbl.Text = "No";
+                            armylblservice.Text = "";
+                            PrdServicelbl.Text = "";
+
+                        }
+                        else if (exarmy == "Yes")
+                        {
+                            armylbl.Text = dr.GetValue(13).ToString() + "," + " ";
+
+                            armylblservice.Text = dr.GetValue(14).ToString();
+
+                        }
+
+                        placebornlbl.Text = dr.GetValue(15).ToString();
+                        aadhaarlbl.Text = dr.GetValue(16).ToString();
+                        citizenlbl.Text = dr.GetValue(17).ToString();
+                        bankreflbl.Text = dr.GetValue(18).ToString();
                         string paymentdatetxt = bankreflbl.Text;
 
+
+
                         if (paymentdatetxt == "")
+
                         {
                             paydatelbl.Text = "";
+
+
                         }
                         else
                         {
-                            paydatelbl.Text = dr.GetValue(18).ToString();
+                            paydatelbl.Text = dr.GetValue(19).ToString();
                         }
 
-                        paymodelbl.Text = dr.GetValue(19).ToString();
-                        emaillbl.Text = dr.GetValue(20).ToString();
-                        mobilelbl.Text = dr.GetValue(21).ToString();
+                        paymodelbl.Text = dr.GetValue(20).ToString();
 
-                        string paddress = dr.GetValue(22).ToString() + ", " + dr.GetValue(23).ToString() + ", " + dr.GetValue(24).ToString() + ", " + dr.GetValue(25).ToString();
+                        if (bankreflbl.Text == "")
+                        {
+                            paymodelbl.Text = "";
+                        }
+
+                        emaillbl.Text = dr.GetValue(21).ToString();
+                        mobilelbl.Text = dr.GetValue(22).ToString();
+
+                        string paddress = dr.GetValue(23).ToString() + ", " + dr.GetValue(24).ToString() + ", " + dr.GetValue(25).ToString() + ", " + dr.GetValue(26).ToString();
                         presentaddlbl.Text = paddress;
-                        permaddlbl.Text = dr.GetValue(26).ToString();
+                        permaddlbl.Text = dr.GetValue(27).ToString();
 
+                        TypingMediumLbl.Text = dr.GetValue(29).ToString();
                     }
                 }
                 else
@@ -499,7 +542,7 @@ namespace recruitment
 
                         forignvisitlbl.Text = dr.GetValue(0).ToString();
                         bondlbl.Text = dr.GetValue(1).ToString();
-                        joinglbl.Text = dr.GetValue(2).ToString();
+                        //joinglbl.Text = dr.GetValue(2).ToString();
 
                         relativelbl.Text = dr.GetValue(3).ToString();
                         string relative = dr.GetValue(4).ToString() + ", " + dr.GetValue(5).ToString() + ", " + dr.GetValue(6).ToString() + ", " + dr.GetValue(7).ToString();
@@ -638,7 +681,7 @@ namespace recruitment
                         YesOrNo();
                         loadbasicdetails();
                         loadeducation();
-                        loadeducationphd();
+                     //   loadeducationphd();
                         loadexperience();
                         loadotherinfordetails();
                         PhotoFileexitCheck();

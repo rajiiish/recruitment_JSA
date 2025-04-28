@@ -231,6 +231,7 @@ namespace recruitment
 
 
 
+
         protected void Addbutton_Click(object sender, EventArgs e)
         {
             addforignvisit();
@@ -748,6 +749,10 @@ namespace recruitment
                 Response.Write("<script> alert ('Please Accept the Declaration');</script>");
             }
 
+            else if (TypingTestDrop.SelectedValue =="0")
+            {
+                Response.Write("<script> alert ('Please Select the Medium for Computer Proficiency Test ');</script>");
+            }
 
             //else if (RelativeDrop.SelectedValue == "Yes")
 

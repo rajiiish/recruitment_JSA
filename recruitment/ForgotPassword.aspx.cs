@@ -18,7 +18,7 @@ namespace recruitment
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            pwdlbl.Visible = false;
+            pwdlbl.Visible = true;
         }
 
         protected void showPwd()

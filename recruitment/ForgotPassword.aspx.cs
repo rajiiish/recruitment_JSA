@@ -127,8 +127,8 @@ namespace recruitment
 
         protected void Login_Click(object sender, EventArgs e)
         {
-            Sendmail();
-           // showPwd();
+          //  Sendmail();
+            showPwd();
         }
     }
 }

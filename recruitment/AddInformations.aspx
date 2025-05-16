@@ -417,15 +417,22 @@
                             </thead>
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="RelativeNametxt" runat="server"></asp:TextBox></td>
+                                    <asp:TextBox ID="RelativeNametxt" runat="server"></asp:TextBox> 
+                                    <asp:RegularExpressionValidator ID="regexValidator" runat="server" ControlToValidate="RelativeNametxt" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+                                </td>
                                 <td>
                                     <asp:TextBox ID="PresentDesignationtxt" runat="server"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="PresentDesignationtxt" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+
                                 </td>
                                 <td>
                                     <asp:TextBox ID="RelationTypetxt" runat="server"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="RelationTypetxt" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
                                 </td>
                                 <td>
                                     <asp:TextBox ID="NameCSIRtxt" runat="server" Height="25px" Width="314px"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator5" runat="server" ControlToValidate="NameCSIRtxt" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+
                                 </td>
                             </tr>
                         </table>
@@ -478,22 +485,42 @@
                             <td class="auto-style7">
                                 <lable>1</lable></td>
                             <td class="auto-style7">
-                                <asp:TextBox ID="NameRef1" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="NameRef1" runat="server"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator6" runat="server" ControlToValidate="NameRef1" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+
+
+                            </td>
                             <td class="auto-style7">
-                                <asp:TextBox ID="OccupRef1" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="OccupRef1" runat="server"></asp:TextBox>
+                              <asp:RegularExpressionValidator ID="RegularExpressionValidator7" runat="server" ControlToValidate="OccupRef1" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+
+
+                            </td>
                             <td class="auto-style7">
-                                <asp:TextBox ID="AddressRef1" runat="server" Width="275px"></asp:TextBox></td>
+                                <asp:TextBox ID="AddressRef1" runat="server" Width="275px"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server" ControlToValidate="AddressRef1" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+                            </td>
+                                                          
 
                         </tr>
                         <tr>
                             <td>
                                 <lable>2</lable></td>
                             <td>
-                                <asp:TextBox ID="NameRef2" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="NameRef2" runat="server"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server" ControlToValidate="NameRef2" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+
+                            </td>
                             <td>
-                                <asp:TextBox ID="OccupRef2" runat="server"></asp:TextBox></td>
+                                <asp:TextBox ID="OccupRef2" runat="server"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator10" runat="server" ControlToValidate="OccupRef2" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+
+                            </td>
                             <td>
-                                <asp:TextBox ID="AddressRef2" runat="server" Width="275px"></asp:TextBox></td>
+                                <asp:TextBox ID="AddressRef2" runat="server" Width="275px"></asp:TextBox>
+                                                                <asp:RegularExpressionValidator ID="RegularExpressionValidator11" runat="server" ControlToValidate="AddressRef2" ValidationGroup="otherinfogroup" ErrorMessage="Special characters are not allowed." ValidationExpression="^[a-zA-Z0-9\s]*$"> </asp:RegularExpressionValidator>
+
+                            </td>
 
                         </tr>
 

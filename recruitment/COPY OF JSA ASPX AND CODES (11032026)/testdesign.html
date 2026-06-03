@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="container">
+        <br />
+        <center>
+            <asp:Label ID="Label3" runat="server" Text="Educational Certificates Upload" Font-Bold="True" ForeColor="#0000CC"></asp:Label> &nbsp;
+        </center>
+
+
+
+        <asp:Table ID="Table1" runat="server">
+
+
+            <asp:TableRow ID="SSLCTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell>10th or Equivalent Certificate</asp:TableCell>
+
+               
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="ssc_pdfview" src="imgs/pdficon.png" runat="server" Height="32px" OnClick="ssc_pdfview_Click" Width="36px" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+
+
+
+            <asp:TableRow ID="HSCTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> 12th or Equivalent Certificate</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="hsc_pdfview" src="imgs/pdficon.png" runat="server" Height="32px" Width="36px" OnClick="hsc_pdfview_Click" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+            <asp:TableRow ID="IITTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> ITI or its Equivalent Certificate</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="ITI_pdfview" src="imgs/pdficon.png" OnClick="ITI_pdfview_Click" runat="server" Height="32px" Width="36px" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+
+            <asp:TableRow ID="DIPTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> Diploma or its Equivalent Certificate</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="DIP_pdfview" src="imgs/pdficon.png" OnClick="DIP_pdfview_Click" runat="server" Height="32px" Width="36px" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+
+            <asp:TableRow ID="UGTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> UG or its Equivalent Certificate</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="UG_pdfview" src="imgs/pdficon.png" OnClick="UG_pdfview_Click" runat="server" Height="32px" Width="36px" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+
+            <asp:TableRow ID="PGTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> PG or its Equivalent Certificate</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="PG_pdfview" src="imgs/pdficon.png" OnClick="PG_pdfview_Click" runat="server" Height="32px" Width="36px" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+
+
+        </asp:Table>
+        <br />
+
+        <center>
+            <asp:Label ID="Label10" runat="server" Text="Other Mandatory Documents Upload" Font-Bold="True" ForeColor="#0000CC"></asp:Label> &nbsp;
+        </center>
+
+        <asp:Table ID="Table3" runat="server">
+
+
+            <asp:TableRow ID="CommunityTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell>Community Certificate</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="Community_pdfview" src="imgs/pdficon.png" runat="server" Height="32px" OnClick="Community_pdfview_Click" Width="36px" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+
+
+
+            <asp:TableRow ID="ExperienceTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> Experience Details Documents (Combine Multiple pages)</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="Experience_pdfview" src="imgs/pdficon.png" runat="server" Height="32px" Width="36px" OnClick="Experience_pdfview_Click" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+            <asp:TableRow ID="ExServicemanTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> Ex-Serviceman Documents </asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="ExServiceman_pdfview" src="imgs/pdficon.png" OnClick="ExServiceman_pdfview_Click" runat="server" Height="32px" Width="36px" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+
+            <asp:TableRow ID="NOCTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> NOC from Current Employer (In case of Permanent CSIR or Government Servant)</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="NOC_pdfview" src="imgs/pdficon.png" OnClick="NOC_pdfview_Click" runat="server" Height="32px" Width="36px" />
+
+
+                </asp:TableCell>
+
+
+            </asp:TableRow>
+
+
+            <asp:TableRow ID="PWDTableRow" runat="server" class="table table-bordered">
+                <asp:TableCell><img src="imgs/ticon.png" height="15" width="15" /></asp:TableCell>
+                <asp:TableCell> PWD Certificate ((Upload a certificate as pdf issued by competent authority)</asp:TableCell>
+
+                <asp:TableCell>
+
+
+
+                    <asp:ImageButton ID="PWD_pdfview" src="imgs/pdficon.png" OnClick="PWD_pdfview_Click" runat="server" Height="32px" Width="36px" />
+
+
+                </asp:TableCell>
+
+            </asp:TableRow>
+
+        </asp:Table>
+
+
+    </div>
+</body>
+</html>
